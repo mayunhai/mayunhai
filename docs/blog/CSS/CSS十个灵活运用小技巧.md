@@ -55,7 +55,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: url('@public/test.jpg') center center;
+    background: url('/test.jpg') center center;
     background-size: cover
   }
 </style>
@@ -69,7 +69,7 @@
 .pic{
   width: 200px;
   height: 300px;
-  background: url('@public/test.jpg') center center no-repeat black;
+  background: url('/test.jpg') center center no-repeat black;
   background-size: contain
 }
 </style>
@@ -81,7 +81,7 @@
     height: 200px;
     float:left;
     border-radius: 50%;
-    background: url('@public/test.jpg') center center;
+    background: url('/test.jpg') center center;
     background-size: cover
   }
   .pic{
@@ -89,7 +89,7 @@
     height: 300px;
     float:left;
     margin-left: 50px;
-    background: url('@public/test.jpg') center center no-repeat black;
+    background: url('/test.jpg') center center no-repeat black;
     background-size: contain
   }
 </style>
