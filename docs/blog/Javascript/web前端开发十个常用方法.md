@@ -15,6 +15,7 @@ function uniqueArr(arr) {
 运用场景：数组去重是一种比较常见的计算需求，方法也有很多种，这种算是利用ES6语法中Set对象比较优雅的一种
 
 例如：
+
 ```
 const arr = [1, 2, 3, 1, 1, 2, 3, 4]
 console.log(uniqueArr(arr)) //输出[1, 2, 3, 4]
@@ -59,6 +60,7 @@ function debounce(func, wait, immediate) {
 运用场景：在规定延迟内连续触发只执行一次，如果第三个参数传true则在最开始就触发。去抖函数其实在很多UI中模糊远程查询都有集成，在拥有echart等(canvas或SVG图表插件)自适应页面中 window.addEventListener('resize', function)配合抖动函数在改变窗口大小时候对图表进行重绘会比较合适，有效减少触发重绘次数，保证良好用户体验
 
 例如：
+
 ```
 <button id="test"测试</button
 <script
@@ -109,6 +111,7 @@ function parseTime(time, cFormat) {
 运用场景：轻轻松松把时间戳或者时间日期对象转化成自己想要输出的格式，可以减少服务器运算同是若是时间输出格式变更需求无需更改后端，前端修改即可，或许这点计算并不算什么，但是积羽沉舟。
 
 例如：
+
 ```
 const now = new Date()
 //以'{y}-{m}-{d} {h}:{i}:{s}'格式化的当前时间
@@ -139,6 +142,7 @@ function fomatNumber(s, n) {
 运用场景：把过长的数字尤其是金额用千分号隔开，方便用户能够更快的识别数字金额大小
 
 例如：
+
 ```
 console.log(fomatNumber（23123.123）) //23,123.12
 console.log(fomatNumber（23123.123, 0）) //123,123
@@ -166,6 +170,7 @@ function deepClone(source) {
 运用场景：这个方法就是克隆一个对象或者数组，在开发当中接口返回的数据往往并不是特别理想，在需要对接口数据做处理运算的时候克隆往往是一个经常可以用的到的方法。
 
 例如：
+
 ```
 const arr = [1, 2, 3, 4]
 const obj = {a: 1, b: 2, c: 3}
@@ -197,6 +202,7 @@ function getByteLen(val) {
 运用场景：这个方法就是把所有中文字符算成1，其他字符串计算为0.5，然后向下取整（这里我们可以延伸一个有趣的问题 Math.floor和parseInt()的区别 有兴趣的小伙伴可以试试 Math.floor(-1.5)、parseInt(-1.5)、parseInt(1111,2)）。看起来毫无意义但是在某些特殊场景还是很有必要，比如遍历一个未知的表格时候，对于表头的长度我们无法控制（接口或者计算返回）的情况下对于过长表头我们不想出现换行以及省略号的形式的时候，可以用次方法计算字符串长度然后乘以一个值来定义table-column的长度。
 
 例如：
+
 ```
 console.log(getByteLen(1231231231231)) //0
 console.log(getByteLen('1231231231231')) //6
@@ -226,6 +232,7 @@ console.log(getByteLen('我就想测试一下')) //7
 运用场景：需要计算两个值相除的值，对于同比环比也可以根据业务需求进行类似封装
 
 例如：
+
 ```
 const { a, b } = { a: 1, b: 2 }
 console.log(divide(a, b)) //输出0.5
@@ -247,6 +254,7 @@ console.log(divide(a, b)) //输出0.5
 运用场景：把对象转化成GET传参url可用参数字符串，大部分ajax库都有封装，特殊情况下使用
 
 例如：
+
 ```
 obj = {
   id: 1,
@@ -271,6 +279,7 @@ function param2Obj(url) {
 运用场景：用户把url中GET传参的参数转化成对象方便使用的场景，不过目前主流框架路由都有相对于的方法可以得到一样的效果
 
 例如：
+
 ```
 const url = 'www.tuniu.com?id=1231&name=mayunhai&sex=1'
 console.log(param2Obj(url)) //{id: "1231", name: "mayunhai", sex: "1"}
@@ -294,6 +303,7 @@ function scrollTo(element, to, duration) {
 运用场景：让一个拥有垂直滚动条的元素在duration时间内滚动到制定高度
 
 例如：
+
 ```
 <div id="test" style="height:300px;overflow-y:auto;overflow-x:hidden" </div
 <script
