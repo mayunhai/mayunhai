@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
-dist/
+docs/.vuepress/dist/
 # CONTRIBUTING.md
 # npm-debug.log
 # yarn-debug.log*
