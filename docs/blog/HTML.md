@@ -1,7 +1,5 @@
 # HTML
 
-<!-- prettier-ignore-start -->
-
 
 
 

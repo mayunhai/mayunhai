@@ -1,9 +1,9 @@
 {
-  "name": "awesome-bookmarks",
+  "name": "mayunhai",
   "version": "1.0.0",
-  "description": "awesome-bookmarks",
+  "description": "mayunhai",
   "main": "index.js",
-  "author": "PanJiaChen",
+  "author": "mayunhai",
   "license": "ISC",
   "scripts": {
     "dev": "vuepress dev docs",
