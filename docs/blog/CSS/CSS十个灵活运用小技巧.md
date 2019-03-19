@@ -79,7 +79,6 @@
   .portrait{
     width: 200px;
     height: 200px;
-    float:left;
     border-radius: 50%;
     background: url('https://mayunhai.github.io/image/test.jpg') center center;
     background-size: cover
@@ -87,16 +86,15 @@
   .pic{
     width: 200px;
     height: 300px;
-    float:left;
-    margin-left: 50px;
     background: url('https://mayunhai.github.io/image/test.jpg') center center no-repeat black;
     background-size: contain
   }
 </style>
-<div style="height: 300px">
-<div class="portrait"> </div> 
-<div class="pic"> </div>
+<div class="flex space_between align_items_c">
+  <div class="portrait"> </div> 
+  <div class="pic"> </div>
 </div>
+
 
 
 ### 6. 纯CSS纯色三角形
