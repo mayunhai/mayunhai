@@ -6,7 +6,7 @@
 ```
 npm install
 npm run dev //开发环境
-npm run build //打包 打包后文件目录/dist
+npm run build //打包
 ```
 
 Coming Soon
