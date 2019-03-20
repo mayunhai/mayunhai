@@ -3,7 +3,8 @@
 </p>
 
 使用方法：
-```
+
+```bash
 npm install
 npm run dev //开发环境
 npm run build //打包

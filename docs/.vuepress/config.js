@@ -56,7 +56,6 @@ module.exports = {
       }
     }
   },
-  ga: 'UA-109340118-1',
   markdown: {
     config: md => {
       // use more markdown-it plugins!
