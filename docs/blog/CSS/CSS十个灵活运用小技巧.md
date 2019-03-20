@@ -11,7 +11,11 @@
 
 ### 2. webkit-tap-highlight-color
 
-这是CSS3一个鲜为人知的熟悉，这个属性只用于iOS (移动开发当中个人认为最容易出兼容性问题的就是IOS)。当你点击一个链接或者通过Javascript定义的可点击元素的时候，它就会出现一个半透明的灰色背景。要重设这个表现，你可以设置-webkit-tap-highlight-color为任何颜色。在大部分情况这个属性是无关痛痒的。但是在万变的需求当中总是要痛的，举个例子在移动端开发当中一个过小可被点击图标是挺常见的事情，通常我们会为了用户能够更好的点击到它可用一个稍微大一些透明div盖在上方来接收点击，这种增加用户点击热区的范围的方法在移动端页面开发是非常实用的，这时候webkit-tap-highlight-color的默认半透明灰色背景会带来很不好的体验，建议全局设置 `{webkit-tap-highlight-color:rgba(255,255,255,0);-webkit-appearance:none}` 这样的属性永绝后患。
+这是CSS3一个鲜为人知的熟悉，这个属性只用于iOS (移动开发当中个人认为最容易出兼容性问题的就是IOS)。当你点击一个链接或者通过Javascript定义的可点击元素的时候，它就会出现一个半透明的灰色背景。要重设这个表现，你可以设置-webkit-tap-highlight-color为任何颜色。在大部分情况这个属性是无关痛痒的。但是在万变的需求当中总是要痛的，举个例子在移动端开发当中一个过小可被点击图标是挺常见的事情，通常我们会为了用户能够更好的点击到它可用一个稍微大一些透明div盖在上方来接收点击，这种增加用户点击热区的范围的方法在移动端页面开发是非常实用的，这时候webkit-tap-highlight-color的默认半透明灰色背景会带来很不好的体验，建议全局设置 
+```CSS
+{webkit-tap-highlight-color:rgba(255,255,255,0);-webkit-appearance:none}
+```
+ 这样的属性永绝后患。
 
 
 ### 3. transition
@@ -47,7 +51,9 @@
 
 ### 5. background-size contain && cover
 
-产品的需求总是千奇百怪的，我曾经就遇到一个奇葩问题，项目用户头像的尺寸尚未统一有横着的长方形有竖着的长方形，列表却需要用统一大小圆形遍历用户头像。这个需求如果用JS做会相当复杂，但是CSS中 background-size 可以轻松解决这个需求，例如：
+产品的需求总是千奇百怪的，我曾经就遇到一个奇葩问题，项目用户头像的尺寸尚未统一有横着的长方形有竖着的长方形，列表却需要用统一大小圆形遍历用户头像。这个需求如果用JS做会相当复杂，但是CSS中 background-size 可以轻松解决这个需求。
+
+例如：
 
 ```HTML
 <style>
@@ -139,7 +145,9 @@ position定位大家熟悉的 relative、fixed、absolute这里就不过多介�
 
 ### 9. -webkit-line-clamp
 
-对于过长的当行文字添加.ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}这样的样式就可以实现文字过长用省略号代替，这里注意一点三个属性缺一不可，通常我也单独会在通用样式表里面添加这样的样式，若需使用直接标签新增ellipsis类即可。但是还是有那种多行简介超过2行的文字出现省略号代替的情况，这时候就需要用到-webkit-line-clamp这样的属性，可以轻松解决。例如：
+对于过长的当行文字添加.ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}这样的样式就可以实现文字过长用省略号代替，这里注意一点三个属性缺一不可，通常我也单独会在通用样式表里面添加这样的样式，若需使用直接标签新增ellipsis类即可。但是还是有那种多行简介超过2行的文字出现省略号代替的情况，这时候就需要用到-webkit-line-clamp这样的属性，可以轻松解决。
+
+例如：
 
 ```HTML
 <style>
