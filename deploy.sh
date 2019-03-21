@@ -10,7 +10,7 @@ npm run build
 cd docs/.vuepress/dist
 
 #创建.nojekyll 防止Github Pages build错误
-touch .nojekyll
+# touch .nojekyll
 
 git init
 git add -A
