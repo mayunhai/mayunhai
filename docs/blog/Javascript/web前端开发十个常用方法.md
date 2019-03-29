@@ -149,7 +149,7 @@ console.log(fomatNumber（23123.123, 0）) //123,123
 ```
 
 
-### 5. 克隆一个对象或者数组
+### 5. 克隆一个对象或者数组(深拷贝)
 
 ```javascript
 function deepClone(source) {
