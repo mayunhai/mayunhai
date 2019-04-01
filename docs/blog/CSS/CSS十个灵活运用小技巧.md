@@ -4,12 +4,13 @@
 
 ### 1. 垂直居中的三种方法（老生常谈）
 
-* 强制定位使用position或者transform属性强制计算定位
-* flex盒子模型 `align-items: center` 轻松搞定，关键外层盒子高度任意变化都会依旧保持垂直居中（推荐不过需要考虑兼容要求，移动端基本都可以使用）
-* 利用td标签的valign属性 `<td valign="middle">` （不赞成使用）
+- 强制定位使用position或者transform属性强制计算定位
+- flex盒子模型 `align-items: center` 轻松搞定，关键外层盒子高度任意变化都会依旧保持垂直居中（推荐不过需要考虑兼容要求，移动端基本都可以使用）
+- 利用td标签的valign属性 `<td valign="middle">` （不赞成使用）
 
-**这里想要强调一点千万不要用尝试用margin去做垂直定位，为什么可以看下一章节** [margin重叠](/blog/CSS.html#margin重叠)
-
+::: tip 这里想要强调一点
+千万不要用尝试用margin去做垂直定位，至于为什么可以看 [margin重叠](/blog/CSS.html#margin重叠)
+:::
 
 ### 2. webkit-tap-highlight-color
 
@@ -23,10 +24,10 @@
 ### 3. transition
 
 这是CSS3一种常用的过渡动画属性，也是较为简单方便的一种，你甚至可以添加一个.trasition_3s{-webkit-transition:.3s;transition:.3s}这样的类，在想要用的地方为所欲为。比如hover效果过渡，长宽变化过渡，淡入淡出...只需要简简单单加上一个类trasition_3s就能够得到不错的效果。这里可以注意一下细节：
-* transition-property	规定设置过渡效果的 CSS 属性的名称
-* transition-duration	规定完成过渡效果需要多少秒或毫秒
-* transition-timing-function	规定速度效果的速度曲线
-* transition-delay	定义过渡效果何时开始
+- transition-property	规定设置过渡效果的 CSS 属性的名称
+- transition-duration	规定完成过渡效果需要多少秒或毫秒
+- transition-timing-function	规定速度效果的速度曲线
+- transition-delay	定义过渡效果何时开始
 
 
 ### 4. flex:0 flex:1 flex:2 实战运用

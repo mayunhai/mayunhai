@@ -35,6 +35,6 @@ Badge 标记
 
 Coming Soon
 
-Base on `vuepress`
+Base on [vuepress](https://vuepress.vuejs.org/zh/)
 
 **本项目为个人博客**
