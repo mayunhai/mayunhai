@@ -19,10 +19,10 @@ module.exports = {
         text: '首页',
         link: '/'
       },
-      // {
-      //   text: '库',
-      //   link: '/repository/'
-      // },
+      {
+        text: '网站',
+        link: '/website/'
+      },
       // {
       //   text: '网站',
       //   link: '/website/'

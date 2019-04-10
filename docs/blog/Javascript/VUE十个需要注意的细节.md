@@ -28,6 +28,10 @@
 
 一般来说，`v-if` 有更高的切换开销，而 `v-show` 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 `v-show` 较好；如果在运行时条件很少改变，则使用 `v-if` 较好
 
+::: tip
+template标签无法使用 v-show ，不信的可以试试
+:::
+
 ### [2. deep](https://cn.vuejs.org/v2/api/#watch)
 对于watch一个对象或者数组时候，若需要深度 `watcher` 则一定需要设置 `deep:true`
 
