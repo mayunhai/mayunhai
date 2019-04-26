@@ -1,10 +1,14 @@
-  - [https://vetoo.me](https://vetoo.me/aff.php?aff=94)
+  - [https://catcc.me](https://catcc.me/aff.php?aff=94)
 
     一个很不错的翻墙工具，10块钱100GB不限时，网速可以至少看视频不卡
 
   - [https://www.iconfont.cn](https://www.iconfont.cn)
 
     非常棒的一个阿里图标库，可以直接下载 SVG AI PNG 格式
+    
+  - [https://cloud.tencent.com/developer/devdocs](https://cloud.tencent.com/developer/devdocs)
+
+    腾讯云出品的一个不错的开发手册集合，里面集合了前后端比较常用的框架、工具的使用手册
 
   - [https://www.colorbox.io](https://www.colorbox.io)
 
