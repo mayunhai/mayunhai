@@ -1,4 +1,4 @@
-## VUE十个需要注意的细节
+## VUE十个需要注意的细节（2.0）
 
 
 ::: tip
@@ -165,9 +165,13 @@ this.$set(this.myObject,'newProperty','hi')
 ```
 
 
-### [10. 自定义组件的  `v-model` ](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model)
+### 10. 自定义组件强化
 
-显而易见就是官方提供了一个 `API` 让你能够在自己封装组件上面也可以使用 `v-model` 双向绑定,这个细节多用于封装自己的表单类组件或者二次封装别人的表单类组件用，新手可以暂时无视此点，因为新手很少会去封装基础组件，并且对 element 这样的UI 进行单组件的二次封装我觉得意义不是很大，感兴趣的可以研究一下，这里我就不做过多解释官网说明的很清楚点击标题可以快速跳转官方文档的相关位置
+只要弄清楚以上9点对于VUE应用开发基本上就没有太大问题了，关于自定义组件的封装其实只要熟练掌握 [子父组件通信](/blog/Javascript.html#_4-子父组件通信) 也足以解决日常开发需求，下面介绍的只是更深层次一点，对于新手而言不懂也没有太大关系尤其是slot插槽这块 `VUE 3.0` 会对此API有大幅度变动，虽然会有兼容方案
+
+- [`v-model` ](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model)
+
+显而易见就是官方提供了一个 `API` 让你能够在自己封装组件上面也可以使用 `v-model` 双向绑定,这个细节多用于封装自己的表单类组件或者二次封装别人的表单类组件用，并且对 element 这样的UI 进行单组件的二次封装我觉得意义不是很大，感兴趣的可以研究一下，这里我就不做过多解释官网说明的很清楚点击标题可以快速跳转官方文档的相关位置
 
 ::: tip
 虽然不是特别重点，但是这里如果只是对 value 属性的进行双绑封装还是极为方便的，新手可以了解一下，只需要在子组件新增 `this.$emit('input', val)` 这样的事件即可
@@ -180,4 +184,43 @@ this.$set(this.myObject,'newProperty','hi')
   v-on:input="searchText = $event.target.value"
 >
 ```
+:::
+
+- [内置组件 `<slot>`](https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87%E6%8F%92%E6%A7%BD%E5%88%86%E5%8F%91%E5%86%85%E5%AE%B9)
+
+最主要的作用就是可以和 HTML 元素一样，我们经常需要向一个组件传递内容。通常是给组件传递一些 `HTML` 代码。
+
+`<slot>` 元素作为组件模板之中的内容分发插槽。`<slot>` 元素自身将被替换,也可以在封装组件时候预留一下默认值，多的不说直接上代码我觉得会比较直观一些。
+
+```HTML
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<div id="app">
+  <alert-box>
+    <b>Something bad happened.</b>
+  </alert-box>
+</div>
+<script>
+  Vue.component('alert-box', {
+    template: `
+      <div class="demo-alert-box">
+        <strong>Error!</strong>
+        <slot><b>这里可以定义默认值</b></slot>
+      </div>
+    `
+  })
+  const vm = new Vue({
+    el: '#app'
+  })
+</script>
+```
+上面的代码会被解析成
+
+```HTML
+<div class="demo-alert-box">
+  <strong>Error!</strong>
+  <b>Something bad happened.</b>
+</div>
+```
+::: tip
+值得一提的这个 `<slot></slot>` 里面依然可以插入子组件并被解析
 :::
