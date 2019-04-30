@@ -6,7 +6,7 @@
 
 ### 1. 数组去重
 
-```javascript
+```js
 function uniqueArr(arr) {
   return Array.from(new Set(arr))
 }
@@ -16,7 +16,7 @@ function uniqueArr(arr) {
 
 例如：
 
-```javascript
+```js
 const arr = [1, 2, 3, 1, 1, 2, 3, 4]
 console.log(uniqueArr(arr)) //输出[1, 2, 3, 4]
 ```
@@ -24,7 +24,7 @@ console.log(uniqueArr(arr)) //输出[1, 2, 3, 4]
 
 ### 2. 去抖函数
 
-```javascript
+```js
 function debounce(func, wait, immediate) {
   let timeout, args, context, timestamp, result
   const later = function () {
@@ -61,7 +61,7 @@ function debounce(func, wait, immediate) {
 
 例如：
 
-```javascript
+```js
 <button id="test"测试</button
 <script
   const Hanlder = debounce(() = {
@@ -74,7 +74,7 @@ function debounce(func, wait, immediate) {
 
 ### 3. 格式化时间戳
 
-```javascript
+```js
 function parseTime(time, cFormat) {
   if (arguments.length === 0) {
     return null
@@ -112,7 +112,7 @@ function parseTime(time, cFormat) {
 
 例如：
 
-```javascript
+```js
 const now = new Date()
 //以'{y}-{m}-{d} {h}:{i}:{s}'格式化的当前时间
 console.log(parseTime(now)) 
@@ -123,7 +123,7 @@ console.log(parseTime(now.getTime() - 3600 * 1000 * 24, '{y}年{m}月{d}日 {h}�
 
 ### 4. 千分号格式化数字
 
-```javascript
+```js
 function fomatNumber(s, n) {
   n = n = 0 && n <= 20 ? n : 2
   s = parseFloat((s + "").replace(/[^\d\.-]/g, "")).toFixed(n) + ""
@@ -143,7 +143,7 @@ function fomatNumber(s, n) {
 
 例如：
 
-```javascript
+```js
 console.log(fomatNumber（23123.123）) //23,123.12
 console.log(fomatNumber（23123.123, 0）) //123,123
 ```
@@ -151,7 +151,7 @@ console.log(fomatNumber（23123.123, 0）) //123,123
 
 ### 5. 克隆一个对象或者数组(深拷贝)
 
-```javascript
+```js
 function deepClone(source) {
   if (typeof source == 'object') {
     const targetObj = source.constructor === Array ? [] : {}
@@ -171,7 +171,7 @@ function deepClone(source) {
 
 例如：
 
-```javascript
+```js
 const arr = [1, 2, 3, 4]
 const obj = {a: 1, b: 2, c: 3}
 const arrClone = deepClone(arr)
@@ -187,7 +187,7 @@ console.log(objClone) //{a: 1, b: 2, c: 3}
 
 ### 6. 计算字符串相对长度
 
-```javascript
+```js
 function getByteLen(val) {
   let len = 0
   for (let i = 0 i < val.length i++) {
@@ -203,7 +203,7 @@ function getByteLen(val) {
 
 例如：
 
-```javascript
+```js
 console.log(getByteLen(1231231231231)) //0
 console.log(getByteLen('1231231231231')) //6
 console.log(getByteLen('asdasdasdasda')) //6
@@ -212,7 +212,7 @@ console.log(getByteLen('我就想测试一下')) //7
 
 ### 7. 相除
 
-```javascript
+```js
   function divide(a, b) {
     if ((a !== 0 && !a) || (b !== 0 && !b)) {
       return 0 //这里当a或者b不存在时默认输出为0，可根据需求自行修改
@@ -233,14 +233,14 @@ console.log(getByteLen('我就想测试一下')) //7
 
 例如：
 
-```javascript
+```js
 const { a, b } = { a: 1, b: 2 }
 console.log(divide(a, b)) //输出0.5
 ```
 
 ### 8. 对象拼接URL传参字符串
 
-```javascript
+```js
   function param(json) {
     if (!json) return ''
     return Object.assign([], Object.keys(json).map(key = {
@@ -255,7 +255,7 @@ console.log(divide(a, b)) //输出0.5
 
 例如：
 
-```javascript
+```js
 obj = {
   id: 1,
   name: 'mayunhai',
@@ -266,7 +266,7 @@ console.log(param(obj)) //id=1&name=mayunhai&sex=1
 
 ### 9. 获取URL参数
 
-```javascript
+```js
 function param2Obj(url) {
   const search = url.split('?')[1]
   if (!search) {
@@ -280,14 +280,14 @@ function param2Obj(url) {
 
 例如：
 
-```javascript
+```js
 const url = 'www.tuniu.com?id=1231&name=mayunhai&sex=1'
 console.log(param2Obj(url)) //{id: "1231", name: "mayunhai", sex: "1"}
 ```
 
 ### 10. 垂直滚动
 
-```javascript
+```js
 function scrollTo(element, to, duration) {
   if (duration <= 0) return
   const difference = to - element.scrollTop
@@ -304,7 +304,7 @@ function scrollTo(element, to, duration) {
 
 例如：
 
-```HTML
+```html
 <div id="test" style="height:300px;overflow-y:auto;overflow-x:hidden" </div>
 <script>
   let html = ''

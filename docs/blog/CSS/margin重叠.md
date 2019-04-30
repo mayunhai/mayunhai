@@ -4,7 +4,7 @@ margin重叠算是前端开发比较容易被忽视的一个点,这里强调一�
 
 先做个总结margin重叠仅存在于垂直方向，水平方向不存在重叠。也就是说只有在没有浮动的块标签(`display:block`)中会出现margin重叠,感兴趣的小伙伴可以复制以下代码测试一下
 
-```HTML
+```html
 <style>
   .box1{
     /* float: left; */
@@ -33,7 +33,7 @@ margin重叠算是前端开发比较容易被忽视的一个点,这里强调一�
 <div class="box1"></div>
 <div class="box1"></div>
 
-```HTML
+```html
 <style>
   .box2{
     /* float: left; */
@@ -63,7 +63,7 @@ margin重叠算是前端开发比较容易被忽视的一个点,这里强调一�
 <div class="box2"></div>
 <div class="box2"></div>
 
-```HTML
+```html
 <style>
   .box3{
     float: left;

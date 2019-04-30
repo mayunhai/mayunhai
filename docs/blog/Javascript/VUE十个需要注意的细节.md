@@ -104,7 +104,7 @@ Vuex特别像一个全局对象，他和全局对象的区别有以下两点
 
 这个算是VUE里面比较少见，但是很重要的接口官方解释：在下次 DOM 更新循环结束之后执行延迟回调在修改数据之后立即使用这个方法，获取更新后的 DOM是不是感觉挺难理解的，所以这里我们直接上一个实例：
 
-```Javascript
+```js
 //当我们使用element UI时候，这里的作用是当element 组件el-input渲染完成后获取焦点
 this.$nextTick(_ => {
   this.$refs.input.focus()
@@ -121,7 +121,7 @@ this.$nextTick(_ => {
 
 这个指令保持在元素上直到关联实例结束编译和 CSS 规则如 `[v-cloak] { display: none }` 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕
 
-```HTML
+```html
 <style>
 [v-cloak] {
   display: none;
@@ -150,7 +150,7 @@ this.$nextTick(_ => {
 
 本项目是基于 [vuepress](https://vuepress.vuejs.org/zh/) 所以当我在这个当前页面需要输入<span v-text="'{{name}}'"></span>的时候，必须用下面这样的代码，如果直接使用写的话会被VUE编译，并提示报错找不到 `name` 变量
 
-```HTML
+```html
 <span v-html="'{{name}}'"></span>
 ```
 
@@ -160,7 +160,7 @@ this.$nextTick(_ => {
 
 向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新它必须用于向响应式对象上添加新属性，因为 Vue 无法探测普通的新增属性 (比如 `this.myObject.newProperty = 'hi'` )
 
-```Javascript
+```js
 this.$set(this.myObject,'newProperty','hi')
 ```
 
@@ -175,7 +175,7 @@ this.$set(this.myObject,'newProperty','hi')
 
 ::: tip
 虽然不是特别重点，但是这里如果只是对 value 属性的进行双绑封装还是极为方便的，新手可以了解一下，只需要在子组件新增 `this.$emit('input', val)` 这样的事件即可
-```HTML
+```html
 <input v-model="searchText">
 <!-- 实际上上面的代码是下面代码的语法糖。 -->
 <!-- 当在父级组件监听这个事件的时候，我们可以通过 $event 访问到被抛出的这个值 -->
@@ -192,7 +192,7 @@ this.$set(this.myObject,'newProperty','hi')
 
 `<slot>` 元素作为组件模板之中的内容分发插槽。`<slot>` 元素自身将被替换,也可以在封装组件时候预留一下默认值，多的不说直接上代码我觉得会比较直观一些。
 
-```HTML
+```html
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <div id="app">
   <alert-box>
@@ -215,7 +215,7 @@ this.$set(this.myObject,'newProperty','hi')
 ```
 上面的代码会被解析成
 
-```HTML
+```html
 <div class="demo-alert-box">
   <strong>Error!</strong>
   <b>Something bad happened.</b>
