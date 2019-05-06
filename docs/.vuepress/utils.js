@@ -12,18 +12,19 @@ exports.inferSiderbars = () => {
       .readdirSync(dirpath)
       .filter(
         item =>
-          item.endsWith('.md') && fs.statSync(path.join(dirpath, item)).isFile()
+        item.endsWith('.md') && fs.statSync(path.join(dirpath, item)).isFile()
       )
+      .sort((prev, next) => (next.includes('Javascript') ? 1 : 0))
+      .sort((prev, next) => (next.includes('CSS') ? 1 : 0))
+      .sort((prev, next) => (next.includes('HTML') ? 1 : 0))
       .sort((prev, next) => (next.includes('README.md') ? 1 : 0))
       .map(item => item.replace(/(README)?(.md)$/, ''))
 
-    sidebar[parent] = [
-      {
-        title,
-        children,
-        collapsable: false
-      }
-    ]
+    sidebar[parent] = [{
+      title,
+      children,
+      collapsable: false
+    }]
   })
   return sidebar
 }
