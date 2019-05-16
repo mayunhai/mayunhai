@@ -224,3 +224,17 @@ this.$set(this.myObject,'newProperty','hi')
 ::: tip
 值得一提的这个 `<slot></slot>` 里面依然可以插入子组件并被解析
 :::
+
+- [el](https://cn.vuejs.org/v2/api/#el)
+
+我先说一下使用场景,假设我们封装一个 使用echart渲染的图标组件，当我们这个页面多次使用此插件时候，你会发现如果你使用 `this.chart = echarts.init(document.getElementById('chart'))` 会出现id重复的情况，VUE就提供了一个dom选择器的API `vm.$el` 用来访问实例挂载之后的元素。
+
+
+```js
+// ... 此处代码省略
+mounted() {
+  this.chart = echarts.init(this.$el)
+  this.setOption(option)
+},
+// ... 此处代码省略
+```
