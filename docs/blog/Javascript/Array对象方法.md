@@ -74,6 +74,7 @@ console.log(arr) // 不会修原数组  [0, 1, 2, 3, 4, 5, 6]
   - fill
   - copyWithin
   - concat
+  - reverse
 
 ### 遍历
   - forEach
@@ -97,7 +98,6 @@ console.log(arr) // 不会修原数组  [0, 1, 2, 3, 4, 5, 6]
 ### 方法处理
   - filter
   - sort
-  - reverse
   - reduce
   - reduceRight
 
