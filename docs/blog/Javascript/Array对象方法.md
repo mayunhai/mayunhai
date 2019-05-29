@@ -14,9 +14,9 @@ console.log(arr) //["a", 1]
   - pop()方法用于删除并返回数组的最后一个元素
 
 ```js
-const arr = ['a']
-console.log(arr.pop()) //a 数组最后一个元素
-console.log(arr) //[]
+const arr = ['a', 1]
+console.log(arr.pop()) //1 数组最后一个元素
+console.log(arr) //["a"]
 ```
 
 <br>
@@ -43,6 +43,10 @@ console.log(arr) //[1]
 
   - slice(start,end)方法可从已有的数组中返回选定的元素。
 
+::: tip
+该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()
+:::
+
 <table>
   <tr>
     <th style="width:30px">参数</th>
@@ -60,21 +64,151 @@ console.log(arr) //[1]
 
 ```js
 const arr = [0, 1, 2, 3, 4, 5, 6]
-console.log(arr.slice(2, 3)) // [2]
-console.log(arr.slice(2)) // [2, 3, 4, 5, 6]
-console.log(arr.slice(-2)) // [5, 6]
-console.log(arr.slice(-2, -1)) // [5]
-console.log(arr) // 不会修原数组  [0, 1, 2, 3, 4, 5, 6]
+console.log(arr.slice(2, 3)) //[2]
+console.log(arr.slice(2)) //[2, 3, 4, 5, 6]
+console.log(arr.slice(-2)) //[5, 6]
+console.log(arr.slice(-2, -1)) //[5]
+console.log(arr) //不会修原数组  [0, 1, 2, 3, 4, 5, 6]
 ```
 
 <br>
 
-  - splice
-  - concat
-  - fill
-  - copyWithin
-  - concat
-  - reverse
+  - splice(index,howmany,item1,.....,itemX)方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素
+
+::: tip
+该方法会改变原始数组
+:::
+
+<table>
+  <tr>
+    <th style="width:30px">参数</th>
+    <th>描述</th>
+  </tr>
+  <tr>
+    <td>index</td>
+    <td>必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置</td>
+  </tr>
+  <tr>
+    <td>end</td>
+    <td>必需。要删除的项目数量。如果设置为 0，则不会删除项目</td>
+  </tr>
+  <tr>
+    <td>item1, ..., itemX</td>
+    <td>可选。向数组添加的新项目</td>
+  </tr>
+</table>
+
+```js
+const arr = [0, 1, 2, 3, 4, 5, 6]
+console.log(arr.splice(2, 1, 9)) //[2]
+console.log(arr) //[0, 1, 9, 3, 4, 5, 6]
+
+const arr2= [0, 1, 2, 3, 4, 5, 6]
+console.log(arr2.splice(2, 1)) //[2]
+console.log(arr2) //[0, 1, 3, 4, 5, 6]
+```
+
+<br>
+
+  - reverse()方法用于颠倒数组中元素的顺序
+
+::: tip
+该方法会改变原来的数组，而不会创建新的数组
+:::
+
+```js
+const arr = [0, 1, 2, 3, 4, 5, 6]
+console.log(arr.reverse()) //[6, 5, 4, 3, 2, 1, 0]
+console.log(arr) //[6, 5, 4, 3, 2, 1, 0]
+```
+
+<br>
+
+  - concat(arrayX,arrayX,......,arrayX)方法用于连接两个或多个数组
+
+::: tip
+该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本 
+:::
+
+```js
+const arr = [1,2,3]
+console.log(arr.concat(3, 4)) //[1, 2, 3, 3, 4]
+console.log(arr) //[1, 2, 3]
+
+const arr2= [0, 1, 2]
+const arr3= [0, 1]
+console.log(arr2.concat(arr3)) //[0, 1, 2, 0, 1]
+console.log(arr2) //[0, 1, 2]
+console.log(arr3) //[0, 1]
+```
+
+<br>
+
+  - fill()方法用于将一个固定值替换数组的元素
+
+<table>
+  <tr>
+    <th style="width:30px">参数</th>
+    <th>描述</th>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>必需。填充的值</td>
+  </tr>
+  <tr>
+    <td>start</td>
+    <td>可选。开始填充位置(默认为 0)</td>
+  </tr>
+  <tr>
+    <td>end</td>
+    <td>可选。停止填充位置 (默认为 array.length)</td>
+  </tr>
+</table>
+
+```js
+const arr = [1,2,3]
+console.log(arr.fill('a')) //["a", "a", "a"]
+console.log(arr) //["a", "a", "a"]
+
+const arr2 = [1,2,3]
+console.log(arr2.fill('a', 1, 3)) //[1, "a", "a"]
+console.log(arr2) //[1, "a", "a"]
+```
+
+<br>
+
+  - copyWithin(target, start, end)方法用于从数组的指定位置拷贝元素到数组的另一个指定位置中
+
+<table>
+  <tr>
+    <th style="width:30px">参数</th>
+    <th>描述</th>
+  </tr>
+  <tr>
+    <td>target</td>
+    <td>必需。复制到指定目标索引位置</td>
+  </tr>
+  <tr>
+    <td>start</td>
+    <td>可选。元素复制的起始位置(默认为 0)</td>
+  </tr>
+  <tr>
+    <td>end</td>
+    <td>可选。停止复制的索引位置 (默认为 array.length)。如果为负值，表示倒数</td>
+  </tr>
+</table>
+
+```js
+var arr = [0, 1, 2, 3, 4, 5];
+console.log(arr.copyWithin(2, 0, 2)) //[0, 1, 0, 1, 4, 5]
+console.log(arr) //[0, 1, 0, 1, 4, 5]
+
+var arr2 = [0, 1, 2, 3, 4, 5];
+console.log(arr2.copyWithin(2)) //[0, 1, 0, 1, 2, 3]
+console.log(arr2) //[0, 1, 0, 1, 2, 3]
+```
+
+<br>
 
 ### 遍历
   - forEach
