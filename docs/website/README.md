@@ -1,4 +1,4 @@
-  - [https://catcc.me](https://catcc.me/aff.php?aff=94)
+  - [https://moncc.net](https://moncc.net/aff.php?aff=94)
 
     一个很不错的翻墙工具，10块钱100GB不限时，网速可以，看视频不卡的哦 ( -_,- )
 
