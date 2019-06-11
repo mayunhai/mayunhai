@@ -93,6 +93,15 @@ Vuex特别像一个全局对象，他和全局对象的区别有以下两点
   - 响应式，数据变动更新组件
   - 不能直接修改，修改唯一途径```mutation```
 
+::: tip
+  [```mutation```](https://vuex.vuejs.org/zh/guide/mutations.html) 必须是同步函数
+
+  [```action```](https://vuex.vuejs.org/zh/guide/actions.html)  类似于 ```mutation```，不同在于：
+
+  - ```action``` 提交的是 ```mutation```，而不是直接变更状态
+  - ```action``` 可以包含任意异步操作
+:::
+
 - **作用：**
 多页面(SPA虚拟页面)多组件数据及时同步、通信
 
