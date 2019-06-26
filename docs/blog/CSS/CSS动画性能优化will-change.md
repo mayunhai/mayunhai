@@ -7,7 +7,7 @@ chrome Rendering里面 FPS meter勾上即可观察,尝试删除will-change会出
 
 如果机器过好可以尝试缩短  `transition` 时间
 
-切记请勿乱用，最好可以动态添加，更不能全局添加此属性
+切记请勿乱用，最好可以利用父标签 `hover` 伪类动态添加，更不能全局添加此属性
 :::
 
 ```html
