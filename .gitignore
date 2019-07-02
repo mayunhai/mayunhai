@@ -18,3 +18,5 @@ docs/.vuepress/dist/
 *.ntvs*
 *.njsproj
 *.sln
+
+package-lock.json
