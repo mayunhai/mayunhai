@@ -1,4 +1,4 @@
-const utils = require('./utils')
+const utils = require('./utils');
 
 module.exports = {
   title: 'MaYunHai',
@@ -23,19 +23,6 @@ module.exports = {
         text: '网站',
         link: '/website/'
       },
-      // {
-      //   text: '网站',
-      //   link: '/website/'
-      // },
-      // {
-      //   text: '文章',
-      //   link: '/article/'
-      // },
-      // { text: '工具', link: 'https://google.com' },
-      // {
-      //   text: '面试',
-      //   link: '/interview/'
-      // },
       {
         text: 'Blog',
         link: '/blog/'
@@ -47,7 +34,7 @@ module.exports = {
     editLinks: true,
     docsDir: 'docs',
     editLinkText: '在 GitHub 上编辑此页',
-    sidebarDepth: 2
+    sidebarDepth: 1
   },
   configureWebpack: {
     resolve: {
@@ -59,7 +46,7 @@ module.exports = {
   markdown: {
     config: md => {
       // use more markdown-it plugins!
-      md.use(require('markdown-it-include'))
+      md.use(require('markdown-it-include'));
     }
   }
-}
+};
