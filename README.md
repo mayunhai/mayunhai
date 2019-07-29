@@ -104,7 +104,7 @@ MVVM,简单粗暴的理解就是用 VM
 
   浏览器兼容性查询
 
-- [https://www.npmtrends.com](https://www.npmtrends.com/chartjs-vs-echarts)
+- [https://www.npmtrends.com](https://www.npmtrends.com/vue-vs-react-vs-angular)
 
   npm 下载量趋势对比可视化
 
