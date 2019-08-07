@@ -132,6 +132,10 @@ MVVM,简单粗暴的理解就是用 VM
 
   非常舒服的一个全站配色网站
 
+- [https://uigradients.com/](https://uigradients.com/)
+
+  非常舒服的一个渐变配色网站
+
 - [https://www.flipkart.com](https://www.flipkart.com)
 
   印度的电商网站，个人认为这个相对同类型网站做的真好看
