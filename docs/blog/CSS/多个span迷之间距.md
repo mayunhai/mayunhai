@@ -5,7 +5,7 @@
 ```html
 <style>
   .spanMargin{
-    background: #3eaf7c
+    background: #e1e1e1
   }
 </style>
 <div>
@@ -16,7 +16,7 @@
 ```
 <style>
   .spanMargin{
-    background: #3eaf7c
+    background: #e1e1e1
   }
 </style>
 <div>
@@ -38,7 +38,7 @@
 ```html
 <style>
   .spanMargin{
-    background: #3eaf7c
+    background: #e1e1e1
   }
 </style>
 <div>
@@ -55,7 +55,7 @@
 ```html
 <style>
   .spanMargin{
-    background: #3eaf7c
+    background: #e1e1e1
   }
 </style>
 <div style="font-size:0px">
