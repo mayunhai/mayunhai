@@ -1,7 +1,3 @@
-- [https://delly.me](https://delly.me/aff.php?aff=94)
-
-  一个很不错的翻墙工具，10 块钱 100GB 不限时，网速可以，看视频不卡的哦 ( -\_,- )
-
 - [https://www.iconfont.cn](https://www.iconfont.cn)
 
   非常棒的一个阿里图标库，可以直接下载 SVG AI PNG 格式
@@ -28,11 +24,7 @@
 
 - [https://ant.design/docs/spec/introduce-cn](https://ant.design/docs/spec/introduce-cn)
 
-  `Ant Design` 是阿里的一套非常棒的 UI，`bootstrap` 的时代已经过去，当然我这里更想介绍的是它关于
-  **页面设计交互**
-  的一些
-  **规范总结**
-  ，说的非常到位，可能做前端开发这么多年，你会觉得里面说的许多都是理所当然，当很少有人能够像它一样可以这么系统的说的清清楚楚
+  `Ant Design` 是阿里的一套非常棒的 UI
 
 - [https://cloud.tencent.com/developer/devdocs](https://cloud.tencent.com/developer/devdocs)
 
@@ -50,11 +42,6 @@
 
   印度的电商网站，个人认为这个相对同类型网站做的真好看
 
-- [https://towardsdatascience.com](https://towardsdatascience.com)
 
-  一个很多有趣文章的网站（但是要收费差评）
-
-<br>
-<br>
 <br>
 未完待续...

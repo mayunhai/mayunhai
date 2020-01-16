@@ -1,4 +1,4 @@
-const utils = require('./utils');
+// const utils = require('./utils');
 
 module.exports = {
   title: 'MaYunHai',
@@ -14,8 +14,8 @@ module.exports = {
     ]
   ],
   themeConfig: {
-    nav: [
-      {
+    displayAllHeaders: true,
+    nav: [{
         text: '首页',
         link: '/'
       },
@@ -28,7 +28,13 @@ module.exports = {
         link: '/blog/'
       }
     ],
-    sidebar: utils.inferSiderbars(),
+    sidebar: {
+      "/blog/": [{
+        title: "Blog",
+        children: ["", "HTML", "CSS", "Javascript"],
+        collapsable: false
+      }]
+    },
     lastUpdated: '上次更新',
     repo: '/mayunhai/mayunhai',
     editLinks: true,
@@ -36,17 +42,14 @@ module.exports = {
     editLinkText: '在 GitHub 上编辑此页',
     sidebarDepth: 1
   },
-  configureWebpack: {
-    resolve: {
-      alias: {
-        '@public': './public'
-      }
-    }
-  },
   markdown: {
-    config: md => {
+    extendMarkdown: md => {
       // use more markdown-it plugins!
       md.use(require('markdown-it-include'));
     }
-  }
+  },
+  plugins: [
+    ["@vuepress/back-to-top", true],
+    ['@vuepress/nprogress']
+  ]
 };
