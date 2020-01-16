@@ -63,3 +63,179 @@ MVVM,简单粗暴的理解就是用VM
 ## 语法糖
 
 百度百科上面说了一大堆个人觉得比较难懂，其实最直白的说法语法糖不过是你代码中的一种简写
+
+## 倒排索引
+Elasticsearch 使用一种称为倒排索引的结构，它适用于快速的全文搜索常用于文章日志管理系统
+
+::: tip
+有趣的是它的诞生是一个失业的程序员给她在学厨艺的女朋友写一个搜索菜谱程序得到的灵感，目前该方法普遍使用于各种搜索引擎 
+:::
+
+想要理解这个首先得先理解两个小知识点：
+- 数据库中的索引就好比是字典侧边a-z，其按照一定规律性的排列方便用户快速的查找到想要的内容
+
+- 数据库服务器的瓶颈往往在于读写瓶颈，由于服务器硬盘需要保证数据可还原性所以多半使用的是机械硬盘，其读写速度也就100M/S - 200M/S,即便使用SSD固态硬盘，读写速度也就在500M/S
+
+上面两点明白后，倒排索引就很容易理解，我们先看数据库的一张表
+
+<table>
+  <tr>
+    <th style="width:30px">id</th>
+    <th style="width:30px">title</th>
+    <th>content</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>xxx</td>
+    <td>xxx汽车xxx</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>xxx</td>
+    <td>xxx娱乐xxx</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>xxx</td>
+    <td>xxx旅游xxx</td>
+  </tr>
+    <tr>
+    <td>4</td>
+    <td>xxx</td>
+    <td>xxx娱乐xxx</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>xxx</td>
+    <td>xxx旅游xxx</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>xxx</td>
+    <td>xxx汽车xxx</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>xxx</td>
+    <td>xxx娱乐xxx</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>xxx</td>
+    <td>xxx旅游xxx</td>
+  </tr>
+    <tr>
+    <td>9</td>
+    <td>xxx</td>
+    <td>xxx娱乐xxx</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>xxx</td>
+    <td>xxx旅游xxx</td>
+  </tr>
+</table>
+
+然后我们再看一下 传统数据库 mysql 和 elasticsearch 索引结构的区别
+
+
+<table>
+  <tr>
+    <th>mysql</th>
+    <th>elasticsearch</th>
+  </tr>
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <th style="width:30px">key</th>
+          <th>value</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>xxx汽车xxx</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>xxx娱乐xxx</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>xxx旅游xxx</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>xxx娱乐xxx</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>xxx旅游xxx</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>xxx汽车xxx</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>xxx娱乐xxx</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>xxx旅游xxx</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>xxx娱乐xxx</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>xxx旅游xxx</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table>
+        <tr>
+          <th style="width:30px">key</th>
+          <th>value</th>
+        </tr>
+        <tr>
+          <td>汽车</td>
+          <td>[1, 6]</td>
+        </tr>
+        <tr>
+          <td>娱乐</td>
+          <td>[2, 4, 7, 9]</td>
+        </tr>
+        <tr>
+          <td>旅游</td>
+          <td>[3, 5, 8, 10]</td>
+        </tr>
+      </table>   
+    </td>
+  </tr>
+</table>
+
+如果到这里还是看不懂的话没有关系，我们看个需求（假设每篇文章大小为 1M ）
+
+需求1： 查找所有汽车相关文章
+
+需求2： 查找所有娱乐相关文章
+
+显而易见
+
+<table>
+  <tr>
+    <th style="width:50%">mysql</th>
+    <th>elasticsearch</th>
+  </tr>
+  <tr>
+    <td>无论需求1还是需求2都需要查询出所有文章（10M），然后再依次对文章内容（content）进行正则匹配</td>
+    <td>
+      <p>需求1：汽车相关文章有2篇，取 2M 数据</p>
+      <p>需求2：娱乐相关文章有4篇，取 4M 数据</p>
+    </td>
+  </tr>
+</table>  
+
+elasticsearch 的索引顺序相对于传统 mysql 的索引顺序是相反的，所以叫倒排索引，且对文章查询类场景有极大优势
