@@ -8,5 +8,7 @@
 
 !!!include(docs/blog/Javascript/按照拼音首字母排序.md)!!!
 
+!!!include(docs/blog/Javascript/优雅地巧妙使用运算符.md)!!!
+
 
 未完待续...
