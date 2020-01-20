@@ -50,7 +50,6 @@ module.exports = {
   },
   plugins: [
     ["@vuepress/back-to-top", true],
-    ['@vuepress/nprogress'],
-    require('./components/baidu')
+    ['@vuepress/nprogress']
   ]
 };
