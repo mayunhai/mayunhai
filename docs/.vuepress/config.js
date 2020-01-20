@@ -24,6 +24,10 @@ module.exports = {
         link: '/website/'
       },
       {
+        text: 'VScode',
+        link: '/VScode/'
+      },
+      {
         text: 'Blog',
         link: '/blog/'
       }
