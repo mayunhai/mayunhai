@@ -24,6 +24,8 @@
 **平分秋色**
 ，因为国内 web 项目对 [MVVM](/blog/#mvc-mvvm) 的应用相比国外还是有一定差距的，所以再较晚的使用 JS 关于 [MVVM](/blog/#mvc-mvvm) 框架有了更多的选择招聘就可以看的出来，别的城市我不知道，但是就北京和南京来说，招聘信息上面 有需求 会 VUE 或者 React 的，甚至单招 VUE 熟手的，缺很少看到单招 React 的
 
+还有一个最关键的原因，vue api 丰富学习梯度比较缓和相比而言 react api 就比较少且对新手不友好，可以说熟练使用 vue 转 react 会轻而易举（毕竟 react 的api就那么几个且 vue 都有容易理解），反正则不一定 vue api 太丰富,想要巧妙合理的运用好每个 api 不太容易短期实现
+
 这里我想要给大家推荐一个快速学习上手使用 VUE 不错的一个开源项目后台管理系统
 
 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)这个项目目前看来在github上关于VUE的项目星数最多的一个，作者更新也非常活跃几乎每天都有新的 `commit` ,提出 `Issues` 基本上能够得到很快的回应，也非常荣幸可以成为该项目contributors之一，虽然提交的代码可能并不算特别重要，但是第一次提交的代码被合并的感觉真的是超级开心
