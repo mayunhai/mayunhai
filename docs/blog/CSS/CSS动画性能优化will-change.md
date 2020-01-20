@@ -18,7 +18,7 @@ chrome Rendering里面 FPS meter勾上即可观察,尝试删除will-change会出
         border: 1px solid;
         opacity: 1;
         transition: .2s;
-        background: url(https://mayunhai.github.io/image/test.jpg);
+        background: url(/test.jpg);
         background-size: cover;
         will-change: height, opacity;
     }
@@ -42,7 +42,7 @@ chrome Rendering里面 FPS meter勾上即可观察,尝试删除will-change会出
         border: 1px solid;
         opacity: 1;
         transition: .2s;
-        background: url(https://mayunhai.github.io/image/test.jpg);
+        background: url(/test.jpg);
         background-size: cover;
         will-change: height, opacity;
     }
