@@ -12,5 +12,7 @@
 
 !!!include(docs/blog/Javascript/let、const、var区别.md)!!!
 
+!!!include(docs/blog/Javascript/webpack 4 动态加载依赖.md)!!!
+
 
 未完待续...
