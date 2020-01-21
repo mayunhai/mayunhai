@@ -141,6 +141,12 @@ export default () => {
       window.addEventListener('mousedown', this.handleMouseDown.bind(this))
       window.addEventListener('pagehide', this.handlePageHide.bind(this))
     }
+
+    destroy() {
+      this.renderCanvas.remove()
+      window.removeEventListener('mousedown', this.handleMouseDown.bind(this))
+      window.removeEventListener('pagehide', this.handlePageHide.bind(this))
+    }
   
     run() {
       this.running = true
@@ -164,15 +170,14 @@ export default () => {
     }
   }
   
-  const cursorSpecialEffects = new CursorSpecialEffects()
+  let cursorSpecialEffects = new CursorSpecialEffects()
   cursorSpecialEffects.init()
 
+
   window.addEventListener('resize', debounce(function() {
-    const w = window.innerWidth
-    const h = window.innerHeight
-    const cursorEffectsBg = document.querySelector('#cursorEffectsBg')
-    cursorEffectsBg.setAttribute('width', w)
-    cursorEffectsBg.setAttribute('height', h)
+    cursorSpecialEffects.destroy()
+    cursorSpecialEffects = new CursorSpecialEffects()
+    cursorSpecialEffects.init()
   }, 300))
 
 }
