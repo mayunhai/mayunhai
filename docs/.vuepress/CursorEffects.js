@@ -40,7 +40,8 @@ class Boom {
   }
 
   randomColor() {
-    const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    // const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    const range = ['3', 'E', 'A', 'F', '7', 'C', 'E', '9', '6']
     return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)
   }
 
