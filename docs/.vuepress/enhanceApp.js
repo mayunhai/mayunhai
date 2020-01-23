@@ -18,7 +18,7 @@ export default () => {
     cursorEffects.destroy()
     cursorEffects = new CursorEffects()
     cursorEffects.init()
-  }, 300))
+  }, 300), false)
 
   // title 变化
   let title = 'MaYunHai'
@@ -37,5 +37,5 @@ export default () => {
         document.title = title
       }, 1000);
     }
-  })
+  }, false)
 }
