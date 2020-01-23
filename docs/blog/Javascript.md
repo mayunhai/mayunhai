@@ -16,5 +16,7 @@
 
 !!!include(docs/blog/Javascript/JS 多线程编程.md)!!!
 
+!!!include(docs/blog/Javascript/Promise 简单实现.md)!!!
+
 
 未完待续...
