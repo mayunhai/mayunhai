@@ -16,7 +16,9 @@
 
 !!!include(docs/blog/Javascript/JS 多线程编程.md)!!!
 
-!!!include(docs/blog/Javascript/Promise 简单实现.md)!!!
+!!!include(docs/blog/Javascript/20行简单实现 Promise.md)!!!
+
+!!!include(docs/blog/Javascript/20行简单实现全局事件 EventBus.md)!!!
 
 
 未完待续...
