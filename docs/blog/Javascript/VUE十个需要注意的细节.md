@@ -47,14 +47,14 @@ template标签无法使用 v-show ，不信的可以试试
 
 ### [2. deep](https://cn.vuejs.org/v2/api/#watch)
 
-对于watch一个对象或者数组时候，若需要深度 `watcher` 则一定需要设置 `deep:true`
+对于watch一个对象时候，若需要深度 `watcher` 则一定需要设置 `deep:true`
 
-对于watch一个对象或者数组时候，若需要深度 `watcher` 则一定需要设置 `deep:true`
+对于watch一个对象时候，若需要深度 `watcher` 则一定需要设置 `deep:true`
 
-对于watch一个对象或者数组时候，若需要深度 `watcher` 则一定需要设置 `deep:true`
+对于watch一个对象时候，若需要深度 `watcher` 则一定需要设置 `deep:true`
 
 ::: tip
-重要的事情说三遍
+注意监听数组的变动不需要这么做
 :::
 
 
