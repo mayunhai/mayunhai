@@ -61,7 +61,6 @@ EventBus.emit('pause-video', 1) // it works   {a: 1, b: undefined, c: undefined}
       this.off(eventName, on)
       fn.apply(this, arguments)
     }
-    on.fn = fn
     this.on(eventName, on)
   }
 ```
