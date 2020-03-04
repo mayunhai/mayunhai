@@ -58,7 +58,7 @@ EventBus.emit('pause-video', 1) // it works   {a: 1, b: undefined, c: undefined}
 ```JS
   once = (eventName, fn) => {
     function on() {
-      this.off(eventName, on)
+      this.off(eventName)
       fn.apply(this, arguments)
     }
     this.on(eventName, on)
