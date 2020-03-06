@@ -4,6 +4,8 @@
 
 直接上代码，其实想要实现一个 Promise 对象，其中关键代码并不多（20行）
 
+对不理解为什么使用 `setTimeout 0` 的小伙伴可以点链接，先理解 [setTimeout](/blog/Javascript.html#settimeout的理解)
+
 ```JS
 class MyPromise {
   constructor(fn) {

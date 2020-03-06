@@ -14,6 +14,8 @@
 
 !!!include(docs/blog/Javascript/webpack 4 动态加载依赖.md)!!!
 
+!!!include(docs/blog/Javascript/setTimeout的理解.md)!!!
+
 !!!include(docs/blog/Javascript/JS 多线程编程.md)!!!
 
 !!!include(docs/blog/Javascript/20行简单实现 Promise.md)!!!
