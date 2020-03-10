@@ -4,6 +4,7 @@
 [es6](https://es6.ruanyifeng.com/)
 [腾讯开发手册](https://cloud.tencent.com/developer/devdocs)
 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+[canvas](https://www.canvasapi.cn/)
 
 ## 框架
 
