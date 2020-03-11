@@ -111,24 +111,3 @@ var a = 1
 let a = 2 // 报错 Identifier 'a' has already been declared
 const a = 2 // 报错 Identifier 'a' has already been declared
 ```
-
-- 最后一点特性,如果不写 var、let、const 默认为 `var`
-```JS
-console.log(window.a) // undefined
-var a = 1
-console.log(window.a) // 1
-
-console.log(window.b) // undefined
-b = 1
-console.log(window.b) // 1
-
-// 分割线
-
-console.log(window.c) // undefined
-let c = 1
-console.log(window.c) // undefined
-
-console.log(window.d) // undefined
-const d = 1
-console.log(window.d) // undefined
-```
