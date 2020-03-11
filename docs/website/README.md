@@ -4,7 +4,9 @@
 [es6](https://es6.ruanyifeng.com/)
 [腾讯开发手册](https://cloud.tencent.com/developer/devdocs)
 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+[git](https://www.progit.cn/)
 [canvas](https://www.canvasapi.cn/)
+[jest](https://jestjs.bootcss.com/)
 
 ## 框架
 
@@ -12,6 +14,7 @@
 [vue-router](https://router.vuejs.org/zh/)
 [vuex](https://vuex.vuejs.org/)
 [react](https://react.docschina.org/)
+[redux](https://reduxjs.bootcss.com/)
 
 ## UI
 
