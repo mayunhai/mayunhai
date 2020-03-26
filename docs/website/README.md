@@ -39,6 +39,7 @@
 [velocityjs](http://www.velocityjs.org/)
 [tweenmax](https://www.tweenmax.com.cn/)
 [tweenjs](http://www.createjs.cc/tweenjs/)
+[lottie](https://airbnb.design/lottie/)
 [threejs](https://threejs.org/)
 
 ## 人工智能
