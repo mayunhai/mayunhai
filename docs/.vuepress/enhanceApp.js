@@ -1,7 +1,7 @@
-import { debounce } from './util'
+import { debounce, animationData, setCookie, getCookie } from './util'
 import CursorEffects from './CursorEffects'
 
-export default () => {
+export default ({ Vue }) => {
   // 百度统计
   window._hmt = window._hmt || [];
   (function() {
@@ -38,4 +38,59 @@ export default () => {
       }, 1000);
     }
   }, false)
+
+  // 夜间模式
+  
+  var lottie = document.createElement('script')
+  lottie.setAttribute('type', 'text/javascript')
+  lottie.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.6/lottie.min.js')
+  document.body.appendChild(lottie)
+
+  let anim
+  let direction = 1
+
+  const htmlDOm = document.querySelector('html')
+  function test() {
+    anim.setDirection(direction)
+    anim.play()
+    direction = direction * -1
+    
+    if (direction == -1) {
+      htmlDOm.style.filter = 'invert(90%)'
+      document.getElementById('switch').style.filter = 'invert(100%)'
+      setCookie('darkMode', 'true')
+    } else {
+      htmlDOm.style.filter = 'invert(0%)'
+      document.getElementById('switch').style.filter = 'invert(0%)'
+      setCookie('darkMode', 'false')
+    }
+  }
+
+  // init darkMode
+  const darkMode = getCookie('darkMode') ==='true'
+  if (darkMode) {
+    htmlDOm.style.filter = 'invert(90%)'
+  }
+
+  lottie.onload = function () {
+    var div = document.createElement('div')
+    div.setAttribute('id', 'switch')
+    div.onclick = test
+    document.body.appendChild(div)
+    var animData = {
+      container: document.getElementById('switch'),
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      animationData: animationData
+    };
+    anim = bodymovin.loadAnimation(animData)
+
+    if (darkMode) {
+      test()
+    }
+  }
+
+        
+
 }

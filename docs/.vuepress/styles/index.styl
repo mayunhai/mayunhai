@@ -2,13 +2,12 @@
 ::selection {background:#e1e1e1; color:#3eaf7c;}
 
 body {
-  font-family: -apple-system, 'Microsoft Yahei', BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
    -webkit-tap-highlight-color: transparent;
 }
 
-.getting-started .outbound,
-.nav-links .outbound {
-  display: none;
+html {
+  transition: .3s;
+  filter: invert(0%);
 }
 
 .links .nav-links .nav-link {
@@ -62,13 +61,6 @@ a {
 a:hover {
   text-decoration: none !important;
   opacity: .5
-}
-
-.site-name {
-  -webkit-user-select:none;
-     -moz-user-select:none;
-      -ms-user-select:none;
-          user-select:none;
 }
 
 ::-webkit-scrollbar {
@@ -279,4 +271,42 @@ a:hover {
 
 .fz12 {
   font-size: 12px
+}
+
+
+#app .home {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 3.6rem);
+}
+
+#app header {
+  flex: 1;
+}
+
+#app .footer {
+  flex: 0;
+}
+
+#app .navbar a {
+  -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+        user-select:none;
+}
+
+// 夜间模式
+
+#switch {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  width: 180px;
+  height: 180px;
+}
+
+@media screen and (max-width: 1300px) {
+    #switch {
+        opacity: .5
+    }
 }
