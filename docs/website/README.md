@@ -45,6 +45,7 @@
 ## 人工智能
 
 [tensorflow](https://tensorflow.google.cn/)
+[tensorflow官方教程视频](https://developers.google.com/machine-learning/crash-course?hl=zh-cn)
 [pytorch](https://pytorch.org/)
 
 ## 其他
