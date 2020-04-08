@@ -20,6 +20,7 @@
 
 [element](https://element.eleme.cn/#/zh-CN)
 [wevue](https://wevue.org/)
+[zarm design](https://zarm.design)
 [ant design](https://ant.design/index-cn)
 [ant design mobile](https://mobile.ant.design/index-cn)
 [阿里图标库](https://www.iconfont.cn/)
@@ -41,6 +42,11 @@
 [tweenjs](http://www.createjs.cc/tweenjs/)
 [lottie](https://airbnb.design/lottie/)
 [threejs](https://threejs.org/)
+
+## 其他插件
+
+[pako](https://www.npmjs.com/package/pako)
+[photoswipe](https://photoswipe.com/)
 
 ## 人工智能
 
