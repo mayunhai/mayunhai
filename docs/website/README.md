@@ -78,10 +78,10 @@
   margin-top: 1rem!important;
 }
 .page h2:first-child {
-  padding-top: 4rem!important;
+  padding-top: 4.6rem!important;
 }
 .page h2 {
   font-size: 1.2rem;
-  padding-top: 3.8rem;
+  padding-top: 3.5rem;
 }
 </style>

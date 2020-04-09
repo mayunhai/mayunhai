@@ -28,6 +28,10 @@ module.exports = {
         link: '/VScode/'
       },
       {
+        text: 'Util',
+        link: '/util/'
+      },
+      {
         text: 'Blog',
         link: '/blog/'
       }
@@ -36,6 +40,11 @@ module.exports = {
       "/blog/": [{
         title: "Blog",
         children: ["", "HTML", "CSS", "Javascript"],
+        collapsable: false
+      }],
+      "/util/": [{
+        title: "Util",
+        children: [""],
         collapsable: false
       }]
     },
