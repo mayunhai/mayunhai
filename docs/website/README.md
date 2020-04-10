@@ -8,6 +8,7 @@
 [git](https://www.progit.cn/)
 [canvas](https://www.canvasapi.cn/)
 [jest](https://jestjs.bootcss.com/)
+[tensorflow](https://tensorflow.google.cn/)
 
 ## 框架
 
@@ -51,7 +52,7 @@
 
 ## 人工智能
 
-[tensorflow](https://tensorflow.google.cn/)
+[tensorflow2](https://tf.wiki/index.html#id1)
 [tensorflow官方教程视频](https://developers.google.com/machine-learning/crash-course?hl=zh-cn)
 [pytorch](https://pytorch.org/)
 
