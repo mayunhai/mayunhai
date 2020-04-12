@@ -1,8 +1,15 @@
-::-moz-selection {background:#e1e1e1; color:#3eaf7c;}
-::selection {background:#e1e1e1; color:#3eaf7c;}
+::-moz-selection {
+  background: #e1e1e1;
+  color: #3eaf7c;
+}
+
+::selection {
+  background: #e1e1e1;
+  color: #3eaf7c;
+}
 
 body {
-   -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -20,8 +27,8 @@ html {
 }
 
 .home .hero .action-button {
-  background: #3eaf7c!important;
-  transition: .3s!important;
+  background: #3eaf7c !important;
+  transition: .3s !important;
 }
 
 .home .hero .action-button:hover {
@@ -82,8 +89,8 @@ a:hover {
 
 @media (max-width: 419px) {
   .theme-default-content div[class*="language-"] {
-      margin: 0rem!important;
-      border-radius: 0;
+    margin: 0rem !important;
+    border-radius: 0;
   }
 }
 
@@ -289,13 +296,13 @@ a:hover {
 }
 
 #app .navbar a {
-  -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-        user-select:none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-// 夜间模式
+/* 夜间模式 */
 
 #switch {
   position: fixed;
@@ -312,8 +319,21 @@ div[class^="language-"] {
 }
 
 @media screen and (max-width: 1300px) {
-    #switch {
-        opacity: .5;
-        right: -24px;
-    }
+  #switch {
+    opacity: .5;
+    right: -24px;
+  }
+}
+
+#app header {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center
 }
