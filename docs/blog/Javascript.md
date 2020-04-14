@@ -18,5 +18,7 @@
 
 !!!include(docs/blog/Javascript/20行简单实现全局事件 EventBus.md)!!!
 
+!!!include(docs/blog/Javascript/遍历同步异步.md)!!!
+
 
 未完待续...
