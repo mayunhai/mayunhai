@@ -372,7 +372,7 @@ console.log(arr.filter((element) => {
 
 <br>
 
-  - [sort() 参考按照拼音首字母排序](/blog/Javascript.html#按照拼音首字母排序)
+  - [sort() 参考按照拼音首字母排序](/util/#拼音首字母排序)
 
 <br>
 
