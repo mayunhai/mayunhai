@@ -23,16 +23,17 @@ export default ({ Vue }) => {
   // title 变化
   let title = 'MaYunHai'
   let titleTime
+  const comeback = '′▽`，我胡汉三又回来了'
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
       document.querySelector('link[rel="icon"]').href = '/mayunhai/sad.ico'
-      title = document.title
+      if(document.title !== comeback) title = document.title
       document.title = '宝宝心里苦，但我不说'
       clearTimeout(titleTime)
     }
     else {
       document.querySelector('link[rel="icon"]').href = '/mayunhai/favicon.ico'
-      document.title = '′▽`，我胡汉三又回来了'
+      document.title = comeback
       titleTime = setTimeout(function () {
         document.title = title
       }, 1000);
