@@ -9,7 +9,7 @@
 [canvas](https://www.canvasapi.cn/)
 [jest](https://jestjs.bootcss.com/)
 [tensorflow](https://tensorflow.google.cn/)
-[bash](https://wangdoc.com/bash/)
+[Bash](https://wangdoc.com/bash/)
 
 ## 框架
 
