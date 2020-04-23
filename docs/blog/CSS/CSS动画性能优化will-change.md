@@ -18,17 +18,16 @@ chrome Rendering里面 FPS meter勾上即可观察,尝试删除will-change会出
         border: 1px solid;
         opacity: 1;
         transition: .2s;
+        cursor: pointer;
         background: url(/mayunhai/test.jpg);
         background-size: cover;
-        will-change: height, opacity;
     }
     .box:hover{
-        width: 300px;
-        height: 200px;
-        opacity: .5;
+        will-change: height, opacity;
     }
     .box:active{
-        height: 200px;
+        width: 320px;
+        height: 180px;
         opacity: .5;
     }
 </style>
@@ -42,17 +41,17 @@ chrome Rendering里面 FPS meter勾上即可观察,尝试删除will-change会出
         border: 1px solid;
         opacity: 1;
         transition: .2s;
+        cursor: pointer;
+        position: relative;
         background: url(/mayunhai/test.jpg);
         background-size: cover;
-        will-change: height, opacity;
     }
     .box:hover{
-        width: 300px;
-        height: 200px;
-        opacity: .5;
+        will-change: height, opacity;
     }
     .box:active{
-        height: 200px;
+        width: 320px;
+        height: 180px;
         opacity: .5;
     }
 </style>
