@@ -19,7 +19,7 @@ chrome Rendering里面 FPS meter勾上即可观察,尝试删除will-change会出
         opacity: 1;
         transition: .2s;
         cursor: pointer;
-        background: url(/mayunhai/test.jpg);
+        background: url(/mayunhai/test.png);
         background-size: cover;
     }
     .box:hover{
@@ -43,7 +43,7 @@ chrome Rendering里面 FPS meter勾上即可观察,尝试删除will-change会出
         transition: .2s;
         cursor: pointer;
         position: relative;
-        background: url(/mayunhai/test.jpg);
+        background: url(/mayunhai/test.png);
         background-size: cover;
     }
     .box:hover{

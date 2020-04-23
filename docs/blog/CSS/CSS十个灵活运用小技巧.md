@@ -79,7 +79,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: url('/mayunhai/test.jpg') center center;
+    background: url('/mayunhai/test.png') center center;
     background-size: cover;
   }
 </style>
@@ -93,7 +93,7 @@
   .pic {
     width: 200px;
     height: 300px;
-    background: url('/mayunhai/test.jpg') center center
+    background: url('/mayunhai/test.png') center center
       no-repeat black;
     background-size: contain;
   }
@@ -106,13 +106,13 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: url('/mayunhai/test.jpg') center center;
+    background: url('/mayunhai/test.png') center center;
     background-size: cover
   }
   .pic{
     width: 200px;
     height: 300px;
-    background: url('/mayunhai/test.jpg') center center no-repeat black;
+    background: url('/mayunhai/test.png') center center no-repeat black;
     background-size: contain
   }
 </style>
