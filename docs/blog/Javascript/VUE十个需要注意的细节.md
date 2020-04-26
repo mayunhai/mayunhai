@@ -81,7 +81,7 @@ template标签无法使用 v-show ，不信的可以试试
 
 如果是在看不懂的可以百度 "VUE子父"网上有很多，不过我依旧觉得我这里介绍的是最精辟的，哈哈
 
-### [5. Vue Router](https://router.vuejs.org/zh/)
+### [5. Vue Router](https://router.vuejs.org/zh)
 - **简介：**
   - 一个配置文件，里面主要配置了SPA页面URL命名以及关联文件位置
   - this.$router里面主要定义了路由的相关信息以及跳转等方法
@@ -89,7 +89,7 @@ template标签无法使用 v-show ，不信的可以试试
 - **作用：**
 管理SPA所有虚拟页面 配置、跳转、跳转历史
 
-### [6. Vuex](https://vuex.vuejs.org/zh/)
+### [6. Vuex](https://vuex.vuejs.org/zh)
 - **简介：**
 Vuex特别像一个全局对象，他和全局对象的区别有以下两点
   - 响应式，数据变动更新组件
@@ -159,7 +159,7 @@ this.$nextTick(_ => {
 
 更新元素的 innerHTML 注意：内容按普通 HTML 插入不会作为 Vue 模板进行编译 如果试图使用 v-html 组合模板，可以重新考虑是否通过使用组件来替代
 
-本项目是基于 [vuepress](https://vuepress.vuejs.org/zh/) 所以当我在这个当前页面需要输入<span v-text="'{{name}}'"></span>的时候，必须用下面这样的代码，如果直接使用写的话会被VUE编译，并提示报错找不到 `name` 变量
+本项目是基于 [vuepress](https://vuepress.vuejs.org/zh) 所以当我在这个当前页面需要输入<span v-text="'{{name}}'"></span>的时候，必须用下面这样的代码，如果直接使用写的话会被VUE编译，并提示报错找不到 `name` 变量
 
 ```html
 <span v-html="'{{name}}'"></span>
