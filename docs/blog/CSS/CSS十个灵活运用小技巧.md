@@ -53,17 +53,14 @@
   .flex_column {
     flex-direction: column;
   }
-  .flex0 {
-    flex: 0;
-  }
   .flex1 {
     flex: 1;
   }
 </style>
 <div class="flex flex_column" style="min-height:100vh">
-  <div class="h50 bg_000 flex0"></div>
+  <div class="h50 bg_000"></div>
   <div class="flex1"></div>
-  <div class="h50 bg_000 flex0"></div>
+  <div class="h50 bg_000"></div>
 </div>
 ```
 
