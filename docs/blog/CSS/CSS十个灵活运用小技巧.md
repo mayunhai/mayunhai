@@ -46,6 +46,8 @@
   }
   .h50 {
     height: 50px;
+    cursor: pointer;
+    transition: .3s;
   }
   .flex {
     display: flex;
@@ -55,6 +57,12 @@
   }
   .flex1 {
     flex: 1;
+  }
+  .h50:hover {
+    height: 100px;
+  }
+  .h50:active {
+    height: 100px;
   }
 </style>
 <div class="flex flex_column" style="min-height:100vh">
