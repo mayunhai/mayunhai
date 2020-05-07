@@ -116,13 +116,11 @@ html {
     }, 50)
   }
   export default {
-    mixins: [{
-      data() {
-        return {
-          fontSize
-        }
-      },
-    }],
+    data() {
+      return {
+        fontSize
+      }
+    },
     created() {
       this.$router.afterEach(() => {
         this.fontSize = fontSize
