@@ -5,6 +5,8 @@
 [nodejs](http://nodejs.cn/api)
 [腾讯开发手册](https://cloud.tencent.com/developer/devdocs)
 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+[Vue CLI](https://cli.vuejs.org/zh/)
+[vuepress](https://www.vuepress.cn/)
 [git](https://www.progit.cn)
 [canvas](https://www.canvasapi.cn)
 [jest](https://jestjs.bootcss.com)
@@ -50,6 +52,7 @@
 
 [pako](https://www.npmjs.com/package/pako)
 [photoswipe](https://photoswipe.com)
+[360度全景照片浏览](https://pchen66.github.io/Panolens/#Home)
 
 ## 人工智能
 
