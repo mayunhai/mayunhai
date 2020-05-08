@@ -129,6 +129,10 @@
     <td class="c_orange">Vue 2 Snippets</td>
     <td>VUE2 输入提示补全</td>
   </tr>
+  <tr>
+    <td class="c_orange">VS Code Counter</td>
+    <td>代码行数统计</td>
+  </tr>
 </table>
 
 
