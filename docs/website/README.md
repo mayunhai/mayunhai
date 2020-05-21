@@ -53,6 +53,7 @@
 [pako](https://www.npmjs.com/package/pako)
 [photoswipe](https://photoswipe.com)
 [360度全景照片浏览](https://pchen66.github.io/Panolens/#Home)
+[mockjs](http://mockjs.com/examples.html)
 
 ## 人工智能
 
