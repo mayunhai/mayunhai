@@ -54,6 +54,10 @@
     <td>ES语法检测且能设置保存自动格式化</td>
   </tr>
   <tr>
+    <td class="c_orange">stylelint</td>
+    <td>CSS检测且能设置保存自动格式化</td>
+  </tr>
+  <tr>
     <td class="c_orange">filesize</td>
     <td>左下角显示文件大小(点击可看Gzipped大小)</td>
   </tr>
@@ -152,12 +156,13 @@
   }
   ```
 
-  - 保存时候自动安装 eslint 配置规则对文档进行格式化
+  - 保存时候自动安装 eslint stylelint 配置规则对文档进行格式化
 
   ```JSON
   {
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
     },
   }
   ```
