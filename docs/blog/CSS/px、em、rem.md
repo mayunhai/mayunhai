@@ -126,6 +126,48 @@ html {
         this.fontSize = fontSize
         htmlDom.style.fontSize = ''
       })
+      this.$nextTick(() => {
+        function addWaterMarker(str) {
+          let can = document.createElement('canvas')
+          const mask = document.querySelector('#watermark-mask')
+          const fontSize = 18 // 字体大小
+          const vMargin = 5 * fontSize
+          mask.appendChild(can)
+          can.width = 600 //画布的宽
+          can.height = 2 * (vMargin + fontSize) //画布的高度
+          can.style.display = 'none'
+          var cans = can.getContext('2d')
+          cans.font = `${fontSize}px Microsoft YaHei` //画布里面文字的字体
+          cans.fillStyle = "rgba(0, 0, 0, 0.20)" //画布里面文字的颜色
+          cans.fillText(str, 0, fontSize * 2 + vMargin * 3 / 2) //画布里面文字的间距比例
+          cans.fillText(str, 300, fontSize * 2 + vMargin * 3 / 2) //画布里面文字的间距比例
+          cans.fillText(str, 150, fontSize + vMargin / 2) //画布里面文字的间距比例
+          cans.fillText(str, -150, fontSize + vMargin / 2) //画布里面文字的间距比例
+          cans.fillText(str, 450, fontSize + vMargin / 2) //画布里面文字的间距比例
+          mask.style.backgroundImage = "url(" + can.toDataURL("image/png") + ")" //把画布插入到mask中
+        }
+
+        const time = new Date()
+        const formatObj = {
+          y: time.getFullYear(),
+          m: time.getMonth() + 1,
+          d: time.getDate(),
+          h: time.getHours(),
+          i: time.getMinutes(),
+          s: time.getSeconds()
+        }
+        const fillZero = (field) => {
+          const value = formatObj[field]
+          if (value < 10) {
+            return '0' + value
+          } else {
+            return value
+          }
+        }
+        //调用这个方法即可
+        const str = `马云海  ${fillZero('y')}-${fillZero('m')}-${fillZero('d')} ${fillZero('h')}:${fillZero('i')}:${fillZero('s')}`
+        addWaterMarker(str)
+      })
     },
     methods: {
       changeValue(v) {
