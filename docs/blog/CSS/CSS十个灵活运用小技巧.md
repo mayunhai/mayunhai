@@ -2,15 +2,123 @@
 
 本篇文章主要总结 web 前端开发过程当中一些相对比较细节的常用样式
 
-### 1. 垂直居中的三种方法（老生常谈）
+### 1. pointer-events: none;
 
-- 强制定位使用 position 或者 transform 属性强制计算定位
-- flex 盒子模型 `align-items: center` 轻松搞定，关键外层盒子高度任意变化都会依旧保持垂直居中（推荐不过需要考虑兼容要求，移动端基本都可以使用）
-- 利用 td 标签的 valign 属性 `<td valign="middle">` （不赞成使用）
+在我们给一个相对敏感项目全屏加水印的时候，可以简单的使用 fixed 定位一块全尺寸的透明蒙版去实现，但是同样会出现一个问题就是这个蒙版会阻塞页面原有的点击事件，这时候只要给它加上  `pointer-events: none;` 属性便可轻松解决
 
-::: tip 这里想要强调一点
-千万不要用尝试用 margin 去做垂直定位，至于为什么可以看 [margin 重叠](/blog/CSS.html#margin重叠)
-:::
+```html
+<style>
+  .warp {
+    position: relative;
+    overflow: hidden;
+  }
+  .watermark-mask {
+    width: 700%;
+    height: 700%;
+    top: -300%;
+    left: -300%;
+    transform: rotate(-40deg);
+    transform-origin: 50% 50%;
+    /* 此处为了掩饰用了 absolute，实际应该 fixed */
+    position: absolute;
+    pointer-events: none;
+  }
+</style>
+
+<div class="warp">
+  <div class="content">
+    <p>假设这里是内容</p>
+    <button onclick="alert(1)">点击这里</button>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+  </div>
+  <div class="watermark-mask" id="watermark-mask"></div>
+</div>
+
+<script>
+function addWaterMarker(str) {
+  let can = document.createElement('canvas')
+  const mask = document.querySelector('#watermark-mask')
+  const fontSize = 18 // 字体大小
+  const vMargin = 5 * fontSize
+  mask.appendChild(can)
+  can.width = 600 //画布的宽
+  can.height = 2 * (vMargin + fontSize) //画布的高度
+  can.style.display = 'none'
+  var cans = can.getContext('2d')
+  cans.font = `${fontSize}px Microsoft YaHei` //画布里面文字的字体
+  cans.fillStyle = "rgba(0, 0, 0, 0.20)" //画布里面文字的颜色
+  cans.fillText(str, 0, fontSize * 2 + vMargin * 3 / 2) //画布里面文字的间距比例
+  cans.fillText(str, 300, fontSize * 2 + vMargin * 3 / 2) //画布里面文字的间距比例
+  cans.fillText(str, 150, fontSize + vMargin / 2) //画布里面文字的间距比例
+  cans.fillText(str, -150, fontSize + vMargin / 2) //画布里面文字的间距比例
+  cans.fillText(str, 450, fontSize + vMargin / 2) //画布里面文字的间距比例
+  mask.style.backgroundImage = "url(" + can.toDataURL("image/png") + ")" //把画布插入到mask中
+}
+
+const time = new Date()
+const formatObj = {
+  y: time.getFullYear(),
+  m: time.getMonth() + 1,
+  d: time.getDate(),
+  h: time.getHours(),
+  i: time.getMinutes(),
+  s: time.getSeconds()
+}
+const fillZero = (field) => {
+  const value = formatObj[field]
+  if (value < 10) {
+    return '0' + value
+  } else {
+    return value
+  }
+}
+//调用这个方法即可
+const str = `马云海  ${fillZero('y')}-${fillZero('m')}-${fillZero('d')} ${fillZero('h')}:${fillZero('i')}:${fillZero('s')}`
+addWaterMarker(str)
+</script>
+```
+
+<style>
+  .warp {
+    position: relative;
+    overflow: hidden;
+  }
+  .watermark-mask {
+    width: 700%;
+    height: 700%;
+    top: -300%;
+    left: -300%;
+    transform: rotate(-40deg);
+    transform-origin: 50% 50%;
+    /* 此处为了掩饰用了 absolute，实际应该 fixed */
+    position: absolute;
+    pointer-events: none;
+  }
+</style>
+
+<div class="warp">
+  <div class="content">
+    <p>假设这里是内容</p>
+    <button onclick="alert(1)">点击这里</button>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+    <p>假设这里是内容</p>
+  </div>
+  <div class="watermark-mask" id="watermark-mask"></div>
+</div>
+
 
 ### 2. webkit-tap-highlight-color
 
