@@ -11,9 +11,9 @@
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "1.4.1",
-    "@vuepress/plugin-nprogress": "1.4.1",
-    "markdown-it-include": "1.1.0",
-    "vuepress": "1.4.1"
+    "@vuepress/plugin-back-to-top": "1.5.0",
+    "@vuepress/plugin-nprogress": "1.5.0",
+    "markdown-it-include": "1.1.1",
+    "vuepress": "1.5.0"
   }
 }
