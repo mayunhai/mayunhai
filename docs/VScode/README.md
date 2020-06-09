@@ -54,10 +54,6 @@
     <td>ES语法检测且能设置保存自动格式化</td>
   </tr>
   <tr>
-    <td class="c_orange">stylelint</td>
-    <td>CSS检测且能设置保存自动格式化</td>
-  </tr>
-  <tr>
     <td class="c_orange">filesize</td>
     <td>左下角显示文件大小(点击可看Gzipped大小)</td>
   </tr>
@@ -112,6 +108,10 @@
   <tr>
     <td class="c_orange">Settings Sync</td>
     <td>在github上远程备份vscode设置</td>
+  </tr>
+  <tr>
+    <td class="c_orange">stylelint</td>
+    <td>CSS检测且能设置保存自动格式化</td>
   </tr>
   <tr>
     <td class="c_orange">Sublime Text Keymap and Settings Importer</td>
