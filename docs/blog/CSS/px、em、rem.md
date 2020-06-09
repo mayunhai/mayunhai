@@ -132,6 +132,7 @@ html {
           const mask = document.querySelector('#watermark-mask')
           const fontSize = 18 // 字体大小
           const vMargin = 5 * fontSize
+          const xMargin = 300
           mask.appendChild(can)
           can.width = 600 //画布的宽
           can.height = 2 * (vMargin + fontSize) //画布的高度
@@ -140,10 +141,10 @@ html {
           cans.font = `${fontSize}px Microsoft YaHei` //画布里面文字的字体
           cans.fillStyle = "rgba(0, 0, 0, 0.20)" //画布里面文字的颜色
           cans.fillText(str, 0, fontSize * 2 + vMargin * 3 / 2) //画布里面文字的间距比例
-          cans.fillText(str, 300, fontSize * 2 + vMargin * 3 / 2) //画布里面文字的间距比例
-          cans.fillText(str, 150, fontSize + vMargin / 2) //画布里面文字的间距比例
-          cans.fillText(str, -150, fontSize + vMargin / 2) //画布里面文字的间距比例
-          cans.fillText(str, 450, fontSize + vMargin / 2) //画布里面文字的间距比例
+          cans.fillText(str, xMargin, fontSize * 2 + vMargin * 3 / 2) //画布里面文字的间距比例
+          cans.fillText(str, xMargin / 2, fontSize + vMargin / 2) //画布里面文字的间距比例
+          cans.fillText(str, xMargin / 2 - xMargin, fontSize + vMargin / 2) //画布里面文字的间距比例
+          cans.fillText(str, xMargin / 2 + xMargin, fontSize + vMargin / 2) //画布里面文字的间距比例
           mask.style.backgroundImage = "url(" + can.toDataURL("image/png") + ")" //把画布插入到mask中
         }
 
