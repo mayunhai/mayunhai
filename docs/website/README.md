@@ -12,6 +12,7 @@
 [jest](https://jestjs.bootcss.com)
 [tensorflow](https://tensorflow.google.cn)
 [Bash](https://wangdoc.com/bash)
+[V8](https://v8docs.nodesource.com/node-0.8/d4/da0/v8_8h_source.html#1)
 
 ## 框架
 

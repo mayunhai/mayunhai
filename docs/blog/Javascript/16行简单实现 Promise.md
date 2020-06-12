@@ -150,75 +150,8 @@ class MyPromise {
 }
 ```
 
-只要在 `then` 里面对 `status` 进行一个判断即可。如果我们连续调用两次then还是会发现一个问题，原生 `Promise` 会响应两次而我们这里写的只会响应一次
+只要在 `then` 里面对 `status` 进行一个判断即可
 
-```JS
-const fn = function (resolve, reject) {
-  setTimeout(() => {
-    resolve(1)
-    reject(2)
-  }, 1000);
-}
-
-const p = new MyPromise(fn)
-
-// resolve:  1  按理说应该会打印两次实际上这里只打印了一次
-p.then(function (data) {
-    console.log('resolve: ', data)
-}, function (data) {
-    console.log('reject: ', data)
-})
-p.then(function (data) {
-    console.log('resolve: ', data)
-}, function (data) {
-    console.log('reject: ', data)
-})
-```
-
-解决方案还是加个判断
-
-```JS
-class MyPromise {
-  constructor(fn) {
-    this.status = 'pending'
-    this.emitTimes = 0
-    this.resolveFn = this.rejectFn = () => {}
-    fn(this.resolve, this.reject)
-  }
-
-  loop(fun) {
-    this.emitTimes && fun(this.res)
-    this.emitTimes --
-    this.emitTimes > 0 && this.loop(fun)
-  }
-
-  resolve = (val) => {
-    if (this.status === 'pending') {
-      this.status = 'resolved'
-        this.res = val
-        this.loop(this.resolveFn)
-    }
-  }
-
-  reject = (val) => {
-    if (this.status === 'pending') {
-      this.status = 'rejected'
-        this.res = val
-        this.loop(this.rejectFn)
-    }
-  }
-
-  then(resolveFn, rejectFn) {
-    this.emitTimes++
-    this.resolveFn = resolveFn
-    this.rejectFn = rejectFn
-    if (this.status !== 'pending') {
-      this.status === 'resolved' && this.resolveFn(this.res)
-      this.status === 'rejected' && this.rejectFn(this.res)
-    }
-  }
-}
-```
 
 :::tip
 即便这样，相比原生的Promise还是存在很多问题，不过 Promise 大致原理已经一目了然，在以后的使用中自然胸有成竹，得心应手
