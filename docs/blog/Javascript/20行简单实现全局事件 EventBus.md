@@ -8,7 +8,7 @@
 
 这里我用 20 行比较简单透明的 ES6 语法进行实现
 
-```JS
+```js
 class EventBus {
   constructor() {
     this.events = {}
@@ -33,7 +33,7 @@ export default new EventBus()
 
 使用方法如下:
 
-```JS
+```js
 // a.js
 import EventBus from '@/utils/EventBus' // 根据对应路径引入
 EventBus.on('pause-video', function(a, b, c) {
@@ -42,7 +42,7 @@ EventBus.on('pause-video', function(a, b, c) {
 })
 ```
 
-```JS
+```js
 // b.js
 import EventBus from '@/utils/EventBus' // 根据对应路径引入
 EventBus.emit('pause-video', 1) // it works   {a: 1, b: undefined, c: undefined}
@@ -55,7 +55,7 @@ EventBus.emit('pause-video', 1) // it works   {a: 1, b: undefined, c: undefined}
 
 - `once` 方法我上面没写了，因为使用并不多，实现也非常简单，触发的同时删除 `off` 即可，只要在上面的类里面加上下面代码即可
 
-```JS
+```js
   once = (eventName, fn) => {
     function on() {
       this.off(eventName)

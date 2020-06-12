@@ -150,7 +150,7 @@
   是不是很难懂什么意思，我其实也不是特别懂，但是在配置特别差的电脑上面关掉这个设置你会发现无比的畅快
   :::
 
-  ```JSON
+  ```json
   {
     "search.followSymlinks": false,
   }
@@ -158,7 +158,7 @@
 
   - 保存时候自动安装 eslint stylelint 配置规则对文档进行格式化
 
-  ```JSON
+  ```json
   {
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true,
@@ -180,7 +180,7 @@
   快速选择多行，进行多行编辑，在特殊场景下会很好用
 
   ![Shift + Alt + 鼠标点击拖动选择多行](/mayunhai/column-select.gif)
-  
+
 - `Ctrl` + `Shift` + `D`
 
   选择单行多行直接复制在下方
@@ -204,7 +204,7 @@
 - `Ctrl` + `/` `Ctrl` + `A` `Ctrl` + `S`
 
   注释代码 全选 保存
- 
+
 
 
 <br>

@@ -2,7 +2,7 @@
 
 setTimeout 看起来实现的假装异步操作实则还是同步运行，其实每次执行的时机都是晚于理想状态的，下面看段代码就能很容易理解
 
-```JS
+```js
 setTimeout(() => {
   console.log('setTimeout')
 }, 0)
