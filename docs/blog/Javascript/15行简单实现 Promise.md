@@ -147,10 +147,10 @@ class MyPromise {
 }
 ```
 
-只要在 `then` 里面对 `status` 进行一个判断即可。
+只要在 `then` 里面对 `status` 进行一个判断即可。再看下面这个问题
 
 ```JS
-var p1 = new Promise(fn)
+var p1 = new MyPromise(fn)
 // resolve2: 1
 p1.then(function (data) {
   console.log('resolve1: ', data)
