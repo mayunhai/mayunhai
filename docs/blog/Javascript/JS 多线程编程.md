@@ -20,7 +20,7 @@ HTML5 提出 `Web Worker` 标准，允许 JavaScript 脚本创建多个线程，
 
 ### 用法一：引入两个 JS 使用Web Worker
 
-```JS
+```js
 // worker.js
 
 /**
@@ -35,7 +35,7 @@ endlessLoop(3000)
 console.log('endlessLoop done') // 死循环三秒后打印 'endlessLoop done'
 ```
 
-```JS
+```js
 // index.js
 const worker = new Worker('worker.js')
 console.log('这里是 index.js 的打印')
@@ -43,7 +43,7 @@ console.log('这里是 index.js 的打印')
 
 ### 用法二：引入单个 JS 使用Web Worker
 
-```JS
+```js
 // index.js
 // 创建 woker
 const workerBlob = new Blob([`const endlessLoop = (time) => {

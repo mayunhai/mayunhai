@@ -12,13 +12,13 @@ webpack 被大部分前端吐槽其最根本原因是配置复杂且文档不友
 
 - 关键代码：
 
-```JS
+```js
 // package.json 前省略
 "pinyin": "2.9.0",
 // package.json 后省略
 ```
 
-```JS
+```js
 // HeaderSearch.vue 前省略
 methods: {
   async searchPool(list) {
