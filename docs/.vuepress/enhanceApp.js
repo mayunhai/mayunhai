@@ -92,9 +92,4 @@ export default ({ Vue }) => {
     }
   }
 
-  // fix 锚点定位问题
-  setTimeout(() => {
-    window.location.href = window.location.href
-  }, 300);
-
 }
