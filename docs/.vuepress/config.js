@@ -43,6 +43,7 @@ module.exports = {
     editLinks: true,
     docsDir: 'docs',
     editLinkText: '在 GitHub 上编辑此页',
+    searchMaxSuggestions: 10,
     sidebarDepth: 1
   },
   markdown: {
