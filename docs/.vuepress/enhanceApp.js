@@ -92,11 +92,11 @@ export default ({ Vue }) => {
     }
   }
 
-  // 路由问题
+  // 三级路由跳转
   const href = window.location.href
   if (href.includes('#')) {
     setTimeout(() => {
       window.location.href = href
-    }, 300);
+    }, 150);
   }
 }
