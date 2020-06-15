@@ -7,7 +7,7 @@ export default ({ Vue }) => {
   (function() {
     var hm = document.createElement('script');
     hm.src = 'https://hm.baidu.com/hm.js?ede2ba09d1e5c979d7ffc0075bd809e9';
-    var s = document.getElementsByTagName('script')[0]; 
+    var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(hm, s);
   })();
 
@@ -41,7 +41,7 @@ export default ({ Vue }) => {
   }, false)
 
   // 夜间模式
-  
+
   var lottie = document.createElement('script')
   lottie.setAttribute('type', 'text/javascript')
   lottie.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.6/lottie.min.js')
@@ -51,11 +51,11 @@ export default ({ Vue }) => {
   let direction = 1
 
   const htmlDOm = document.querySelector('html')
-  function test() {
+  function toggleTheme() {
     anim.setDirection(direction)
     anim.play()
     direction = direction * -1
-    
+
     if (direction == -1) {
       htmlDOm.style.filter = 'invert(90%)'
       document.getElementById('switch').style.filter = 'invert(100%)'
@@ -76,7 +76,7 @@ export default ({ Vue }) => {
   lottie.onload = function () {
     var div = document.createElement('div')
     div.setAttribute('id', 'switch')
-    div.onclick = test
+    div.onclick = toggleTheme
     document.body.appendChild(div)
     var animData = {
       container: document.getElementById('switch'),
@@ -88,10 +88,13 @@ export default ({ Vue }) => {
     anim = bodymovin.loadAnimation(animData)
 
     if (darkMode) {
-      test()
+      toggleTheme()
     }
   }
 
-        
+  // fix 锚点定位问题
+  setTimeout(() => {
+    window.location.href = window.location.href
+  }, 300);
 
 }
