@@ -1,5 +1,7 @@
 # 常用方法
 
+<p></p>
+
 ## 数组去重
 
 ```js
@@ -275,15 +277,10 @@ function sortByPinyin(arr) {
 
 
 <style scoped>
-.page h1 {
-  font-size: 0;
-  opacity: 0;
+#常用方法 {
+  display: none;
 }
-.page h2:first-child {
-  padding-top: 4.6rem!important;
-}
-.page h2 {
-  font-size: 1.2rem;
-  padding-top: 3.2rem;
+h2 {
+  font-size: 1.35rem;
 }
 </style>
