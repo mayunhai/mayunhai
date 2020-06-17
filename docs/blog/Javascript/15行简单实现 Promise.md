@@ -4,6 +4,12 @@
 
 直接上代码，其实想要实现一个 Promise 对象，其中关键代码并不多
 
+:::tip
+如果对 `this.resolveFn && this.resolveFn(val)` 不懂的小伙伴
+
+建议先阅读[优雅地巧妙使用运算符](/blog/Javascript.html#优雅地巧妙使用运算符)
+:::
+
 ```js
 class MyPromise {
   constructor(fn) {
