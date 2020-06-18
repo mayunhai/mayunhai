@@ -64,6 +64,7 @@
 
 ## 其他
 
+[花裤衩大佬个人收藏夹](https://panjiachen.github.io/awesome-bookmarks/)
 [技术问答](https://stackoverflow.com)
 [浏览器兼容性查询](https://caniuse.com)
 [npm下载量对比](https://www.npmtrends.com/vue-vs-react-vs-angular)
