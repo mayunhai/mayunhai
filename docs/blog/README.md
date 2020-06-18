@@ -12,6 +12,7 @@
 [堆、栈、队列](/blog/#堆、栈、队列)
 [浮动精度](/blog/#浮动精度)
 [XSS攻击](/blog/#xss攻击)
+[CSRF攻击](/blog/#csrf攻击)
 [CSP](/blog/#csp)
 :::
 
@@ -314,6 +315,13 @@ var z = x + y       // z 的结果为 0.30000000000000004
 
 - [CSP](/blog/#csp)确认接收的内容被妥善地规范化，仅包含最小的、安全的Tag（没有JavaScript），去掉任何对远程内容的引用（尤其是样式表和JavaScript），使用HTTPonly的cookie
 
+### CSRF攻击
+
+跨站请求攻击（Cross-site request forgery），简单地说，是攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并运行一些操作（如发邮件，发消息，甚至财产操作如转账和购买商品），实现原理就是诱导用户点击第三方链接，然后在他的链接用你之前登陆生成的cookie身份令牌进行接口请求，这种攻击其实预防措施非常简单
+
+- 检查Referer字段
+
+- 头信息添加 `token` 身份令牌
 
 ### CSP
 CSP(Content-Security-Policy)内容安全策略,通俗讲就是可以避免第三方 js css 引入，防[XSS攻击](/blog/#xss攻击)、或者运营商劫持，具体实现只要在 `head标签` 加个 `meta标签` 即可实现[配置详见](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP)
