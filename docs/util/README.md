@@ -263,11 +263,65 @@ function transformArrayBufferToBase64(buffer) {
 ```js
 /**
  * @description 拼音首字母排序
- * @param {Array} 中文汉字组成的数组
+ * @param {Array} arr 中文汉字组成的数组
  * @return {Array}
  */
 function sortByPinyin(arr) {
   return arr.sort((a, b) => a.localeCompare(b))
+}
+```
+
+## 扁平数据转树数据(已知单根)
+
+```js
+/**
+ * @description 扁平数据转树数据
+ * @param {Array} items 元素组
+ * @param {Array} id 根id 默认 null
+ * @param {Array} link 父id 字段名称 默认 parentId
+ * @return {Array}
+ */
+function flat2Tree(items, id = null, link = 'parentId') {
+  return items
+    .filter(item => item[link] === id)
+    .map(item => ({
+      ...item,
+      children: nest(items, item.id)
+    }))
+}
+```
+
+## 扁平数据转树数据(未知根)
+
+```js
+/**
+ * @description 扁平数据转树数据(未知根)
+ * @param {Array} items 元素组
+ * @param {Array} link 父id 字段名称 默认 parentId
+ * @return {Array}
+ */
+function flat2Tree(items, link = 'parentId') {
+  const res = []
+  const parentIdArr = []
+  items.forEach(element => {
+    parentIdArr.push(element.id)
+    element.children = []
+    const parentId = element[link]
+    if (parentIdArr.includes(parentId)) {
+      (function loop(res) {
+        res.forEach(v => {
+          if (v.id === parentId) {
+            v.children.push(element)
+          } else {
+            loop(v.children)
+          }
+        })
+      })(res)
+    } else {
+      res.push(element)
+    }
+  })
+  return res
 }
 ```
 
