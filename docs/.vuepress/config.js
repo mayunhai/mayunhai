@@ -30,13 +30,18 @@ module.exports = {
         link: '/util/'
       },
       {
+        text: '排序',
+        link: '/sort/Three'
+      },
+      {
         text: 'Blog',
         link: '/blog/'
       }
     ],
     sidebar: {
       "/blog/": ["", "HTML", "CSS", "Javascript"],
-      "/util/": [""]
+      "/util/": [""],
+      "/sort/": ["Three", "Two", "One"]
     },
     lastUpdated: '上次更新',
     repo: '/mayunhai/mayunhai',
