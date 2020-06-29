@@ -79,6 +79,79 @@ quickSort(arr)
 - 那为什么要随机挑选基准元素呢？假设我们每次都选取第一个元素作为基准元素，且需要排序的数组为 `[4, 3, 2, 1]`，每次基准元素都是最大值，这样根本无法发挥分治法的优势，在这种极端条件下复杂度又变为了 `O(n²)`,所以我们随机选择一个元素作为基准元素，这样一来，即使在数列完全逆序的情况下，也可以有效地将数列分成两部分
 :::
 
+## 归并排序
+
+归并排序类似于擂台赛，两两一组最后决出冠军，区别在于擂台赛只需要知道前面几位选手的排名，但是排序则需要全量排序，这里我们就要用到可以将两个已经有序的数组进行合并排序的方法叫做 `归并`，对应英文单词 `merge`，方法很简单两个数组依次取出第一个元素比较大小，小的存入结果再取下一位继续比较，直到两个数组值全部取完，实现的代码如下，相比之前的排序代码稍稍有些长，但是其实就是一个递归一个`merge`,结合注释看应该不难懂
+
+```js
+function mergeSort(arr) {
+  let groups = []
+  // 合并两个已排序的数组
+  const merge = (arr) => {
+    const a = arr[0]
+    const b = arr[1]
+    const res = []
+    let aIndex = 0
+    let bIndex = 0
+    // 如果 index 存在，推a里面的元素进结果，否则推b
+    const pushItem = (index) => {
+      if (index) {
+        res.push(a[aIndex])
+        aIndex++
+      } else {
+        res.push(b[bIndex])
+        bIndex++
+      }
+    }
+    // 依次遍历数组直到全部遍历完成
+    while (aIndex < a.length || bIndex < b.length) {
+      if (a[aIndex] && b[bIndex]) {
+        // a小就推a，否则推b的元素
+        a[aIndex] < b[bIndex] ? pushItem(1) : pushItem()
+      } else {
+        // 若一个数组全部推完，则把另外一个数组元素全部推入
+        a[aIndex] && pushItem(1)
+        b[bIndex] && pushItem()
+      }
+    }
+    return res
+  }
+
+  // 两两分组排序，如果 length 是基数最后一组一个一组
+  function divideIntoGroups(arr) {
+    groups = []
+    arr.forEach((v, i) => {
+      // 遍历依次结果为 0 0 1 1 2 2...
+      const groupIndex = Math.ceil((i + 1) / 2) - 1
+      groups[groupIndex] || (groups[groupIndex] = [])
+      const groupItem = groups[groupIndex]
+      // 第一个元素后推，第二个元素小于第一个元素前推，大于后退
+      if (groupItem.length === 1 && v < groupItem[0]) {
+        groupItem.unshift(v)
+      } else {
+        groupItem.push(v)
+      }
+      // 如果元素是数组则需要 merge 合并两个有序数组
+      if (groupItem.length === 2 && Array.isArray(v)) {
+        groups[groupIndex] = merge(groupItem)
+      }
+    })
+    console.log(`两两分组后: ${JSON.stringify(groups)}`)
+    // 递归直到 groups 两两组合只剩下一个元素
+    groups.length > 1 && divideIntoGroups(groups)
+  }
+  divideIntoGroups(arr)
+  return groups[0]
+}
+
+const arr = [4, 1, 3, 5, 6, 8, 7]
+mergeSort(arr)
+
+// 第一次两两分组后: [[1,4],[3,5],[6,8],[7]]
+// 第二次两两分组后: [[1,3,4,5],[6,7,8]]
+// 第三次两两分组后: [[1,3,4,5,6,7,8]]
+// [1,3,4,5,6,7,8]
+```
 
 
 <br>
