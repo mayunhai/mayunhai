@@ -31,7 +31,7 @@ module.exports = {
       },
       {
         text: '排序',
-        link: '/sort/Three'
+        link: '/sort/'
       },
       {
         text: 'Blog',
@@ -41,7 +41,7 @@ module.exports = {
     sidebar: {
       "/blog/": ["", "HTML", "CSS", "Javascript"],
       "/util/": [""],
-      "/sort/": ["Three", "Two", "One"]
+      "/sort/": ["", "Two", "One"]
     },
     lastUpdated: '上次更新',
     repo: '/mayunhai/mayunhai',
