@@ -153,6 +153,147 @@ mergeSort(arr)
 // [1,3,4,5,6,7,8]
 ```
 
+## 堆排序
+看了很多文字类的文章说实话还是比较难以理解，后来看了一张 `GIF` 动图，感觉瞬间秒懂。这里建议可以先去了解堆这种数据结构，然后再看下面这张动图对堆排序应该可以瞬间领悟
 
-<br>
-未完待续...
+![heapSort](/mayunhai/heapSort.gif)
+
+```js
+function heapSort(arr) {
+  // 创建二叉树
+  const heap = []
+  let maxParentIndex = 0 // 最后节点
+  arr.forEach((value, index) => {
+    let pos = null
+    let parentIndex = null
+    index > 0 && (pos = index % 2 == 1 ? 'left' : 'right') && (parentIndex = (index + index % 2) / 2 - 1)
+    maxParentIndex = parentIndex
+    heap.push({
+      value,
+      pos,
+      parentIndex
+    })
+  })
+
+  function nodeUpdate(parentIndex, deep,  maxIndex) {
+    const leftItemIndex = (parentIndex + 1) * 2 - 1
+    const rightItemIndex = (parentIndex + 1) * 2
+    let changedIndex = null
+    function adjust(index) {
+      const nodeValue = heap[parentIndex].value
+      // 如果父节点值小于子节点则交换值
+      if (nodeValue < heap[index].value) {
+        changedIndex = index
+        heap[parentIndex].value = heap[index].value
+        heap[index].value = nodeValue
+      }
+    }
+    adjust(leftItemIndex)
+    adjust(rightItemIndex)
+    if (deep && changedIndex) {
+      changedIndex < maxIndex && nodeUpdate(changedIndex, deep)
+    }
+  }
+
+  // 遍历成最大堆
+  for (let parentIndex = maxParentIndex; parentIndex >= 0; parentIndex--) {
+    nodeUpdate(parentIndex)
+  }
+
+  console.log(`第一次最大堆${JSON.stringify([...heap], null, 2)}`)
+
+  // 依次把堆顶替换到最末尾直到 1 位置
+  for (let index = heap.length - 1; index > 1; index--) {
+    const maxValue = heap[0].value
+    // 堆顶与末尾替换
+    heap[0].value = heap[index].value
+    heap[index].value = maxValue
+    // 调整最大堆（parentIndex == 0，无需再调整）
+    index > 2 && nodeUpdate(0, true, heap[index].parentIndex)
+    console.log(`最大堆${JSON.stringify([...heap], null, 2)}`)
+  }
+
+  // 最后对比 0 1 位置的值
+  const firstValue = heap[0].value
+  if (firstValue > heap[1].value) {
+    heap[0].value = heap[1].value
+    heap[1].value = firstValue
+  }
+
+  const res = []
+  heap.forEach(v => {
+    res.push(v.value)
+  })
+  return res
+}
+
+const arr = [4, 1, 3, 5, 6, 8, 7]
+heapSort(arr)
+
+// 第一次最大堆[
+//   { "value": 8, "pos": null, "parentIndex": null },
+//   { "value": 4, "pos": "left", "parentIndex": 0 },
+//   { "value": 6, "pos": "right", "parentIndex": 0 },
+//   { "value": 1, "pos": "left", "parentIndex": 1 },
+//   { "value": 5, "pos": "right", "parentIndex": 1 },
+//   { "value": 3, "pos": "left", "parentIndex": 2 },
+//   { "value": 7, "pos": "right", "parentIndex": 2 }
+// ]
+// 第二次最大堆[
+//   { "value": 7, "pos": null, "parentIndex": null },
+//   { "value": 4, "pos": "left", "parentIndex": 0 },
+//   { "value": 6, "pos": "right", "parentIndex": 0 },
+//   { "value": 1, "pos": "left", "parentIndex": 1 },
+//   { "value": 5, "pos": "right", "parentIndex": 1 },
+//   { "value": 3, "pos": "left", "parentIndex": 2 },
+//   { "value": 8, "pos": "right", "parentIndex": 2 }
+// ]
+// 第三次最大堆[
+//   { "value": 6, "pos": null, "parentIndex": null },
+//   { "value": 3, "pos": "left", "parentIndex": 0 },
+//   { "value": 4, "pos": "right", "parentIndex": 0 },
+//   { "value": 1, "pos": "left", "parentIndex": 1 },
+//   { "value": 5, "pos": "right", "parentIndex": 1 },
+//   { "value": 7, "pos": "left", "parentIndex": 2 },
+//   { "value": 8, "pos": "right", "parentIndex": 2 }
+// ]
+// 第四次最大堆[
+//   { "value": 5, "pos": null, "parentIndex": null },
+//   { "value": 3, "pos": "left", "parentIndex": 0 },
+//   { "value": 4, "pos": "right", "parentIndex": 0 },
+//   { "value": 1, "pos": "left", "parentIndex": 1 },
+//   { "value": 6, "pos": "right", "parentIndex": 1 },
+//   { "value": 7, "pos": "left", "parentIndex": 2 },
+//   { "value": 8, "pos": "right", "parentIndex": 2 }
+// ]
+// 第五次最大堆[
+//   { "value": 4, "pos": null, "parentIndex": null },
+//   { "value": 1, "pos": "left", "parentIndex": 0 },
+//   { "value": 3, "pos": "right", "parentIndex": 0 },
+//   { "value": 5, "pos": "left", "parentIndex": 1 },
+//   { "value": 6, "pos": "right", "parentIndex": 1 },
+//   { "value": 7, "pos": "left", "parentIndex": 2 },
+//   { "value": 8, "pos": "right", "parentIndex": 2 }
+// ]
+// 最后对比 index 0 1 的值[
+//   { "value": 3, "pos": null, "parentIndex": null },
+//   { "value": 1, "pos": "left", "parentIndex": 0 },
+//   { "value": 4, "pos": "right", "parentIndex": 0 },
+//   { "value": 5, "pos": "left", "parentIndex": 1 },
+//   { "value": 6, "pos": "right", "parentIndex": 1 },
+//   { "value": 7, "pos": "left", "parentIndex": 2 },
+//   { "value": 8, "pos": "right", "parentIndex": 2 }
+// ]
+// [1, 3, 4, 5, 6, 7, 8]
+```
+
+:::tip
+|          | 是原地排序 | 是否稳定 | 最好  | 最坏  | 平均  |
+|  :-:     | :-:       |  :-:     | :-:   | :-:   | :-:   |
+| 希尔排序  | √         | ×       | O(n^1.3) | O(n²) | O(nlogn) |
+| 快速排序  | √         | ×       | O(n) | O(n²) | O(nlogn) |
+| 归并排序  | ×         | √       | O(nlogn) | O(nlogn) | O(nlogn) |
+| 堆排排序  | √         | ×       | O(nlogn) | O(nlogn) | O(nlogn) |
+
+- 堆排序的平均性能比快速排序和归并排序略低，主要是由于二叉堆的父子节点在内存中并不连续，在访问内存数据时，对于顺序存储的数据，读写效率往往是最高的。
+:::
