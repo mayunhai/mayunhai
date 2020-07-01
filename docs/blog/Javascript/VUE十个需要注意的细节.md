@@ -81,15 +81,17 @@ template标签无法使用 v-show ，不信的可以试试
 
 如果是在看不懂的可以百度 "VUE子父"网上有很多，不过我依旧觉得我这里介绍的是最精辟的，哈哈
 
-### [5. Vue Router](https://router.vuejs.org/zh)
+### 5. Vue全家桶成员
+
+#### [Vue Router](https://router.vuejs.org/zh)
 - **简介：**
-  - 一个配置文件，里面主要配置了SPA页面URL命名以及关联文件位置
-  - this.$router里面主要定义了路由的相关信息以及跳转等方法
+  - 使用起来很方便主要就是一个配置文件，里面主要配置了SPA页面URL命名以及关联文件位置
+  - this.$router里面主要定义了路由的相关信息以及跳转等钩子方法
 
 - **作用：**
 管理SPA所有虚拟页面 配置、跳转、跳转历史
 
-### [6. Vuex](https://vuex.vuejs.org/zh)
+#### [Vuex](https://vuex.vuejs.org/zh)
 - **简介：**
 Vuex特别像一个全局对象，他和全局对象的区别有以下两点
   - 响应式，数据变动更新组件
@@ -106,6 +108,14 @@ Vuex特别像一个全局对象，他和全局对象的区别有以下两点
 
 - **作用：**
 多页面(SPA虚拟页面)多组件数据及时同步、通信
+
+### [6. key](https://cn.vuejs.org/v2/api/#key)
+官方文档上面的说明可能比较难懂，简单的说就是当一个 `list` 中的 `li` 上面的 `key` 没有变化，那么在数据变化渲染中这个 `li` 就不会被重复渲染
+
+:::tip
+很多人喜欢用 `index` 作为 `key`, 不是不可以啊，但是当一个列表中间的 `item` 发生变化（增、删、改）时，渲染就会出现问题
+:::
+
 
 ### [7. nextTick && v-cloak](https://cn.vuejs.org/v2/api/#Vue-nextTick)
 
