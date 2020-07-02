@@ -9,9 +9,7 @@ function bubbleSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - 1 - i; j++) {
       if (arr[j] > arr[j + 1]) {
-        const tmp = arr[j]
-        arr[j] = arr[j + 1]
-        arr[j + 1] = tmp
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
       }
       console.log(`对比index ${j} - ${j + 1}`, arr)
     }
@@ -40,9 +38,7 @@ function bubbleSort(arr) {
     let isSorted = true
     for (let j = 0; j < arr.length - 1 - i; j++) {
       if (arr[j] > arr[j + 1]) {
-        const tmp = arr[j]
-        arr[j] = arr[j + 1]
-        arr[j + 1] = tmp
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
         // 有元素交换，所以不是有序，标记变为false
         isSorted = false
       }
@@ -78,9 +74,7 @@ function bubbleSort(arr) {
     let isSorted = true
     for (let j = 0; j < sortBorder; j++) {
       if (arr[j] > arr[j + 1]) {
-        const tmp = arr[j]
-        arr[j] = arr[j + 1]
-        arr[j + 1] = tmp
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
         // 有元素交换，所以不是有序，标记变为false
         isSorted = false
         // 把无序数列的边界更新为最后一次交换元素的位置
@@ -118,9 +112,7 @@ function selectionSort(arr) {
       minIndex = arr[minIndex] < arr[j] ? minIndex : j
     }
     // 用最小的值替换当前元素
-    const temp = arr[i]
-    arr[i] = arr[minIndex]
-    arr[minIndex] = temp
+    [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
   }
   return arr
 }
@@ -143,14 +135,12 @@ selectionSort(arr)
 // 插入排序(从左往右依次像打扑克一样把元素插入合适的位置)
 function insertionSort(arr) {
   for (let i = 1; i < arr.length; i++) {
-    let insertValue = arr[i]
-    let j = i - 1
     //从右向左比较元素的同时，进行元素复制
-    for (; j >= 0 && (console.log(`对比${insertValue} - ${arr[j]}`) || 1) && insertValue < arr[j]; j--) {
-      arr[j + 1] = arr[j]
+    const log = console.log(`对比${arr[i]} - ${arr[i - 1]}`) || 1
+    for (let j = i - 1; j >= 0 && log && arr[i] < arr[j]; j--) {
+      // insertValue的值(arr[i])插入适当位置
+      [arr[i], arr[j]] = [arr[j], arr[i]]
     }
-    //insertValue的值插入适当位置
-    arr[j + 1] = insertValue
     console.log(arr)
   }
   return arr
