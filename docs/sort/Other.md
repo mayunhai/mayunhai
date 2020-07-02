@@ -66,5 +66,94 @@ getSum(1, 2) // 3
 getSum(2, 2) // 4
 ```
 
+## 最大子序和
+给定一个整数数组，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和
+
+:::tip
+- 输入: `[-2, 1, -3, 4, -1, 2, 1, -5, 4]`
+- 输出: `6`
+- 解释: 连续子数组 `[4, -1, 2, 1]` 的和最大为 `6`
+:::
+
+### 基础版(依次遍历所有子序列和求最大值)
+```js
+const maxSubArray = function(arr) {
+  const resArr = []
+  for (let index = 0; index < arr.length; index++) {
+    let res = arr[index]
+    resArr.push(res)
+    for (let j = index + 1; j < arr.length; j++) {
+      res += arr[j]
+      resArr.push(res)
+    }
+  }
+  return Math.max(...resArr)
+}
+
+const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+maxSubArray(arr) // 6
+```
+
+### 升级版(分治法)
+```js
+const maxSubArray = function(arr) {
+  const resArr = []
+  const leftArr = []
+  const rightArr = []
+  const d = Math.floor(arr.length / 2) // 中间index，分为左右两块数组
+  const findSubArray = (begin, end) => {
+    for (let index = begin; index <= end; index++) {
+      let res = arr[index]
+      resArr.push(res)
+      for (let j = index + 1; j <= end; j++) {
+        res += arr[j]
+        resArr.push(res)
+        // 记录左右边界值
+        begin === 0 && j === end && leftArr.push(res)
+        begin !== 0 && index === begin && rightArr.push(res)
+      }
+    }
+  }
+  // 记录左侧 子序和
+  findSubArray(0, d)
+  // 记录右侧 子序和
+  d + 1 && findSubArray(d + 1, arr.length - 1)
+  // 左右边界组合
+  leftArr.forEach(v => {
+    rightArr.forEach(el => {
+      resArr.push(v + el)
+    })
+  })
+  return Math.max(...resArr)
+}
+
+const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+maxSubArray(arr) // 6
+```
+
+
+### 简洁版
+
+这个版本无论从速度还是代码量方面明显要比上面的简单高效很多，上面两种都说把所有的子序和都算出来取最大值，而下面的方法就比较的巧妙，对较小的子序和及时舍弃避免不必要的计算
+
+```js
+const maxSubArray = function(nums) {
+    let pre = 0
+    maxSum = nums[0] // 当前最大子序和
+    nums.forEach((x) => {
+        // 当前最大累加与当前元素求最大，并更新当前最大累加
+        pre = Math.max(pre + x, x)
+        // 最大子序和与当前累加，并更新最大子序和
+        maxSum = Math.max(maxSum, pre)
+        console.log({pre, maxSum})
+    });
+    return maxSum
+}
+
+const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+maxSubArray(arr) // 6
+```
+
+
 <br>
 未完待续...
