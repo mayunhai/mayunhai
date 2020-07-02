@@ -154,6 +154,50 @@ const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 maxSubArray(arr) // 6
 ```
 
+## 最长有效括号
+
+给定一个只包含 `'('` 和 `')'` 的字符串，找出最长的包含有效括号的子串的长度。
+
+:::tip
+- 输入: `"(()"`
+- 输出: `2`
+- 解释: 最长有效括号子串为 `"()"`
+<hr>
+- 输入: `")()())"`
+- 输出: `4`
+- 解释: 最长有效括号子串为 `"()()"`
+:::
+
+遍历所有可能只需要计算以 `'('` 开头、 `')'` 结尾且左右括号出现的次数是一样的，则是有效括号并计算长度
+
+```js
+const longestValidParentheses = function(s) {
+  const arr = [...String(s)]
+  let res = null
+  for (let index = 0; index < arr.length; index++) {
+    for (let j = index + 1; j < arr.length; j += 2) {
+      let leftTimes = 0
+      let rightTimes = 0
+      for (let i = index; i <= j; i++) {
+        // 以 '(' 开头 ')' 结尾
+        if (arr[index] === '(' && arr[j] === ')') {
+            arr[i] === '(' ? leftTimes++ : rightTimes++
+        }
+      }
+      if (leftTimes && leftTimes === rightTimes) {
+        const length = j - index + 1
+        res === null ? (res = length) : (length > res && (res = length))
+      }
+    }
+  }
+  return res
+}
+
+longestValidParentheses('(()') // 2
+longestValidParentheses(')()()') // 4
+longestValidParentheses(')()(') // 2
+longestValidParentheses('())(') // 2
+```
 
 <br>
 未完待续...
