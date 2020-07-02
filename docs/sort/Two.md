@@ -12,9 +12,7 @@ function ShellSort(arr) {
     for (let x = 0; x < d; x++) {
       for (let i = x + d; i < arr.length; i = i + d) {
         if (arr[i - d] > arr[i]) {
-          const temp = arr[i]
-          arr[i] = arr[i - d]
-          arr[i - d] = temp
+          [arr[i], arr[i - d]] = [arr[i - d], arr[i]]
         }
         console.log(`对比index ${i-d} - ${i}`, arr)
       }
@@ -180,12 +178,10 @@ function heapSort(arr) {
     const rightItemIndex = (parentIndex + 1) * 2
     let changedIndex = null
     function adjust(index) {
-      const nodeValue = heap[parentIndex].value
       // 如果父节点值小于子节点则交换值
-      if (nodeValue < heap[index].value) {
+      if (heap[parentIndex].value < heap[index].value) {
         changedIndex = index
-        heap[parentIndex].value = heap[index].value
-        heap[index].value = nodeValue
+        [heap[parentIndex].value, heap[index].value] = [heap[index].value, heap[parentIndex].value]
       }
     }
     adjust(leftItemIndex)
@@ -204,10 +200,8 @@ function heapSort(arr) {
 
   // 依次把堆顶替换到最末尾直到 1 位置
   for (let index = heap.length - 1; index > 1; index--) {
-    const maxValue = heap[0].value
     // 堆顶与末尾替换
-    heap[0].value = heap[index].value
-    heap[index].value = maxValue
+    [heap[0].value, heap[index].value] = [heap[index].value, heap[0].value]
     // 调整最大堆（parentIndex == 0，无需再调整）
     index > 2 && nodeUpdate(0, true, heap[index].parentIndex)
     console.log(`最大堆${JSON.stringify([...heap], null, 2)}`)
