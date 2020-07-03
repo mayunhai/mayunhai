@@ -196,5 +196,37 @@ longestValidParentheses(')()(') // 2
 longestValidParentheses('())(') // 2
 ```
 
+## 字典序的第K小数字
+
+给定整数 n 和 k，找到 1 到 n 中字典序第 k 小的数字
+
+注意：1 ≤ k ≤ n ≤ 109
+
+:::tip
+- 输入: n: `13`   k: `2`
+- 输出: `10`
+- 解释:
+  - 1 到 n `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]`
+  - 转成字典序 `[1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9]`，所以第2小的数字是 `10`
+:::
+
+这个问题JS解决会异常简单，因为 JS `sort()` 方法默认就是基数排序
+
+```js
+const findKthNumber = (n, k) => {
+  const arr = []
+  for (let index = 1; index <= n; index++) {
+    arr.push(index)
+  }
+  console.log(arr.sort())
+  return [...arr.sort()][k - 1]
+}
+
+findKthNumber(13, 2)
+// arr.sort() [1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9]
+// 10
+```
+
+
 <br>
 未完待续...
