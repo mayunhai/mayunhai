@@ -16,11 +16,10 @@ const monkey = (n) => {
       const allStepTimes = oneStepTimes + threeStepTimes
       // 阶乘(尾递归)
       function factorial(num, total = 1) {
-        if (num < 1) return 0 // 防止死循环
-        if (num === 1) return total
+        if (num <= 1) return total
         return factorial(num - 1, num * total)
       }
-      // 这里我们把一步当成黑球，三步当成白球，m个黑球，n个白球，
+      // 这里我们把一步当成黑球，三步当成白球，所以问题可以理解为m个黑球，n个白球排列组合
       // (m+n)! 为假设所有球颜色都不一样的排列方式，m!为m个不一样黑球的排列方式，n!为n个不一样白球的排列方式
       // 所以最终排列组合方式 (m+n)! / (m!n!)
       res += factorial(allStepTimes) / (factorial(oneStepTimes) * factorial(threeStepTimes))
@@ -42,9 +41,9 @@ monkey(50)
 console.timeEnd('计算50用时')
 
 // 当总共有3个台阶的时候，猴子有2种方式上山
-// 计算3用时: 0.19580078125ms
+// 计算3用时: 0.183837890625ms
 // 当总共有50个台阶的时候，猴子有122106097种方式上山
-// 计算50用时: 0.111083984375ms
+// 计算50用时: 0.095947265625ms
 ```
 
 ## 实现加法
