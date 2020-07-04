@@ -2,6 +2,177 @@
 
 <p></p>
 
+## 常用判断
+
+```js
+function isString(obj) {
+  return Object.prototype.toString.call(obj) === '[object String]'
+}
+
+function isObject(obj) {
+  return Object.prototype.toString.call(obj) === '[object Object]'
+}
+
+function isHtmlElement(node) {
+  return node && node.nodeType === Node.ELEMENT_NODE
+}
+
+function isIE() {
+  return !isNaN(Number(document.documentMode))
+};
+
+function isEdge() {
+  return navigator.userAgent.indexOf('Edge') > -1
+};
+
+function isFirefox() {
+  return !!window.navigator.userAgent.match(/firefox/i)
+};
+```
+
+## 首字母大写
+
+```js
+function capitalize(str) {
+  str = String(str)
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+```
+
+## 事件封装（兼容IE5-8）
+
+```js
+function on(element, event, handler, capture = false) {
+  if (element && event && handler) {
+    if (document.addEventListener) {
+      element.addEventListener(event, handler, capture)
+    } else {
+      element.attachEvent('on' + event, handler)
+    }
+  }
+}
+
+function off(element, event, handler, capture = false) {
+  if (element && event && handler) {
+    if (document.addEventListener) {
+      element.removeEventListener(event, handler, capture)
+    } else {
+      element.detachEvent('on' + event, handler)
+    }
+  }
+}
+
+function once(el, event, fn) {
+  const listener = function() {
+    if (fn) {
+      fn.apply(this, arguments)
+    }
+    off(el, event, listener)
+  };
+  on(el, event, listener)
+}
+
+function triggerEvent(elm, name, ...opts) {
+  let eventName;
+
+  if (/^mouse|click/.test(name)) {
+    eventName = 'MouseEvents'
+  } else if (/^key/.test(name)) {
+    eventName = 'KeyboardEvent'
+  } else {
+    eventName = 'HTMLEvents'
+  }
+  const evt = document.createEvent(eventName)
+
+  evt.initEvent(name, ...opts)
+  elm.dispatchEvent
+    ? elm.dispatchEvent(evt)
+    : elm.fireEvent('on' + name, evt)
+
+  return elm
+}
+```
+
+## class操作
+
+```js
+function hasClass(el, cls) {
+  if (!el || !cls) return false
+  if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.')
+  if (el.classList) {
+    return el.classList.contains(cls)
+  } else {
+    return (' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1
+  }
+};
+
+function addClass(el, cls) {
+  if (!el) return
+  var curClass = el.className
+  var classes = (cls || '').split(' ')
+
+  for (var i = 0, j = classes.length; i < j; i++) {
+    var clsName = classes[i]
+    if (!clsName) continue
+
+    if (el.classList) {
+      el.classList.add(clsName);
+    } else if (!hasClass(el, clsName)) {
+      curClass += ' ' + clsName
+    }
+  }
+  if (!el.classList) {
+    el.className = curClass
+  }
+};
+
+function removeClass(el, cls) {
+  if (!el || !cls) return
+  var classes = cls.split(' ')
+  var curClass = ' ' + el.className + ' '
+
+  for (var i = 0, j = classes.length; i < j; i++) {
+    var clsName = classes[i]
+    if (!clsName) continue
+
+    if (el.classList) {
+      el.classList.remove(clsName)
+    } else if (hasClass(el, clsName)) {
+      curClass = curClass.replace(' ' + clsName + ' ', ' ')
+    }
+  }
+  if (!el.classList) {
+    el.className = trim(curClass)
+  }
+```
+
+## cookie
+
+```js
+function setCookie(cname, cvalue, exdays = 99999) {
+  const d = new Date()
+  d.setTime(d.getTime() + (exdays*24*60*60*1000))
+  const expires = "expires="+ d.toUTCString()
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
+}
+
+function getCookie(cname) {
+  const name = cname + "=";
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+      let c = ca[i]
+      while (c.charAt(0) == ' ') {
+          c = c.substring(1)
+       }
+       if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length)
+       }
+   }
+  return "";
+}
+```
+
 ## 数组去重
 
 ```js
@@ -149,6 +320,10 @@ function fomatNumber(s, n) {
 
 
 ## 克隆一个对象或者数组(深拷贝)
+
+:::tip
+浅拷贝：`Object.assign([], arr)`、`Object.assign({}, obj)` or `[...arr]`、`{...obj}`
+:::
 
 ```js
 /**
