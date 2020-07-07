@@ -5,7 +5,7 @@
 ## 常用判断
 
 :::tip
-有的人可能会不解，为什么类型判断不直接用 `typeof` ，其实仅用 `typeof` 判断是存在Bug的，具体详见 [详情见玉伯的分享](https://github.com/lifesinger/blog/issues/175)
+有的人可能会不解，为什么类型判断不直接用 `typeof` ，其实仅用 `typeof` 判断是存在Bug的，具体详见 详情见[玉伯的分享](https://github.com/lifesinger/blog/issues/175)
 :::
 
 ```js
