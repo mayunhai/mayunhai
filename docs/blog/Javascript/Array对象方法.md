@@ -1,7 +1,7 @@
 ## Array对象方法
 
 ### 基础处理
-  - push()方法可向数组的末尾添加一个或多个元素，并返回新的长度
+  - `push()` 方法可向数组的末尾添加一个或多个元素，并返回新的长度
 
 ```js
 const arr = ['a']
@@ -11,7 +11,7 @@ console.log(arr) //["a", 1]
 
 <br>
 
-  - pop()方法用于删除并返回数组的最后一个元素
+  - `pop()` 方法用于删除并返回数组的最后一个元素
 
 ```js
 const arr = ['a', 1]
@@ -21,7 +21,7 @@ console.log(arr) //["a"]
 
 <br>
 
-  - unshift()方法可向数组的开头添加一个或更多元素，并返回新的长度
+  - `unshift()` 方法可向数组的开头添加一个或更多元素，并返回新的长度
 
 ```js
 const arr = ['a']
@@ -31,7 +31,7 @@ console.log(arr) //[1, "a"]
 
 <br>
 
-  - shift()方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。
+  - `shift()` 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。
 
 ```js
 const arr = ['a', 1]
@@ -41,7 +41,7 @@ console.log(arr) //[1]
 
 <br>
 
-  - slice(start,end)方法可从已有的数组中返回选定的元素。
+  - `slice(start,end)` 方法可从已有的数组中返回选定的元素。
 
 ::: tip
 该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()
@@ -73,7 +73,7 @@ console.log(arr) //不会修原数组  [0, 1, 2, 3, 4, 5, 6]
 
 <br>
 
-  - splice(index,howmany,item1,.....,itemX)方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素
+  - `splice(index,howmany,item1,.....,itemX)` 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素
 
 ::: tip
 该方法会改变原始数组
@@ -110,7 +110,7 @@ console.log(arr2) //[0, 1, 3, 4, 5, 6]
 
 <br>
 
-  - reverse()方法用于颠倒数组中元素的顺序
+  - `reverse()` 方法用于颠倒数组中元素的顺序
 
 ::: tip
 该方法会改变原来的数组，而不会创建新的数组
@@ -124,10 +124,10 @@ console.log(arr) //[6, 5, 4, 3, 2, 1, 0]
 
 <br>
 
-  - concat(arrayX,arrayX,......,arrayX)方法用于连接两个或多个数组
+  - `concat(arrayX,arrayX,......,arrayX)` 方法用于连接两个或多个数组
 
 ::: tip
-该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本 
+该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本
 :::
 
 ```js
@@ -144,7 +144,7 @@ console.log(arr3) //[0, 1]
 
 <br>
 
-  - fill()方法用于将一个固定值替换数组的元素
+  - `fill()` 方法用于将一个固定值替换数组的元素
 
 <table>
   <tr>
@@ -177,7 +177,7 @@ console.log(arr2) //[1, "a", "a"]
 
 <br>
 
-  - copyWithin(target, start, end)方法用于从数组的指定位置拷贝元素到数组的另一个指定位置中
+  - `copyWithin(target, start, end)` 方法用于从数组的指定位置拷贝元素到数组的另一个指定位置中
 
 <table>
   <tr>
@@ -211,11 +211,12 @@ console.log(arr2) //[0, 1, 0, 1, 2, 3]
 <br>
 
 ### 遍历
-  - forEach(function(currentValue, index, arr), thisValue)方法用于调用数组的每个元素，并将元素传递给回调函数
+  - `forEach(function(currentValue, index, arr), thisValue)` 方法用于调用数组的每个元素，并将元素传递给回调函数
 
 :::tip
-forEach() 对于空数组是不会执行回调函数的
-::: 
+- `forEach()` 对于空数组是不会执行回调函数的
+- `forEach()` 不会被 `return` 或者 `break` 打断，但是 `for` 循环遍历可以
+:::
 
 直接上例子说明一切
 
@@ -242,7 +243,7 @@ console.log(arr2) //["a2", "b2"]
 
 <br>
 
-  - map(function(currentValue, index, arr), thisValue)方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值
+  - `map(function(currentValue, index, arr), thisValue)` 方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值
 
 :::tip
   - map() 不会对空数组进行检测
@@ -274,7 +275,7 @@ console.log(JSON.stringify(arr2)) //[2,4]
 
 <br>
 
-  - entries()方法返回一个数组的迭代对象，该对象包含数组的键值对 (key/value)
+  - `entries()` 方法返回一个数组的迭代对象，该对象包含数组的键值对 (key/value)
 
 ```js
 const arr = [1, 2]
@@ -287,7 +288,7 @@ console.log(JSON.stringify(iterator.next())) //{"done":true}
 <br>
 
 ### 判断
-  - indexOf(searchvalue,fromindex)方法可返回某个指定的字符串值在字符串中首次出现的位置
+  - `indexOf(searchvalue,fromindex)` 方法可返回某个指定的字符串值在字符串中首次出现的位置
 
 :::tip
   - 字符串也能使用
@@ -321,7 +322,7 @@ console.log(str.indexOf('b')) //1
 
 <br>
 
-  - lastIndexOf()和indexOf()相反，方法可返回一个指定的字符串值最后出现的位置
+  - `lastIndexOf()` 和 `indexOf()` 相反，方法可返回一个指定的字符串值最后出现的位置
 
 ```js
 const arr = [0, 1, 2, 1]
@@ -330,33 +331,33 @@ console.log(arr.lastIndexOf(1, 1)) //1
 console.log(arr.lastIndexOf(1, 0)) //-1
 const str = 'babc'
 console.log(str.lastIndexOf('b')) //2
-``` 
+```
 
 <br>
 
-  - includes()方法用来判断一个数组是否包含一个指定的值，如果是返回 true，否则false
+  - `includes()` 方法用来判断一个数组是否包含一个指定的值，如果是返回 true，否则false
 
 ```js
 const arr = [1, 2, 3]
 console.log(arr.includes(1)) //true
 console.log(arr.includes(4)) //false
-``` 
+```
 
 <br>
 
-  - isArray()方法用于判断一个对象是否为数组
+  - `isArray()` 方法用于判断一个对象是否为数组
 
 ```js
 const arr = [1, 2, 3]
 const str = 'abc'
 console.log(Array.isArray(arr)) //true
 console.log(Array.isArray(str)) //false
-``` 
+```
 
 <br>
 
 ### 方法处理
-  - filter(function(currentValue,index,arr), thisValue)方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素
+  - `filter(function(currentValue,index,arr), thisValue)` 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素
 
 :::tip
   - 不会对空数组进行检测
@@ -368,7 +369,7 @@ const arr = [32, 33, 16, 40]
 console.log(arr.filter((element) => {
     return element >= 18
 })) //[32, 33, 40]
-``` 
+```
 
 <br>
 
@@ -376,30 +377,30 @@ console.log(arr.filter((element) => {
 
 <br>
 
-  - reduce(function(total, currentValue, currentIndex, arr), initialValue)方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值
+  - `reduce(function(total, currentValue, currentIndex, arr), initialValue)` 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值
 
 ```js
 const arr = [1, 2, 3]
 console.log(arr.reduce((total, num) => {
     return total - num
 })) //-4 (1 - 2 - 3)
-``` 
+```
 
 <br>
 
-  - reduceRight() 与上面相反
+  - `reduceRight()` 与上面相反
 
 ```js
 const arr = [1, 2, 3]
 console.log(arr.reduceRight((total, num) => {
     return total - num
 })) //0 (3 - 2 - 1)
-``` 
+```
 
 <br>
 
 ### 方法判断
-  - every()方法用于检测数组所有元素是否都符合指定条件
+  - `every()` 方法用于检测数组所有元素是否都符合指定条件
 
 :::tip
   - 不会对空数组进行检测
@@ -415,11 +416,11 @@ console.log(arr.every((element) => {
 console.log(arr2.every((element) => {
     return element >= 18
 })) //true
-``` 
+```
 
 <br>
 
-  - some()方法用于检测数组中的元素是否满足指定条件
+  - `some()` 方法用于检测数组中的元素是否满足指定条件
 
 :::tip
   - 不会对空数组进行检测
@@ -435,11 +436,11 @@ console.log(arr.some((element) => {
 console.log(arr2.some((element) => {
     return element >= 18
 })) //false
-``` 
+```
 
 <br>
 
-  - findIndex()方法返回传入一个测试条件（函数）符合条件的数组第一个元素位置
+  - `findIndex()` 方法返回传入一个测试条件（函数）符合条件的数组第一个元素位置
 
 :::tip
   - 不会对空数组进行检测
@@ -455,12 +456,12 @@ console.log(arr.findIndex((element) => {
 console.log(arr2.findIndex((element) => {
     return element >= 18
 })) //2
-``` 
+```
 
 <br>
 
 ### 转化
-  - join数组转字符串 && split字符串转数组
+  - `join` 数组转字符串 && `split` 字符串转数组
 
 这个算是比较常见处理方法，直接上例子了
 
@@ -475,7 +476,7 @@ console.log(str) //'a,b,c'
 
 <br>
 
-  - toString && toLocaleString(Date, number)方法可把数组转换为字符串，并返回结果
+  - `toString` && `toLocaleString(Date, number)` 方法可把数组转换为字符串，并返回结果
 
 ```js
 const arr = [12313, new Date()]
@@ -485,7 +486,7 @@ console.log(arr.toLocaleString()) //12,313,2019/5/30 下午1:48:52
 console.log(arr) //[12313, Thu May 30 2019 13:48:52 GMT+0800 (中国标准时间)]
 ```
 
-  - valueOf()是数组对象的默认方法
+  - `valueOf()` 是数组对象的默认方法
 
 这个方法说实话至今不知道有什么用!!!
 

@@ -25,6 +25,7 @@
 ## UI
 
 [element](https://element.eleme.cn/#/zh-CN)
+[vuetifyjs](https://vuetifyjs.com/zh-Hans)
 [wevue](https://wevue.org)
 [zarm design](https://zarm.design)
 [ant design](https://ant.design/index-cn)
