@@ -32,5 +32,9 @@ countSort(arr)
 // res: [0, 1, 1, 2, 3, 3, 3, 4, 4, 5, 5, 7, 7, 8, 9, 9, 9, 9, 10]
 ```
 <br>
-未完待续...
+
+
+## 桶排序
+
+桶排序的思路类似于计数排序，不过能过解决计数排序不能对非整数排序问题，但是个人觉得并不实用，只有在特殊的情况下才能够适用，一旦数据分布不够均匀还不如用常规排序方案，感兴趣的小伙伴可以直接点链接看看 [桶排序](https://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&mid=2653195582&idx=1&sn=1e7ece4e48c20fb994e2cefdcbdce4c5&chksm=8c99ffe4bbee76f23d16ac1e0c7feeb16654ebb75e40d92c911bffa113059f52ce4508281a55&scene=21#wechat_redirect)
 
