@@ -259,3 +259,7 @@ mounted() {
 },
 // ... 此处代码省略
 ```
+
+- [directive](https://cn.vuejs.org/v2/guide/custom-directive.html)
+
+自定义指令完全能够实现一个小组件的功能，在一些全局用到的小方法上面非常好用，比如按压效果、角标、曝光监听封装等
