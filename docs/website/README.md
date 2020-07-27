@@ -10,6 +10,7 @@
 [git](https://www.progit.cn)
 [canvas](https://www.canvasapi.cn)
 [jest](https://jestjs.bootcss.com)
+[tensorflow 入门](https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist/#0)
 [tensorflow](https://tensorflow.google.cn)
 [Bash](https://wangdoc.com/bash)
 [V8](https://v8docs.nodesource.com/node-0.8/d4/da0/v8_8h_source.html#1)
