@@ -2,7 +2,7 @@
 
 关于 webpack 4 动态异步 import 依赖有细微的调整，文档详见 [dynamic-imports](https://webpack.js.org/guides/code-splitting/#dynamic-imports)
 
-webpack 被大部分前端吐槽其最根本原因是配置复杂且文档不友好(英文难懂，中文不全)，所有就有了 `Webpack 工程师`, `前端打包工程师`， `首席 Webpack 配置官`...
+webpack 被大部分前端吐槽其最根本原因是配置复杂且文档不友好(英文难懂，中文不全)，所有就有了 `Webpack 工程师`, `前端打包工程师`， `Webpack 配置官`...
 
 下面我们看个实际例子关于 [dynamic-imports](https://webpack.js.org/guides/code-splitting/#dynamic-imports)
 
