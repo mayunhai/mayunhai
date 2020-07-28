@@ -86,39 +86,7 @@ addWaterMarker(str)
 </script>
 ```
 
-<style>
-  .warp {
-    position: relative;
-    overflow: hidden;
-  }
-  .watermark-mask {
-    width: 700%;
-    height: 700%;
-    top: -300%;
-    left: -300%;
-    transform: rotate(-40deg);
-    transform-origin: 50% 50%;
-    /* 此处为了掩饰用了 absolute，实际应该 fixed */
-    position: absolute;
-    pointer-events: none;
-  }
-</style>
-
-<div class="warp">
-  <div class="content">
-    <p>假设这里是内容</p>
-    <button onclick="alert(1)">点击这里</button>
-    <p>假设这里是内容</p>
-    <p>假设这里是内容</p>
-    <p>假设这里是内容</p>
-    <p>假设这里是内容</p>
-    <p>假设这里是内容</p>
-    <p>假设这里是内容</p>
-    <p>假设这里是内容</p>
-    <p>假设这里是内容</p>
-  </div>
-  <div class="watermark-mask" id="watermark-mask"></div>
-</div>
+<WaterMarker />
 
 
 ### 2. webkit-tap-highlight-color
@@ -231,7 +199,7 @@ addWaterMarker(str)
   }
 </style>
 <div class="flex space_between align_items_c">
-  <div class="portrait"> </div> 
+  <div class="portrait"> </div>
   <div class="pic"> </div>
 </div>
 

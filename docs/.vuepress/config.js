@@ -45,10 +45,10 @@ module.exports = {
     ['@vuepress/active-header-links'],
     ['@vuepress/back-to-top', true],
     ['@vuepress/nprogress'],
-    // ['@vuepress/pwa', {
-    //   serviceWorker: true,
-    //   updatePopup: true
-    // }]
+    ['@vuepress/pwa', {
+      serviceWorker: true,
+      updatePopup: true
+    }]
   ],
   themeConfig: {
     displayAllHeaders: true,
