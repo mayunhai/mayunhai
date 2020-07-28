@@ -338,6 +338,8 @@ function fomatNumber(s, n) {
 
 :::tip
 浅拷贝：`Object.assign([], arr)`、`Object.assign({}, obj)` or `[...arr]`、`{...obj}`
+
+这里我想要强调一下，浅拷贝是复制一层不是直接赋值，面试过很多人对此都有误解。其实大部分场景浅拷贝足矣，无需深拷贝
 :::
 
 ```js
@@ -371,7 +373,7 @@ function deepClone(source) {
  */
 function obj2Param(json) {
   if (!json) return ''
-  return Object.assign([], Object.keys(json).map(key = {
+  return Object.assign([], Object.keys(json).map(key => {
     if (json[key] === undefined) return ''
     return encodeURIComponent(key) + '=' +
       encodeURIComponent(json[key])

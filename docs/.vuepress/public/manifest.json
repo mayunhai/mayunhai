@@ -1,0 +1,13 @@
+{
+  "name": "马云海个人博客",
+  "short_name": "马云海",
+  "start_url": "/mayunhai",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "HTML、CSS、JS三方面 实战心得",
+  "icons": [{
+    "src": "icons/home.png",
+    "sizes": "380x380"
+  }],
+  "related_applications": []
+}
