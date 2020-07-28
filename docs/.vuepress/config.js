@@ -3,13 +3,43 @@ module.exports = {
   description: '分享web前端相关的一些个人见解',
   base: '/mayunhai/',
   head: [
-    [
-      'link',
-      {
-        rel: 'icon',
-        href: '/favicon.ico'
-      }
-    ]
+    ['link', {
+      rel: 'icon',
+      href: '/favicon.ico'
+    }],
+    ['link', {
+      rel: 'manifest',
+      href: '/manifest.json'
+    }],
+    ['meta', {
+      name: 'theme-color',
+      content: '#3eaf7c'
+    }],
+    ['meta', {
+      name: 'apple-mobile-web-app-capable',
+      content: 'yes'
+    }],
+    ['meta', {
+      name: 'apple-mobile-web-app-status-bar-style',
+      content: 'black'
+    }],
+    ['link', {
+      rel: 'apple-touch-icon',
+      href: 'icons/home.png'
+    }],
+    ['link', {
+      rel: 'mask-icon',
+      href: 'icons/home.png',
+      color: '#3eaf7c'
+    }],
+    ['meta', {
+      name: 'msapplication-TileImage',
+      content: 'icons/home.png'
+    }],
+    ['meta', {
+      name: 'msapplication-TileColor',
+      content: '#000000'
+    }]
   ],
   themeConfig: {
     displayAllHeaders: true,
@@ -58,7 +88,11 @@ module.exports = {
     }
   },
   plugins: [
-    ["@vuepress/back-to-top", true],
+    ['@vuepress/pwa', {
+      serviceWorker: true,
+      updatePopup: true
+    }],
+    ['@vuepress/back-to-top', true],
     ['@vuepress/nprogress']
   ]
 }
