@@ -94,12 +94,14 @@ html {
   </p>
 </div>
 
-<template>
-  <p style="font-size: 1rem;">
-    这是 1rem 文本,当前 <b>html font-size: {{ fontSize }}px</b>，滑动下方滑块可修改html字体大小
-  </p>
-  <input type="range" min="12" max="20" step="1" :value="fontSize" @change="changeValue">
-</template>
+<ClientOnly>
+  <template>
+    <p style="font-size: 1rem;">
+      这是 1rem 文本,当前 <b>html font-size: {{ fontSize }}px</b>，滑动下方滑块可修改html字体大小
+    </p>
+    <input type="range" min="12" max="20" step="1" :value="fontSize" @change="changeValue">
+  </template>
+</ClientOnly>
 
 <script>
   const htmlDom = document.querySelector('html')

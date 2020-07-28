@@ -45,9 +45,10 @@ module.exports = {
     ['@vuepress/active-header-links'],
     ['@vuepress/back-to-top', true],
     ['@vuepress/nprogress'],
-    ['@vuepress/pwa', {
-      serviceWorker: false
-    }]
+    // ['@vuepress/pwa', {
+    //   serviceWorker: true,
+    //   updatePopup: true
+    // }]
   ],
   themeConfig: {
     displayAllHeaders: true,
@@ -91,6 +92,7 @@ module.exports = {
     sidebarDepth: 1
   },
   markdown: {
+    lineNumbers: true,
     extendMarkdown: md => {
       // use more markdown-it plugins!
       md.use(require('markdown-it-include'));
