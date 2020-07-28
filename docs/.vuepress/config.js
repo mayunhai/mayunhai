@@ -41,6 +41,14 @@ module.exports = {
       content: '#000000'
     }]
   ],
+  plugins: [
+    ['@vuepress/active-header-links'],
+    ['@vuepress/back-to-top', true],
+    ['@vuepress/nprogress'],
+    ['@vuepress/pwa', {
+      serviceWorker: false
+    }]
+  ],
   themeConfig: {
     displayAllHeaders: true,
     nav: [{
@@ -79,6 +87,7 @@ module.exports = {
     docsDir: 'docs',
     editLinkText: '在 GitHub 上编辑此页',
     searchMaxSuggestions: 10,
+    smoothScroll: true,
     sidebarDepth: 1
   },
   markdown: {
@@ -86,13 +95,5 @@ module.exports = {
       // use more markdown-it plugins!
       md.use(require('markdown-it-include'));
     }
-  },
-  plugins: [
-    ['@vuepress/pwa', {
-      serviceWorker: true,
-      updatePopup: true
-    }],
-    ['@vuepress/back-to-top', true],
-    ['@vuepress/nprogress']
-  ]
+  }
 }
