@@ -8,6 +8,7 @@
   "description": "分享web前端相关的一些个人见解",
   "icons": [{
     "src": "icons/home.png",
-    "sizes": "380x380"
+    "sizes": "380x380",
+    "purpose": "any maskable"
   }]
 }
