@@ -9,6 +9,6 @@
   "icons": [{
     "src": "icons/home.png",
     "sizes": "380x380",
-    "purpose": "maskable"
+    "purpose": "any maskable"
   }]
 }
