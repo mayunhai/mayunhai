@@ -20,5 +20,7 @@
 
 !!!include(docs/blog/Javascript/遍历同步异步.md)!!!
 
+!!!include(docs/blog/Javascript/IntersectionObserver监听可视区域.md)!!!
+
 
 未完待续...
