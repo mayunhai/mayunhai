@@ -47,44 +47,43 @@ module.exports = {
     ['@vuepress/nprogress'],
     ['@vuepress/pwa', {
       serviceWorker: true,
-      updatePopup: true,
       updatePopup: {
-        message: "新内容可用",
-        buttonText: "更新"
+        message: '新内容可用',
+        buttonText: '更新'
       }
     }]
   ],
   themeConfig: {
     displayAllHeaders: true,
     nav: [{
-        text: '首页',
-        link: '/'
-      },
-      {
-        text: '网站',
-        link: '/website/'
-      },
-      {
-        text: 'VScode',
-        link: '/VScode/'
-      },
-      {
-        text: 'Util',
-        link: '/util/'
-      },
-      {
-        text: '算法',
-        link: '/sort/'
-      },
-      {
-        text: 'Blog',
-        link: '/blog/'
-      }
+      text: '首页',
+      link: '/'
+    },
+    {
+      text: '网站',
+      link: '/website/'
+    },
+    {
+      text: 'VScode',
+      link: '/VScode/'
+    },
+    {
+      text: 'Util',
+      link: '/util/'
+    },
+    {
+      text: '算法',
+      link: '/sort/'
+    },
+    {
+      text: 'Blog',
+      link: '/blog/'
+    }
     ],
     sidebar: {
-      "/blog/": ["", "HTML", "CSS", "Javascript"],
-      "/util/": [""],
-      "/sort/": ["", "Two", "One", "Other"]
+      '/blog/': ['', 'HTML', 'CSS', 'Javascript'],
+      '/util/': [''],
+      '/sort/': ['', 'Two', 'One', 'Other']
     },
     lastUpdated: '上次更新',
     repo: '/mayunhai/mayunhai',
@@ -99,7 +98,7 @@ module.exports = {
     lineNumbers: true,
     extendMarkdown: md => {
       // use more markdown-it plugins!
-      md.use(require('markdown-it-include'));
+      md.use(require('markdown-it-include'))
     }
   }
 }

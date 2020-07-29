@@ -24,7 +24,7 @@ class Circle {
 }
 
 class Boom {
-  constructor ({ origin, context, circleCount = 10, area }) {
+  constructor({ origin, context, circleCount = 10, area }) {
     this.origin = origin
     this.context = context
     this.circleCount = circleCount
@@ -50,7 +50,7 @@ class Boom {
   }
 
   init() {
-    for(let i = 0; i < this.circleCount; i++) {
+    for (let i = 0; i < this.circleCount; i++) {
       const circle = new Circle({
         context: this.context,
         origin: this.origin,
@@ -122,7 +122,7 @@ class CursorEffects {
 
     style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth
     style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight
-    
+
     this.renderCanvas.id = 'cursorEffectsBg'
     document.body.append(this.renderCanvas)
 
@@ -139,7 +139,7 @@ class CursorEffects {
   run() {
     this.running = true
     if (this.booms.length == 0) {
-      return this.running = false
+      return (this.running = false)
     }
 
     requestAnimationFrame(this.run.bind(this))
