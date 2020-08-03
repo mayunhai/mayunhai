@@ -57,6 +57,18 @@ export function getCookie(cname) {
   return ''
 }
 
+export function on(element, event, handler, capture = false) {
+  if (element && event && handler) {
+    element.addEventListener(event, handler, capture)
+  }
+}
+
+export function off(element, event, handler, capture = false) {
+  if (element && event && handler) {
+    element.removeEventListener(event, handler, capture)
+  }
+}
+
 export const animationData = {
   v: '5.4.4',
   fr: 60,

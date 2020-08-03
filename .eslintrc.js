@@ -36,9 +36,7 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    // 编译模式禁止 alert
-    // 'no-alert': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-alert': 'error',
+    'no-alert': 'off',
     'block-spacing': 'error',
     // 不禁止 console
     'no-console': 'off',
