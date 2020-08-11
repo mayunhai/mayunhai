@@ -20,6 +20,7 @@
 [CSRF攻击](/blog/#csrf攻击)
 [CSP](/blog/#csp)
 [CRLF、CR、LF](/blog/#crlf、cr、lf)
+[作用域链](/blog/#作用域链)
 :::
 
 
@@ -435,8 +436,10 @@ var z = x + y       // z 的结果为 0.30000000000000004
 
 
 ### CSP
-CSP(Content-Security-Policy)内容安全策略,通俗讲就是可以避免第三方 js css 引入，防[XSS攻击](/blog/#xss攻击)、或者运营商劫持，具体实现只要在 `head标签` 加个 `meta标签` 即可实现[配置详见](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP)
+CSP(Content-Security-Policy)内容安全策略,通俗讲就是可以避免第三方 js css 引入，防[XSS攻击](/blog/#xss攻击)、或者运营商劫持，具体实现有两种方式：
+- 直接配置在服务器头信息上(首选)[详见](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers),另外头信息还能配置很多其他安全相关配置
 
+- 在 `head标签` 加个 `meta标签` 即可实现[配置详见](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP)
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';">
 ```
@@ -458,6 +461,24 @@ CSP(Content-Security-Policy)内容安全策略,通俗讲就是可以避免第三
 :::tip
 `.editorconfig` 里面 `end_of_line` 可以配置项目相关设置
 :::
+
+
+### 作用域链
+
+作用域链决定了哪些数据能被函数访问。当一个函数创建后，它的作用域链会被创建此函数的作用域中可访问的数据对象填充,我们来看个例子
+
+```js
+let name = '小王'
+const fn = () => {
+  console.log(name)
+}
+
+(() => {
+  let name = '小李'
+  fn() // 打印结果是 小王
+})()
+```
+
 
 未完待续...
 
