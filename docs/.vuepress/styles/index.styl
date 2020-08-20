@@ -1,11 +1,11 @@
 ::-moz-selection {
   background: #e1e1e1;
-  color: #3eaf7c;
+  color: #0388e3;
 }
 
 ::selection {
   background: #e1e1e1;
-  color: #3eaf7c;
+  color: #0388e3;
 }
 
 body {
@@ -15,6 +15,10 @@ body {
 html {
   transition: .3s;
   filter: invert(0%);
+}
+
+* {
+  outline: none;
 }
 
 .links .nav-links .nav-link {
@@ -28,10 +32,47 @@ html {
 
 .home .hero img {
   object-fit: contain;
+  margin: 1rem 0 0 0!important;
+  position: relative;
+  top: 2rem;
 }
 
+.custom-block.tip {
+  border-color: #0388e3 !important;
+}
+
+// code
+.token.attr-name,.token.deleted,.token.namespace,.token.tag {
+    color: #DA5961 !important;
+}
+
+.token.function-name {
+    color: #0388e3 !important;
+}
+
+.token.boolean,.token.function,.token.number {
+    color: rgba(0, 194, 47, 75%) !important;
+}
+
+.token.class-name,.token.constant,.token.property,.token.symbol {
+    color: rgba(255, 101, 67, 75%) !important;
+}
+
+.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector {
+    color: #2392cd !important;
+}
+
+.token.attr-value,.token.char,.token.regex,.token.string,.token.variable {
+    color: rgba(255, 229, 100, 75%) !important;
+}
+
+.token.entity,.token.operator,.token.url {
+    color: rgba(0, 217, 227, 75%) !important
+}
+
+
 .home .hero .action-button {
-  background: #3eaf7c !important;
+  background: #0388e3 !important;
   transition: .3s !important;
 }
 
@@ -40,7 +81,7 @@ html {
 }
 
 .c_orange {
-  color: #e96900;
+  color: #0388e3;
 }
 
 .ellipsis {
@@ -51,18 +92,12 @@ html {
 
 li code,
 p code {
-  color: #e96900 !important;
+  color: #0388e3 !important;
   background-color: #f8f8f8 !important;
   margin: 0 2px !important;
   padding: 0.25rem 0.4rem !important;
 }
 
-blockquote {
-  font-size: 15px !important;
-  color: #858585 !important;
-  border-left: 0.25rem solid #42b983 !important;
-  font-weight: 1000 !important;
-}
 
 a {
   transition: opacity .3s;
@@ -349,6 +384,12 @@ a:hover {
   #switch {
     opacity: .5;
     right: -32px;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  .navbar .logo {
+    display: none;
   }
 }
 

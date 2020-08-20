@@ -10,5 +10,5 @@ features:
   details: 工欲善其事必先利其器
 - title: web前端
   details: HTML、CSS、JS三方面 实战心得
-footer: MIT Licensed | Copyright © 2019-MaYunHai
+footer: MIT Licensed | Copyright © 2020-MaYunHai
 ---

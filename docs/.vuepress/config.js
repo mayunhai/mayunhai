@@ -13,7 +13,7 @@ module.exports = {
     }],
     ['meta', {
       name: 'theme-color',
-      content: '#3eaf7c'
+      content: '#0388e3'
     }],
     ['meta', {
       name: 'apple-mobile-web-app-capable',
@@ -30,7 +30,7 @@ module.exports = {
     ['link', {
       rel: 'mask-icon',
       href: 'icons/home.png',
-      color: '#3eaf7c'
+      color: '#0388e3'
     }],
     ['meta', {
       name: 'msapplication-TileImage',
@@ -55,6 +55,7 @@ module.exports = {
   ],
   themeConfig: {
     displayAllHeaders: true,
+    logo: "/home.png",
     nav: [{
       text: '首页',
       link: '/'
@@ -66,6 +67,10 @@ module.exports = {
     {
       text: 'VScode',
       link: '/VScode/'
+    },
+    {
+      text: 'Array',
+      link: '/array/'
     },
     {
       text: 'Util',
@@ -82,6 +87,7 @@ module.exports = {
     ],
     sidebar: {
       '/blog/': ['', 'HTML', 'CSS', 'Javascript'],
+      '/array/': ['', 'Ergodic', 'DealWith', 'Judge', 'Conversion'],
       '/util/': [''],
       '/sort/': ['', 'Two', 'One', 'Other']
     },

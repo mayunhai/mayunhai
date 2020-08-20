@@ -161,7 +161,7 @@ addWaterMarker(str)
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: url('/mayunhai/test.png') center center;
+    background: url('https://dummyimage.com/320x180/0388e3&text=320x180') center center;
     background-size: cover;
   }
 </style>
@@ -175,7 +175,7 @@ addWaterMarker(str)
   .pic {
     width: 200px;
     height: 300px;
-    background: url('/mayunhai/test.png') center center
+    background: url('https://dummyimage.com/320x180/0388e3&text=320x180') center center
       no-repeat black;
     background-size: contain;
   }
@@ -188,13 +188,13 @@ addWaterMarker(str)
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: url('/mayunhai/test.png') center center;
+    background: url('https://dummyimage.com/320x180/0388e3&text=320x180') center center;
     background-size: cover
   }
   .pic{
     width: 200px;
     height: 300px;
-    background: url('/mayunhai/test.png') center center no-repeat black;
+    background: url('https://dummyimage.com/320x180/0388e3&text=320x180') center center no-repeat black;
     background-size: contain
   }
 </style>
