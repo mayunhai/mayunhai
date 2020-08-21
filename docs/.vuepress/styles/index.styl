@@ -8,40 +8,50 @@
   color: #0388e3;
 }
 
-body {
-  -webkit-tap-highlight-color: transparent;
-}
-
-html {
-  transition: .3s;
-  filter: invert(0%);
-}
-
 * {
+  transition: .3s!important;
+  -webkit-tap-highlight-color: transparent;
   outline: none;
-}
-
-.links .nav-links .nav-link {
-  height: 22px;
-  display: block
-}
-
-.getting-started a img {
-  margin-right: 8px;
 }
 
 .home .hero img {
   object-fit: contain;
-  margin: 1rem 0 0 0!important;
+  margin: 1rem auto 0!important;
   position: relative;
   top: 2rem;
+}
+
+#app .home {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 3.6rem);
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+
+
+.home .hero .action-button {
+  background: #0388e3 !important;
+}
+
+.home .hero .action-button:hover {
+  opacity: 0.75
 }
 
 .custom-block.tip {
   border-color: #0388e3 !important;
 }
 
-// code
+#app .navbar a {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+// code begin
 .token.attr-name,.token.deleted,.token.namespace,.token.tag {
     color: #DA5961 !important;
 }
@@ -70,15 +80,16 @@ html {
     color: rgba(0, 217, 227, 75%) !important
 }
 
-
-.home .hero .action-button {
-  background: #0388e3 !important;
-  transition: .3s !important;
+// 行内代码
+li code,
+p code {
+  color: #0388e3 !important;
+  background-color: #f8f8f8 !important;
+  margin: 0 2px !important;
+  padding: 0.25rem 0.4rem !important;
 }
 
-.home .hero .action-button:hover {
-  opacity: 0.75
-}
+// code end
 
 .c_orange {
   color: #0388e3;
@@ -90,25 +101,13 @@ html {
   white-space: nowrap;
 }
 
-li code,
-p code {
-  color: #0388e3 !important;
-  background-color: #f8f8f8 !important;
-  margin: 0 2px !important;
-  padding: 0.25rem 0.4rem !important;
-}
-
-
-a {
-  transition: opacity .3s;
-  opacity: 1
-}
-
 a:hover {
   text-decoration: none !important;
   opacity: .5
 }
 
+
+// scrollbar begin
 ::-webkit-scrollbar {
   width: 6px;
   height: 5px
@@ -125,242 +124,13 @@ a:hover {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.18);
   background-color: rgba(99, 99, 99, 0.18);
 }
-
-@media (max-width: 419px) {
-  .theme-default-content div[class*="language-"] {
-    margin: 0rem !important;
-    border-radius: 0;
-  }
-
-  .theme-default-content:not(.custom) {
-    padding:1rem!important;
-  }
-
-  .sidebar-button {
-    padding-left: 0!important;
-  }
-
-  .navbar {
-    padding-left: 3.4rem!important;
-  }
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex
-}
-
-.flex_wrap {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap
-}
-
-.flex0 {
-  -webkit-box-flex: 0;
-  -ms-flex: 0;
-  flex: 0
-}
-
-.flex1 {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1
-}
-
-.flex2 {
-  -webkit-box-flex: 2;
-  -ms-flex: 2;
-  flex: 2
-}
-
-.flex3 {
-  -webkit-box-flex: 3;
-  -ms-flex: 3;
-  flex: 3
-}
-
-.flex4 {
-  -webkit-box-flex: 4;
-  -ms-flex: 4;
-  flex: 4
-}
-
-.flex5 {
-  -webkit-box-flex: 5;
-  -ms-flex: 5;
-  flex: 5
-}
-
-.flex6 {
-  -webkit-box-flex: 6;
-  -ms-flex: 6;
-  flex: 6
-}
-
-.flex7 {
-  -webkit-box-flex: 7;
-  -ms-flex: 7;
-  flex: 7
-}
-
-.flex8 {
-  -webkit-box-flex: 8;
-  -ms-flex: 8;
-  flex: 8
-}
-
-.flex9 {
-  -webkit-box-flex: 9;
-  -ms-flex: 9;
-  flex: 9
-}
-
-.flex10 {
-  -webkit-box-flex: 10;
-  -ms-flex: 10;
-  flex: 10
-}
-
-.align_items_flex_start {
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start
-}
-
-.align_items_flex_end {
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end
-}
-
-.flex_start {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start
-}
-
-.flex_end {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end
-}
-
-.flex_column {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column
-}
-
-.flex_column_reverse {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: column-reverse;
-  flex-direction: column-reverse
-}
-
-.flex_row {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row
-}
-
-.flex_row_reverse {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse
-}
-
-.align_items_c {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
-}
-
-.center {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center
-}
-
-.space_between {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between
-}
-
-.space_around {
-  -ms-flex-pack: distribute;
-  -webkit-box-pack: space-around;
-  justify-content: space-around
-}
-
-.baseline {
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline
-}
-
-.align_items_stretch {
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch
-}
-
-.align_content_stretch {
-  -ms-flex-line-pack: stretch;
-  align-content: stretch
-}
-
-.tac {
-  text-align: center
-}
-
-.tal {
-  text-align: left
-}
-
-.tar {
-  text-align: right
-}
-
-.fz12 {
-  font-size: 12px
-}
+// scrollbar end
 
 
-#app .home {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 3.6rem);
-}
+.flex { display: -webkit-box; display: -ms-flexbox; display: flex } .flex_wrap { -ms-flex-wrap: wrap; flex-wrap: wrap } .flex0 { -webkit-box-flex: 0; -ms-flex: 0; flex: 0 } .flex1 { -webkit-box-flex: 1; -ms-flex: 1; flex: 1 } .flex2 { -webkit-box-flex: 2; -ms-flex: 2; flex: 2 } .flex3 { -webkit-box-flex: 3; -ms-flex: 3; flex: 3 } .flex4 { -webkit-box-flex: 4; -ms-flex: 4; flex: 4 } .flex5 { -webkit-box-flex: 5; -ms-flex: 5; flex: 5 } .flex6 { -webkit-box-flex: 6; -ms-flex: 6; flex: 6 } .flex7 { -webkit-box-flex: 7; -ms-flex: 7; flex: 7 } .flex8 { -webkit-box-flex: 8; -ms-flex: 8; flex: 8 } .flex9 { -webkit-box-flex: 9; -ms-flex: 9; flex: 9 } .flex10 { -webkit-box-flex: 10; -ms-flex: 10; flex: 10 } .align_items_flex_start { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start } .align_items_flex_end { -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end } .flex_start { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start } .flex_end { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end } .flex_column { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column } .flex_column_reverse { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse } .flex_row { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row } .flex_row_reverse { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse } .align_items_c { -webkit-box-align: center; -ms-flex-align: center; align-items: center } .center { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center } .space_between { -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between } .space_around { -ms-flex-pack: distribute; -webkit-box-pack: space-around; justify-content: space-around } .baseline { -webkit-box-align: baseline; -ms-flex-align: baseline; align-items: baseline } .align_items_stretch { -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch } .align_content_stretch { -ms-flex-line-pack: stretch; align-content: stretch }
 
-#app header {
-  flex: 1;
-}
+.tac { text-align: center } .tal { text-align: left } .tar { text-align: right } .fz12 { font-size: 12px }
 
-#app .footer {
-  flex: 0;
-}
-
-#app .navbar a {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-#app .navbar .home-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
-}
 
 
 /* 夜间模式 */
@@ -376,10 +146,6 @@ a:hover {
   transition: .3s;
 }
 
-/* div[class^="language-"] {
-  filter: invert(1);
-} */
-
 @media screen and (max-width: 1300px) {
   #switch {
     opacity: .5;
@@ -391,17 +157,21 @@ a:hover {
   .navbar .logo {
     display: none;
   }
+
+  // 移动端隐藏 code 行号
+  div[class*="language-"].line-numbers-mode::after, .line-numbers-wrapper {
+    display: none
+  }
+
+  div[class*="language-"].line-numbers-mode pre {
+    padding-left: 1.5rem
+  }
+
+  // 边距
+  .theme-default-content div[class*="language-"] {
+    margin: 0rem !important;
+    border-radius: 0;
+  }
 }
 
-#app header {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center
-}
+

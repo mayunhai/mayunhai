@@ -56,7 +56,7 @@ export default ({ Vue }) => {
     direction = direction * -1
 
     if (direction == -1) {
-      htmlDOm.style.filter = 'invert(90%)'
+      htmlDOm.style.filter = 'invert(100%)'
       document.getElementById('switch').style.filter = 'invert(100%)'
       setCookie('darkMode', 'true')
     } else {
@@ -69,7 +69,7 @@ export default ({ Vue }) => {
   // init darkMode
   const darkMode = getCookie('darkMode') === 'true'
   if (darkMode) {
-    htmlDOm.style.filter = 'invert(90%)'
+    htmlDOm.style.filter = 'invert(100%)'
   }
 
   lottie.onload = function() {
