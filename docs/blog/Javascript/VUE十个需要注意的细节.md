@@ -126,7 +126,7 @@ Vuex特别像一个全局对象，他和全局对象的区别有以下两点
 这个算是VUE里面比较少见，但是很重要的接口官方解释：在下次 DOM 更新循环结束之后执行延迟回调在修改数据之后立即使用这个方法，获取更新后的 DOM是不是感觉挺难理解的，所以这里我们直接上一个实例：
 
 ```js
-//当我们使用element UI时候，这里的作用是当element 组件el-input渲染完成后获取焦点
+// 当我们使用element UI时候，这里的作用是当element 组件el-input渲染完成后获取焦点
 this.$nextTick(_ => {
   this.$refs.input.focus()
 })
