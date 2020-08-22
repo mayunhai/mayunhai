@@ -368,6 +368,13 @@ arr.forEach(v => {
 
 目前来看，在高版本的webkit内核浏览器里passive是默认为true的，所以想禁止滚动发现不生效的时候，你得把事件绑定添加这个选项了
 
+:::tip
+这里我想要强调一个细节，如果一个页面尤其是单页应用在多处对 `window` 进行 `visibilitychange`、`resize`、 `scroll` 等事件的监听，会出现事件不触发也不报错的情况，所以这里我想要给两个建议
+- 有 `addEventListener` 一定要注意在不需要的情况下 `removeEventListener` 及时销毁
+- 在多处对 `window` 进行 `visibilitychange`、`resize`、 `scroll` 等事件重复的监听情况下，建议单独拎一个文件出来封装这些事件只监听一次，然后把 `event` 通过 [EventBus](/blog/Javascript.html#_20行简单实现全局事件-eventbus) 或者状态管理器(`VueX`、`Redux`)分发到需要用到的地方，有效避免无效重复监听导致的问题
+:::
+
+
 
 ### 堆、栈、队列
 
