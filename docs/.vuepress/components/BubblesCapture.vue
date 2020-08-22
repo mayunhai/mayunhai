@@ -1,7 +1,7 @@
 <template>
   <div ref="outSide">
     <div ref="midSide">
-      <button ref="inSide">test {{ captureBubbles ? 'capture bubbles' : 'bubbles capture'}}</button>
+      <button ref="inSide">test {{ captureBubbles ? 'capture bubbles' : 'bubbles capture' }}</button>
     </div>
   </div>
 </template>
