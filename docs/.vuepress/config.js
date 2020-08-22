@@ -55,7 +55,7 @@ module.exports = {
   ],
   themeConfig: {
     displayAllHeaders: true,
-    logo: "/home.png",
+    logo: '/home.png',
     nav: [{
       text: '首页',
       link: '/'

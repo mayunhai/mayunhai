@@ -1,7 +1,16 @@
-import { debounce, animationData, setCookie, getCookie } from './util'
+import {
+  debounce,
+  animationData,
+  setCookie,
+  getCookie,
+  on,
+  off
+} from './util'
 import CursorEffects from './CursorEffects'
 
-export default ({ Vue }) => {
+export default ({
+  Vue
+}) => {
   // 百度统计
   window._hmt = window._hmt || [];
   (function() {
@@ -14,17 +23,17 @@ export default ({ Vue }) => {
   // 点击特效
   let cursorEffects = new CursorEffects()
   cursorEffects.init()
-  window.addEventListener('resize', debounce(function() {
+  on(window, 'resize', debounce(function() {
     cursorEffects.destroy()
     cursorEffects = new CursorEffects()
     cursorEffects.init()
-  }, 300), false)
+  }, 300))
 
   // title 变化
   let title = 'MaYunHai'
   let titleTime
   const comeback = '′▽`，我胡汉三又回来了'
-  document.addEventListener('visibilitychange', function() {
+  on(document, 'visibilitychange', function() {
     if (document.hidden) {
       document.querySelector('link[rel="icon"]').href = '/mayunhai/sad.ico'
       if (document.title !== comeback) title = document.title
@@ -37,7 +46,7 @@ export default ({ Vue }) => {
         document.title = title
       }, 1000)
     }
-  }, false)
+  })
 
   // 夜间模式
 
@@ -50,6 +59,7 @@ export default ({ Vue }) => {
   let direction = 1
 
   const htmlDOm = document.querySelector('html')
+
   function toggleTheme() {
     anim.setDirection(direction)
     anim.play()
@@ -97,5 +107,37 @@ export default ({ Vue }) => {
     setTimeout(() => {
       window.location.href = href
     }, 150)
+  }
+
+  // 安装按钮
+  let preBtn
+  window.onload = () => {
+    const beforeinstallpromptHandler = function(event) {
+      event.preventDefault()
+
+      // 创建按钮
+      const btn = document.createElement('BUTTON')
+      const i = document.createElement('I')
+      btn.appendChild(i)
+      const t = document.createTextNode('安装')
+      btn.className = 'install-btn'
+      preBtn && preBtn.remove()
+      btn.appendChild(t)
+      preBtn = btn
+
+      function clickHandler() {
+        event.prompt()
+        event.userChoice.then(function(outcome) {
+          if (!(outcome === 'dismissed' || outcome.outcome === 'dismissed')) {
+            off(btn, 'click', clickHandler)
+            btn.remove()
+            off(window, 'beforeinstallprompt', beforeinstallpromptHandler)
+          }
+        })
+      }
+      on(btn, 'click', clickHandler)
+      document.body.appendChild(btn)
+    }
+    on(window, 'beforeinstallprompt', beforeinstallpromptHandler)
   }
 }

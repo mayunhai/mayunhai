@@ -146,10 +146,93 @@ a:hover {
   transition: .3s;
 }
 
+
+// 安装 btn begin
+button.install-btn {
+  z-index: 100;
+  align-items: center;
+  -webkit-animation: shine 8s infinite;
+  animation: shine 8s infinite;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background: #0388e3;
+  background: linear-gradient(-45deg, #0388e3 50%, #2e59d4 60%, #0388e3 70%);
+  background-size: 600% 100%;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: center;
+  outline: none;
+  padding: 7px 16px;
+  position: fixed;
+  right: 49px;
+  top: 120px;
+}
+
+button.install-btn:hover {
+  opacity: .5
+}
+
+button.install-btn i {
+  background: #fff;
+  border-radius: 1px;
+  display: inline-block;
+  height: 2px;
+  margin-right: 8px;
+  position: relative;
+  width: 10px;
+}
+
+button.install-btn::before {
+  background: #fff;
+  border-radius: 1px;
+  content: '';
+  display: inline-block;
+  height: 10px;
+  position: relative;
+  width: 2px;
+  left: 6px;
+}
+
+@-webkit-keyframes shine {
+  0% {
+    background-position-x: 400%;
+  }
+
+  100% {
+    background-position-x: 200%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: 400%;
+  }
+
+  100% {
+    background-position-x: 200%;
+  }
+}
+// 安装 btn end
+
+
+// 移动端适配
+
 @media screen and (max-width: 1300px) {
   #switch {
     opacity: .5;
     right: -32px;
+  }
+
+  button.install-btn {
+    opacity: .5;
+    right: 16px;
   }
 }
 
@@ -173,5 +256,3 @@ a:hover {
     border-radius: 0;
   }
 }
-
-
