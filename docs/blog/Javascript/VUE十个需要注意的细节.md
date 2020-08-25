@@ -190,6 +190,10 @@ this.$set(this.myObject,'newProperty','hi')
 
 只要弄清楚以上9点对于VUE应用开发基本上就没有太大问题了，关于自定义组件的封装其实只要熟练掌握 [子父组件通信](/blog/Javascript.html#_4-子父组件通信) 也足以解决日常开发需求，下面介绍的只是更深层次一点，对于新手而言不懂也没有太大关系尤其是slot插槽这块 `VUE 3.0` 会对此API有大幅度变动，虽然会有兼容方案
 
+- [`.native`](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E5%B0%86%E5%8E%9F%E7%94%9F%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%88%B0%E7%BB%84%E4%BB%B6)
+
+我们可以 `@click` 在 `dom` 上面绑定原生事件，但是在普通组件上面却不起作用这里我们就需要 `.native` 修饰符官方文档说的很清楚，这里还有一种解决方案就是可以配合 [`v-on="$listeners"`](https://cn.vuejs.org/v2/api/#vm-listeners) 将所有的原生事件监听器指向这个组件的某个特定的子元素，这样就可以用不加修饰符也能够直接监听的到
+
 - [`v-model` ](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model)
 
 显而易见就是官方提供了一个 `API` 让你能够在自己封装组件上面也可以使用 `v-model` 双向绑定,这个细节多用于封装自己的表单类组件或者二次封装别人的表单类组件用，并且对 element 这样的UI 进行单组件的二次封装我觉得意义不是很大，感兴趣的可以研究一下，这里我就不做过多解释官网说明的很清楚点击标题可以快速跳转官方文档的相关位置，或者参考 [`sync-修饰符`](https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6)
