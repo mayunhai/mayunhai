@@ -65,6 +65,10 @@ module.exports = {
       link: '/website/'
     },
     {
+      text: '正则',
+      link: '/Regular/'
+    },
+    {
       text: 'VScode',
       link: '/VScode/'
     },
@@ -88,6 +92,7 @@ module.exports = {
     sidebar: {
       '/blog/': ['', 'HTML', 'CSS', 'Javascript'],
       '/array/': ['', 'Ergodic', 'DealWith', 'Judge', 'Conversion'],
+      '/Regular/': [''],
       '/util/': [''],
       '/sort/': ['', 'Two', 'One', 'Other']
     },
