@@ -1,104 +1,12 @@
-::-moz-selection {
-  background: #e1e1e1;
-  color: #0388e3;
-}
-
-::selection {
-  background: #e1e1e1;
-  color: #0388e3;
-}
-
 * {
-  transition: background .3s ease, color .3s ease, width .3s ease, height .3s ease, padding .3s ease, margin .3s ease, left .3s ease, right .3s ease, top .3s ease, bottom .3s ease, opacity .3s ease!important;
+  transition: background .3s ease, color .3s ease, width .3s ease, height .3s ease, padding .3s ease, margin .3s ease, left .3s ease, right .3s ease, top .3s ease, bottom .3s ease, opacity .3s ease, border-color .3s ease, filter .3s ease!important;
   -webkit-tap-highlight-color: transparent;
   outline: none;
 }
 
-.home .hero img {
-  object-fit: contain;
-  margin: 1rem auto 0!important;
-  position: relative;
-  top: 2rem;
-}
-
-#app .home {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 3.6rem);
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between
-}
-
-
-.home .hero .action-button {
-  background: #0388e3 !important;
-}
-
-.home .hero .action-button:hover {
-  opacity: 0.75
-}
-
-.custom-block.tip {
-  border-color: #0388e3 !important;
-}
-
-#app .navbar a {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-
-// code begin
-.token.attr-name,.token.deleted,.token.namespace,.token.tag {
-    color: #DA5961 !important;
-}
-
-.token.function-name {
-    color: #0388e3 !important;
-}
-
-.token.boolean,.token.function,.token.number {
-    color: rgba(0, 194, 47, 75%) !important;
-}
-
-.token.class-name,.token.constant,.token.property,.token.symbol {
-    color: rgba(255, 101, 67, 75%) !important;
-}
-
-.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector {
-    color: #2392cd !important;
-}
-
-.token.attr-value,.token.char,.token.regex,.token.string,.token.variable {
-    color: rgba(255, 229, 100, 75%) !important;
-}
-
-.token.entity,.token.operator,.token.url {
-    color: rgba(0, 217, 227, 75%) !important
-}
-
-// 行内代码
-li code,
-p code {
-  color: #0388e3 !important;
-  background-color: #f8f8f8 !important;
-  margin: 0 2px !important;
-  padding: 0.25rem 0.4rem !important;
-}
-
-// code end
-
-.c_orange {
-  color: #0388e3;
-}
-
-.ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+body {
+  background-attachment: fixed;
+  background-image: linear-gradient(158deg, rgba(84, 84, 84, 0.03) 0%, rgba(84, 84, 84, 0.03) 20%,rgba(219, 219, 219, 0.03) 20%, rgba(219, 219, 219, 0.03) 40%,rgba(54, 54, 54, 0.03) 40%, rgba(54, 54, 54, 0.03) 60%,rgba(99, 99, 99, 0.03) 60%, rgba(99, 99, 99, 0.03) 80%,rgba(92, 92, 92, 0.03) 80%, rgba(92, 92, 92, 0.03) 100%),linear-gradient(45deg, rgba(221, 221, 221, 0.02) 0%, rgba(221, 221, 221, 0.02) 14.286%,rgba(8, 8, 8, 0.02) 14.286%, rgba(8, 8, 8, 0.02) 28.572%,rgba(52, 52, 52, 0.02) 28.572%, rgba(52, 52, 52, 0.02) 42.858%,rgba(234, 234, 234, 0.02) 42.858%, rgba(234, 234, 234, 0.02) 57.144%,rgba(81, 81, 81, 0.02) 57.144%, rgba(81, 81, 81, 0.02) 71.42999999999999%,rgba(239, 239, 239, 0.02) 71.43%, rgba(239, 239, 239, 0.02) 85.71600000000001%,rgba(187, 187, 187, 0.02) 85.716%, rgba(187, 187, 187, 0.02) 100.002%),linear-gradient(109deg, rgba(33, 33, 33, 0.03) 0%, rgba(33, 33, 33, 0.03) 12.5%,rgba(147, 147, 147, 0.03) 12.5%, rgba(147, 147, 147, 0.03) 25%,rgba(131, 131, 131, 0.03) 25%, rgba(131, 131, 131, 0.03) 37.5%,rgba(151, 151, 151, 0.03) 37.5%, rgba(151, 151, 151, 0.03) 50%,rgba(211, 211, 211, 0.03) 50%, rgba(211, 211, 211, 0.03) 62.5%,rgba(39, 39, 39, 0.03) 62.5%, rgba(39, 39, 39, 0.03) 75%,rgba(55, 55, 55, 0.03) 75%, rgba(55, 55, 55, 0.03) 87.5%,rgba(82, 82, 82, 0.03) 87.5%, rgba(82, 82, 82, 0.03) 100%),linear-gradient(348deg, rgba(42, 42, 42, 0.02) 0%, rgba(42, 42, 42, 0.02) 20%,rgba(8, 8, 8, 0.02) 20%, rgba(8, 8, 8, 0.02) 40%,rgba(242, 242, 242, 0.02) 40%, rgba(242, 242, 242, 0.02) 60%,rgba(42, 42, 42, 0.02) 60%, rgba(42, 42, 42, 0.02) 80%,rgba(80, 80, 80, 0.02) 80%, rgba(80, 80, 80, 0.02) 100%),linear-gradient(120deg, rgba(106, 106, 106, 0.03) 0%, rgba(106, 106, 106, 0.03) 14.286%,rgba(67, 67, 67, 0.03) 14.286%, rgba(67, 67, 67, 0.03) 28.572%,rgba(134, 134, 134, 0.03) 28.572%, rgba(134, 134, 134, 0.03) 42.858%,rgba(19, 19, 19, 0.03) 42.858%, rgba(19, 19, 19, 0.03) 57.144%,rgba(101, 101, 101, 0.03) 57.144%, rgba(101, 101, 101, 0.03) 71.42999999999999%,rgba(205, 205, 205, 0.03) 71.43%, rgba(205, 205, 205, 0.03) 85.71600000000001%,rgba(53, 53, 53, 0.03) 85.716%, rgba(53, 53, 53, 0.03) 100.002%),linear-gradient(45deg, rgba(214, 214, 214, 0.03) 0%, rgba(214, 214, 214, 0.03) 16.667%,rgba(255, 255, 255, 0.03) 16.667%, rgba(255, 255, 255, 0.03) 33.334%,rgba(250, 250, 250, 0.03) 33.334%, rgba(250, 250, 250, 0.03) 50.001000000000005%,rgba(231, 231, 231, 0.03) 50.001%, rgba(231, 231, 231, 0.03) 66.668%,rgba(241, 241, 241, 0.03) 66.668%, rgba(241, 241, 241, 0.03) 83.33500000000001%,rgba(31, 31, 31, 0.03) 83.335%, rgba(31, 31, 31, 0.03) 100.002%),linear-gradient(59deg, rgba(224, 224, 224, 0.03) 0%, rgba(224, 224, 224, 0.03) 12.5%,rgba(97, 97, 97, 0.03) 12.5%, rgba(97, 97, 97, 0.03) 25%,rgba(143, 143, 143, 0.03) 25%, rgba(143, 143, 143, 0.03) 37.5%,rgba(110, 110, 110, 0.03) 37.5%, rgba(110, 110, 110, 0.03) 50%,rgba(34, 34, 34, 0.03) 50%, rgba(34, 34, 34, 0.03) 62.5%,rgba(155, 155, 155, 0.03) 62.5%, rgba(155, 155, 155, 0.03) 75%,rgba(249, 249, 249, 0.03) 75%, rgba(249, 249, 249, 0.03) 87.5%,rgba(179, 179, 179, 0.03) 87.5%, rgba(179, 179, 179, 0.03) 100%),linear-gradient(241deg, rgba(58, 58, 58, 0.02) 0%, rgba(58, 58, 58, 0.02) 25%,rgba(124, 124, 124, 0.02) 25%, rgba(124, 124, 124, 0.02) 50%,rgba(254, 254, 254, 0.02) 50%, rgba(254, 254, 254, 0.02) 75%,rgba(52, 52, 52, 0.02) 75%, rgba(52, 52, 52, 0.02) 100%),linear-gradient(90deg, #ffffff,#ffffff);
 }
 
 a:hover {
@@ -106,6 +14,15 @@ a:hover {
   opacity: .5
 }
 
+::-moz-selection {
+  background: #e1e1e1;
+  color: $accentColor;
+}
+
+::selection {
+  background: #e1e1e1;
+  color: $accentColor;
+}
 
 // scrollbar begin
 ::-webkit-scrollbar {
@@ -126,15 +43,69 @@ a:hover {
 }
 // scrollbar end
 
+// nav begin
+#app .navbar a {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.navbar .logo {
+  position: relative;
+  top: 0.14rem;
+}
+.navbar, .sidebar {
+  background: $navBgColor!important;
+  border: none!important;
+}
+.navbar .links {
+  background: transparent!important;
+}
+.search-box input {
+  background: transparent url(/mayunhai/assets/img/search.83621669.svg) 0.6rem 0.6rem no-repeat!important;
+  border-width: 2px!important;
+  border-color: $borderColor!important;
+  transition: border-color .3s ease, width .3s ease!important;
+}
+.search-box input:focus {
+  background:#ebebeb!important;
+  border-color: $accentColor!important;
+}
+.home .features {
+  border: none!important;
+}
+tr:nth-child(2n) {
+  background: $tipBgColor!important;
+}
+// nav end
 
-.flex { display: -webkit-box; display: -ms-flexbox; display: flex } .flex_wrap { -ms-flex-wrap: wrap; flex-wrap: wrap } .flex0 { -webkit-box-flex: 0; -ms-flex: 0; flex: 0 } .flex1 { -webkit-box-flex: 1; -ms-flex: 1; flex: 1 } .flex2 { -webkit-box-flex: 2; -ms-flex: 2; flex: 2 } .flex3 { -webkit-box-flex: 3; -ms-flex: 3; flex: 3 } .flex4 { -webkit-box-flex: 4; -ms-flex: 4; flex: 4 } .flex5 { -webkit-box-flex: 5; -ms-flex: 5; flex: 5 } .flex6 { -webkit-box-flex: 6; -ms-flex: 6; flex: 6 } .flex7 { -webkit-box-flex: 7; -ms-flex: 7; flex: 7 } .flex8 { -webkit-box-flex: 8; -ms-flex: 8; flex: 8 } .flex9 { -webkit-box-flex: 9; -ms-flex: 9; flex: 9 } .flex10 { -webkit-box-flex: 10; -ms-flex: 10; flex: 10 } .align_items_flex_start { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start } .align_items_flex_end { -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end } .flex_start { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start } .flex_end { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end } .flex_column { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column } .flex_column_reverse { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse } .flex_row { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row } .flex_row_reverse { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse } .align_items_c { -webkit-box-align: center; -ms-flex-align: center; align-items: center } .center { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center } .space_between { -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between } .space_around { -ms-flex-pack: distribute; -webkit-box-pack: space-around; justify-content: space-around } .baseline { -webkit-box-align: baseline; -ms-flex-align: baseline; align-items: baseline } .align_items_stretch { -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch } .align_content_stretch { -ms-flex-line-pack: stretch; align-content: stretch }
-
-.tac { text-align: center } .tal { text-align: left } .tar { text-align: right } .fz12 { font-size: 12px }
-
-
+// other
+#app .home {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 3.6rem);
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+.home .hero .action-button {
+  background: $accentColor !important;
+}
+.home .hero .action-button:hover {
+  opacity: 0.75
+}
+.home .hero img {
+  object-fit: contain;
+  margin: 1rem auto 0!important;
+  position: relative;
+  top: 2rem;
+}
+.custom-block.tip {
+  background: $tipBgColor!important;
+  border-color: $accentColor !important;
+}
 
 /* 夜间模式 */
-
 #switch {
   position: fixed;
   cursor: pointer;
@@ -146,7 +117,6 @@ a:hover {
   transition: .3s;
 }
 
-
 // 安装 btn begin
 button.install-btn {
   z-index: 100;
@@ -157,8 +127,8 @@ button.install-btn {
   animation-delay: 0s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
-  background: #0388e3;
-  background: linear-gradient(-45deg, #0388e3 50%, #2e59d4 60%, #0388e3 70%);
+  background: $accentColor;
+  background: linear-gradient(-45deg, $accentColor 50%, #2e59d4 60%, $accentColor 70%);
   background-size: 600% 100%;
   border: 0;
   border-radius: 4px;
@@ -221,9 +191,7 @@ button.install-btn::before {
 }
 // 安装 btn end
 
-
 // 移动端适配
-
 @media screen and (max-width: 1300px) {
   #switch {
     opacity: .5;
@@ -255,4 +223,65 @@ button.install-btn::before {
     margin: 0rem !important;
     border-radius: 0;
   }
+
+  // 背景
+  #app .sidebar {
+    transition: transform .3s ease!important;
+    background: #f1f1f1!important;
+  }
+}
+
+
+
+// code beign
+// 行内代码
+li code,
+p code {
+  color: $accentColor !important;
+  background-color: $tipBgColor !important;
+  margin: 0 2px !important;
+  padding: 0.25rem 0.4rem !important;
+}
+.token.attr-name,.token.deleted,.token.namespace,.token.tag {
+    color: $badgeErrorColor !important;
+}
+
+.token.function-name {
+    color: $accentColor !important;
+}
+
+.token.boolean,.token.function,.token.number {
+    color: $codeBooleanColor!important;
+}
+
+.token.class-name,.token.constant,.token.property,.token.symbol {
+    color: $codeClassNameColor!important;
+}
+
+.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector {
+    color: $codeSelectorColor!important;
+}
+
+.token.attr-value,.token.char,.token.regex,.token.string,.token.variable {
+    color: $codeRegexColor!important;
+}
+
+.token.entity,.token.operator,.token.url {
+    color: $codeUrlColor!important
+}
+// code end
+
+// 通用
+.flex { display: -webkit-box; display: -ms-flexbox; display: flex } .flex_wrap { -ms-flex-wrap: wrap; flex-wrap: wrap } .flex0 { -webkit-box-flex: 0; -ms-flex: 0; flex: 0 } .flex1 { -webkit-box-flex: 1; -ms-flex: 1; flex: 1 } .flex2 { -webkit-box-flex: 2; -ms-flex: 2; flex: 2 } .flex3 { -webkit-box-flex: 3; -ms-flex: 3; flex: 3 } .flex4 { -webkit-box-flex: 4; -ms-flex: 4; flex: 4 } .flex5 { -webkit-box-flex: 5; -ms-flex: 5; flex: 5 } .flex6 { -webkit-box-flex: 6; -ms-flex: 6; flex: 6 } .flex7 { -webkit-box-flex: 7; -ms-flex: 7; flex: 7 } .flex8 { -webkit-box-flex: 8; -ms-flex: 8; flex: 8 } .flex9 { -webkit-box-flex: 9; -ms-flex: 9; flex: 9 } .flex10 { -webkit-box-flex: 10; -ms-flex: 10; flex: 10 } .align_items_flex_start { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start } .align_items_flex_end { -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end } .flex_start { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start } .flex_end { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end } .flex_column { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column } .flex_column_reverse { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse } .flex_row { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row } .flex_row_reverse { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse } .align_items_c { -webkit-box-align: center; -ms-flex-align: center; align-items: center } .center { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center } .space_between { -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between } .space_around { -ms-flex-pack: distribute; -webkit-box-pack: space-around; justify-content: space-around } .baseline { -webkit-box-align: baseline; -ms-flex-align: baseline; align-items: baseline } .align_items_stretch { -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch } .align_content_stretch { -ms-flex-line-pack: stretch; align-content: stretch }
+
+.tac { text-align: center } .tal { text-align: left } .tar { text-align: right } .fz12 { font-size: 12px }
+
+.c_orange {
+  color: $accentColor;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

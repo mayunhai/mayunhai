@@ -511,6 +511,6 @@ const fn = () => {
 }
 .page h3 {
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid #eaecef
+  border-bottom: 1px solid rgba(0, 0, 0, 2%)
 }
 </style>

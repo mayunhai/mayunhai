@@ -91,6 +91,10 @@ template标签无法使用 v-show ，不信的可以试试
 - **作用：**
 管理SPA所有虚拟页面 配置、跳转、跳转历史
 
+:::tip
+这里需要强调一下如果想用 [`history`](https://router.vuejs.org/zh/guide/essentials/history-mode.html#html5-history-%E6%A8%A1%E5%BC%8F) 模式务必需要后台配置支持，就是要在服务端配置 Rewrite 路由把所有路由都指向 index.html
+:::
+
 #### [Vuex](https://vuex.vuejs.org/zh)
 - **简介：**
 Vuex特别像一个全局对象，他和全局对象的区别有以下两点

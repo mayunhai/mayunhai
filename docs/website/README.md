@@ -18,6 +18,7 @@
 ## 框架
 
 [vue](https://cn.vuejs.org)
+[vue3](https://v3.vuejs.org)
 [vue-router](https://router.vuejs.org/zh)
 [vuex](https://vuex.vuejs.org)
 [react](https://react.docschina.org)
@@ -36,6 +37,7 @@
 [渐变色](https://uigradients.com/#Relay)
 [css背景1](http://www.heropatterns.com)
 [css背景2](https://bansal.io/pattern-css#introduction)
+[css背景3](https://www.gradientmagic.com)
 [在线图片无损压缩](https://tinypng.com)
 [谷歌图片无损压缩](https://squoosh.app)
 
