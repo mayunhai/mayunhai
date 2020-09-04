@@ -1,7 +1,7 @@
 <template>
   <div ref="outSide">
     <div ref="midSide">
-      <button ref="inSide">test {{ captureBubbles ? 'capture bubbles' : 'bubbles capture' }}</button>
+      <button class="capture-bubbles-btn" ref="inSide">test {{ captureBubbles ? 'capture bubbles' : 'bubbles capture' }}</button>
     </div>
   </div>
 </template>
@@ -63,3 +63,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.capture-bubbles-btn {
+  cursor: pointer;
+}
+</style>

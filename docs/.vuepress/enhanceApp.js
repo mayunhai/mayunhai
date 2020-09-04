@@ -66,8 +66,8 @@ export default ({
     direction = direction * -1
 
     if (direction == -1) {
-      htmlDOm.style.filter = 'invert(100%)'
-      document.getElementById('switch').style.filter = 'invert(100%)'
+      htmlDOm.style.filter = 'invert(90%)'
+      document.getElementById('switch').style.filter = 'invert(90%)'
       setCookie('darkMode', 'true')
     } else {
       htmlDOm.style.filter = 'invert(0%)'
@@ -79,7 +79,7 @@ export default ({
   // init darkMode
   const darkMode = getCookie('darkMode') === 'true'
   if (darkMode) {
-    htmlDOm.style.filter = 'invert(100%)'
+    htmlDOm.style.filter = 'invert(90%)'
   }
 
   lottie.onload = function() {

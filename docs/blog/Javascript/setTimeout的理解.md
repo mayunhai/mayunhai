@@ -2,7 +2,7 @@
 
 setTimeout 看起来实现的假装异步操作实则还是同步运行，其实每次执行的时机都是晚于理想状态的，下面看段代码就能很容易理解
 
-```js
+```js {2}
 setTimeout(() => {
   console.log('setTimeout')
 }, 0)
@@ -12,6 +12,11 @@ while (timestamp + 3000 > new Date().getTime()) {
   console.log('loop')
 }
 console.log('done')
+// loop
+// ...(持续很久重复打印loop)
+// loop
+// done
+// setTimeout
 ```
 上面这段代码直接复制在 chrome 的 Console 打印会发现 'setTimeout' 并不能在0毫秒后打印出来，而是在三秒甚至三秒更多的时间后打印出来
 

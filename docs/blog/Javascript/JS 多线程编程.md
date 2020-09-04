@@ -43,7 +43,7 @@ console.log('这里是 index.js 的打印')
 
 ### 用法二：引入单个 JS 使用Web Worker
 
-```js
+```js {9}
 // index.js
 // 创建 woker
 const workerBlob = new Blob([`const endlessLoop = (time) => {
