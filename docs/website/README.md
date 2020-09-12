@@ -1,4 +1,4 @@
-## 手册
+#### 常用手册
 
 [runoob](https://www.runoob.com)
 [es6](https://es6.ruanyifeng.com)
@@ -15,7 +15,7 @@
 [Bash](https://wangdoc.com/bash)
 [V8](https://v8docs.nodesource.com/node-0.8/d4/da0/v8_8h_source.html#1)
 
-## 框架
+#### 框架
 
 [vue](https://cn.vuejs.org)
 [vue3](https://v3.vuejs.org)
@@ -24,7 +24,7 @@
 [react](https://react.docschina.org)
 [redux](https://reduxjs.bootcss.com)
 
-## UX
+#### UX
 
 [element](https://element.eleme.cn/#/zh-CN)
 [vuetifyjs](https://vuetifyjs.com/zh-Hans)
@@ -41,13 +41,13 @@
 [在线图片无损压缩](https://tinypng.com)
 [谷歌图片无损压缩](https://squoosh.app)
 
-## 图表插件
+#### 图表插件
 
 [echartsjs](https://www.echartsjs.com/zh/index.html)
 [d3](https://d3js.org)
 [antv](https://antv.vision/zh)
 
-## 动画引擎
+#### 动画引擎
 
 [animate](https://daneden.github.io/animate.css)
 [velocityjs](http://www.velocityjs.org)
@@ -56,20 +56,20 @@
 [lottie](https://airbnb.design/lottie)
 [threejs](https://threejs.org)
 
-## 其他插件
+#### 其他插件
 
 [pako](https://www.npmjs.com/package/pako)
 [photoswipe](https://photoswipe.com)
 [360度全景照片浏览](https://pchen66.github.io/Panolens/#Home)
 [mockjs](http://mockjs.com/examples.html)
 
-## 人工智能
+#### 人工智能
 
 [tensorflow2](https://tf.wiki/index.html#id1)
 [tensorflow官方教程视频](https://developers.google.com/machine-learning/crash-course?hl=zh-cn)
 [pytorch](https://pytorch.org)
 
-## 其他
+#### 其他
 
 [花裤衩大佬个人收藏夹](https://panjiachen.github.io/awesome-bookmarks/)
 [技术问答](https://stackoverflow.com)
@@ -93,10 +93,10 @@
 .page p {
   margin-top: 1rem!important;
 }
-.page h2:first-child {
+.page h4:first-child {
   padding-top: 4.6rem!important;
 }
-.page h2 {
+.page h4 {
   font-size: 1.2rem;
   padding-top: 3.5rem;
 }

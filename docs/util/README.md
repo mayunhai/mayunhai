@@ -66,6 +66,7 @@ function off(element, event, handler, capture = false) {
   }
 }
 
+// 直接 addEventListener options 里面配置 once 为 true 也是可以的，只是不兼容IE5-8
 function once(el, event, fn) {
   const listener = function() {
     if (fn) {
@@ -167,6 +168,13 @@ function uniqueArr(arr) {
 
 ## 去抖函数
 
+:::tip
+下面两个方法功能容易被混淆，这里强调一下
+- 去抖：在小于固定延时 `wait` 中连续触发时不触发，直到超过延时阈值才会触发，`immediate` 传参为 `true` 是立刻触发（连续触发无论多久一轮只会触发一次）
+
+- 节流：在小于固定延时 `wait` 中连续触发时每隔 `wait` 触发一次（连续触发可能触发多次）
+:::
+
 ```js
 /**
  * @description 去抖函数
@@ -232,7 +240,14 @@ function throttle(func, wait) {
 
 ## 格式化时间戳
 
-```js
+:::tip
+用 `new Date()` 把字符串转化为时间戳的时候
+IOS只支持 '2016/06/18 11:11:11'，不支持 '2016-06-18 11:11:11' 的转换，安卓双支持
+
+所以需要 `time = time.replace(new RegExp(/-/gm), '/')` 处理后再统一处理
+:::
+
+```js {23}
 /**
  * @description 格式化时间戳
  * @param {String, Number} time 需要格式化时间或者时间戳
