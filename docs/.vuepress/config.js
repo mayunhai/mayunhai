@@ -91,6 +91,7 @@ module.exports = {
     ],
     sidebar: {
       '/blog/': ['', 'HTML', 'CSS', 'Javascript'],
+      '/website/': ['', 'Recommend'],
       '/array/': ['', 'Ergodic', 'DealWith', 'Judge', 'Conversion'],
       '/Regular/': [''],
       '/util/': [''],
