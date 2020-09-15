@@ -279,6 +279,10 @@ mounted() {
 :::tip
 值得一提这里我想要强调一下 `mixins` 的语法规范，否则很容易出现一些找不到在哪定义的方法或者重名问题
 
+- 数据对象在内部会进行递归合并，并在发生冲突时以组件数据优先
+
+- 混入对象的钩子将在组件自身钩子之前调用
+
 - 附带一个 [命名空间](https://cn.vuejs.org/v2/style-guide/#%E7%A7%81%E6%9C%89-property-%E5%90%8D%E5%BF%85%E8%A6%81) 以回避和其它作者的冲突 (比如 `$_yourPluginName_`)
 
 - 如果使用了上述方法还需要注意一点，以 `_` 或 `$` 开头的 property 不会被 Vue 实例代理，因为它们可能和 Vue 内置的 property、API 方法冲突。你可以使用例如 `vm.$data._property` 的方式访问这些 property，详细参考文档 [data](https://cn.vuejs.org/v2/api/#data)
