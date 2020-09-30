@@ -127,7 +127,7 @@
 
 <b>width: min-content;</b>
 <div class="border min-content">
-  <img src="https://dummyimage.com/320x180/0388e3&text=320x180">
+  <img src="https://dummyimage.com/320x180/0388e3&text=320x180" style="max-width: unset;">
   <p>display:inline-block具有收缩特性，但这里宽度随文字。而width:min-content随图片。</p>
 </div>
 
