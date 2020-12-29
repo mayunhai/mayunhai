@@ -493,12 +493,12 @@ function flat2Tree(items, id = null, link = 'parentId') {
     .filter(item => item[link] === id)
     .map(item => ({
       ...item,
-      children: nest(items, item.id)
+      children: flat2Tree(items, item.id，link)
     }))
 }
 ```
 
-## 扁平数据转树数据(未知根)
+<!-- ## 扁平数据转树数据(未知根)
 
 ```js
 /**
@@ -530,7 +530,7 @@ function flat2Tree(items, link = 'parentId') {
   })
   return res
 }
-```
+``` -->
 
 
 
