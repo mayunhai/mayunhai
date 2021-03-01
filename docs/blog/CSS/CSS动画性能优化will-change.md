@@ -56,3 +56,14 @@ chrome Rendering里面 FPS meter勾上即可观察,尝试删除will-change会出
     }
 </style>
 <div class="box"></div>
+
+开启硬件加速的方法还有 `transform: translateZ(0);`
+
+在 Chrome and Safari 中，当我们使用 CSS transforms 或者 animations 时可能会有页面闪烁的效果，下面的代码可以修复此情况：
+
+```css
+{
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+```
