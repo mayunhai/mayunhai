@@ -70,7 +70,7 @@ a:hover {
   position: relative;
   top: 0.14rem;
 }
-.navbar {
+.navbar, .sidebar {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -83,6 +83,10 @@ a:hover {
 }
 
 .navbar:hover a {
+    will-change: opacity, text-decoration;
+}
+
+.sidebar:hover a {
     will-change: opacity, text-decoration;
 }
 
