@@ -22,6 +22,7 @@
 [CSP](/blog/#csp)
 [CRLF、CR、LF](/blog/#crlf、cr、lf)
 [作用域链](/blog/#作用域链)
+[链运算符](/blog/#链运算符)
 :::
 
 
@@ -495,6 +496,38 @@ const fn = () => {
   let name = '小李'
   fn() // 打印结果是 小王
 })()
+```
+
+
+### 链运算符
+
+在取对象里面字段的时候，为了防止报错通常需要层层判空非常麻烦，ES2020 新特性 链判断运算符 能够很好的解决这个问题，下面看一段新特性以及 Babel 转化
+
+```js
+// ES2020 链判断运算符
+const userInfo = [{
+  name: '小王',
+  age: '20',
+  addr: {
+    provience: '江苏',
+    city: '南京',
+  }
+}]
+
+const name = userInfo?.addr?.city
+
+// Babel 转化后
+var _userInfo$addr;
+
+const userInfo = [{
+  name: '小王',
+  age: '20',
+  addr: {
+    provience: '江苏',
+    city: '南京'
+  }
+}];
+const name = userInfo === null || userInfo === void 0 ? void 0 : (_userInfo$addr = userInfo.addr) === null || _userInfo$addr === void 0 ? void 0 : _userInfo$addr.city;
 ```
 
 
