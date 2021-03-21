@@ -23,6 +23,7 @@
 [CRLF、CR、LF](/blog/#crlf、cr、lf)
 [作用域链](/blog/#作用域链)
 [链运算符](/blog/#链运算符)
+[HTTP2](/blog/#http2)
 :::
 
 
@@ -123,142 +124,11 @@ Elasticsearch 使用一种称为倒排索引的结构，它适用于快速的全
 
 上面两点明白后，倒排索引就很容易理解，我们先看数据库的一张表
 
-<table>
-  <tr>
-    <th style="width:30px">id</th>
-    <th style="width:30px">title</th>
-    <th>content</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>xxx</td>
-    <td>xxx汽车xxx</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>xxx</td>
-    <td>xxx娱乐xxx</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>xxx</td>
-    <td>xxx旅游xxx</td>
-  </tr>
-    <tr>
-    <td>4</td>
-    <td>xxx</td>
-    <td>xxx娱乐xxx</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>xxx</td>
-    <td>xxx旅游xxx</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>xxx</td>
-    <td>xxx汽车xxx</td>
-  </tr>
-  <tr>
-    <td>7</td>
-    <td>xxx</td>
-    <td>xxx娱乐xxx</td>
-  </tr>
-  <tr>
-    <td>8</td>
-    <td>xxx</td>
-    <td>xxx旅游xxx</td>
-  </tr>
-    <tr>
-    <td>9</td>
-    <td>xxx</td>
-    <td>xxx娱乐xxx</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>xxx</td>
-    <td>xxx旅游xxx</td>
-  </tr>
-</table>
+<ESTable :type="1" />
 
 然后我们再看一下 传统数据库 mysql 和 elasticsearch 索引结构的区别
 
-<table>
-  <tr>
-    <th>mysql</th>
-    <th>elasticsearch</th>
-  </tr>
-  <tr>
-    <td>
-      <table>
-        <tr>
-          <th style="width:30px">key</th>
-          <th>value</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>xxx汽车xxx</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>xxx娱乐xxx</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>xxx旅游xxx</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>xxx娱乐xxx</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>xxx旅游xxx</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>xxx汽车xxx</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>xxx娱乐xxx</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>xxx旅游xxx</td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td>xxx娱乐xxx</td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td>xxx旅游xxx</td>
-        </tr>
-      </table>
-    </td>
-    <td>
-      <table>
-        <tr>
-          <th style="width:30px">key</th>
-          <th>value</th>
-        </tr>
-        <tr>
-          <td>汽车</td>
-          <td>[1, 6]</td>
-        </tr>
-        <tr>
-          <td>娱乐</td>
-          <td>[2, 4, 7, 9]</td>
-        </tr>
-        <tr>
-          <td>旅游</td>
-          <td>[3, 5, 8, 10]</td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+<ESTable :type="2" />
 
 如果到这里还是看不懂的话没有关系，我们看个需求（假设每篇文章大小为 1M ）
 
@@ -530,6 +400,24 @@ const userInfo = [{
 const name = userInfo === null || userInfo === void 0 ? void 0 : (_userInfo$addr = userInfo.addr) === null || _userInfo$addr === void 0 ? void 0 : _userInfo$addr.city;
 ```
 
+
+### HTTP2
+
+HTTP2大幅度的提高了web 性能，在HTTP1.1完全语义兼容的基础上，进一步减少了网络的延迟,优化有以下几点
+
+- 二进制分帧
+- 首部压缩
+- 多路复用
+- 请求优先级
+- 服务器推送
+
+先上个 [demo](https://http2.akamai.com/demo) 这是 Akamai 公司建立的一个官方的演示，用以说明 HTTP/2 相比于之前的 HTTP/1.1 在性能上的大幅度提升。 同时请求 379 张图片，从Load time 的对比可以看出 HTTP/2 在速度上的优势
+
+在HTTP1.x中浏览器会限制同一个域的同时请求数，Chrome是限制6个，总连接数是17个，其它浏览器的个数有所浮动但差不多。我们经常会使用到雪碧图、使用多个域名等方式来进行优化。HTTP2基于二进制分帧层，可以在共享TCP连接的基础上同时发送请求和响应。HTTP消息被分解为独立的帧，而不破坏消息本身的语义交错发出去，在另一端根据流标识符和首部将他们重新组装起来。 通过该技术可以避免HTTP旧版本的队头阻塞问题，极大提高传输性能
+
+关于浏览器兼容性可以 [点击这里查看](https://caniuse.com/http2)
+
+升级到HTTP2要求nginx的最低版本是1.10.0，openssl的最低版本是1.0.2，在实现上基本上只支持https
 
 未完待续...
 
