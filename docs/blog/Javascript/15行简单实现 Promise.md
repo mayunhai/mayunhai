@@ -146,8 +146,8 @@ class MyPromise {
     this.resolveFn = resolveFn
     this.rejectFn = rejectFn
     if (this.status !== 'pending') {
-      this.status === 'resolved' && this.resolveFn(this.res)
-      this.status === 'rejected' && this.rejectFn(this.res)
+      this.status === 'resolved' && resolveFn(this.res)
+      this.status === 'rejected' && rejectFn(this.res)
     }
   }
 }
@@ -205,8 +205,8 @@ class MyPromise {
     this.resolveFnArr.push(resolveFn)
     this.rejectFnArr.push(rejectFn)
     if (this.status !== 'pending') {
-      this.status === 'resolved' && this.resolveFn(this.res)
-      this.status === 'rejected' && this.rejectFn(this.res)
+      this.status === 'resolved' && resolveFn(this.res)
+      this.status === 'rejected' && rejectFn(this.res)
     }
   }
 }
