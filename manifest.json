@@ -1,0 +1,14 @@
+{
+  "name": "马云海Blog",
+  "short_name": "马云海",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff",
+  "description": "分享web前端相关的一些个人见解",
+  "icons": [{
+    "src": "icons/home.png",
+    "sizes": "380x380",
+    "purpose": "any maskable"
+  }]
+}
