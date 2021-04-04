@@ -203,16 +203,25 @@ this.$set(this.myObject,'newProperty','hi')
 显而易见就是官方提供了一个 `API` 让你能够在自己封装组件上面也可以使用 `v-model` 双向绑定,这个细节多用于封装自己的表单类组件或者二次封装别人的表单类组件用，并且对 element 这样的UI 进行单组件的二次封装我觉得意义不是很大，感兴趣的可以研究一下，这里我就不做过多解释官网说明的很清楚点击标题可以快速跳转官方文档的相关位置，或者参考 [`sync-修饰符`](https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6)
 
 ::: tip
-虽然不是特别重点，但是这里如果只是对 value 属性的进行双绑封装还是极为方便的，新手可以了解一下，只需要在子组件新增 `this.$emit('input', val)` 这样的事件即可
+无论 [`v-model` ](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model) 还是 [`sync-修饰符`](https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6) 实际上是一个实现双向绑定的语法糖
 ```html
+<!-- 在原生表单元素中 -->
 <input v-model="searchText">
-<!-- 实际上上面的代码是下面代码的语法糖。 -->
-<!-- 当在父级组件监听这个事件的时候，我们可以通过 $event 访问到被抛出的这个值 -->
+<!-- 相当于 -->
 <input
   v-bind:value="searchText"
   v-on:input="searchText = $event.target.value"
 >
+
+<!-- 在自定义组件中 -->
+<my-component v-model="inputValue" />
+<!-- 相当于 -->
+<my-component
+  v-bind:value="inputValue"
+  v-on:input="inputValue = argument[0]"
+/>
 ```
+
 :::
 
 - [内置组件 `<slot>`](https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87%E6%8F%92%E6%A7%BD%E5%88%86%E5%8F%91%E5%86%85%E5%AE%B9)
