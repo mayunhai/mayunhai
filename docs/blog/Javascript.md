@@ -14,6 +14,8 @@
 
 !!!include(docs/blog/Javascript/15行简单实现 Promise.md)!!!
 
+!!!include(docs/blog/Javascript/17行手写 promiseAll.md)!!!
+
 !!!include(docs/blog/Javascript/20行简单实现全局事件 EventBus.md)!!!
 
 !!!include(docs/blog/Javascript/async函数容易忽视的问题.md)!!!

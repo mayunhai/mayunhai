@@ -8,6 +8,10 @@
 
 [labuladong 的算法小抄](https://labuladong.gitbook.io/algo/)
 
+[50 个 Vue 知识点，全都会你就是神](https://mp.weixin.qq.com/s/wX6M6To1Hs0uQegtFMQZiA)
+
+[Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
+
 
 
 
