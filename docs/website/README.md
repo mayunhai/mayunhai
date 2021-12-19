@@ -45,6 +45,7 @@
 #### 图表插件
 
 [echartsjs](https://www.echartsjs.com/zh/index.html)
+[datav](http://datav.jiaminghi.com/)
 [d3](https://d3js.org)
 [antv](https://antv.vision/zh)
 

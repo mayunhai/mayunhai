@@ -24,6 +24,7 @@
 [作用域链](/blog/#作用域链)
 [链运算符](/blog/#链运算符)
 [HTTP2](/blog/#http2)
+[BFC](/blog/#bfc)
 :::
 
 
@@ -243,7 +244,11 @@ arr.forEach(v => {
 目前来看，在高版本的webkit内核浏览器里passive是默认为true的，所以想禁止滚动发现不生效的时候，你得把事件绑定添加这个选项了
 
 :::tip
-这里我想要强调一个细节，如果一个页面尤其是单页应用在多处对 `window` 进行 `visibilitychange`、`resize`、 `scroll` 等事件的监听，会出现事件不触发也不报错的情况，所以这里我想要给两个建议
+这里我想要强调两个细节：
+
+一、`touchstart` 或者 `touchend` 的 `event.preventDefault()` 会阻塞 `click` 事件的触发，而且无论冒泡还是捕获 `touchend` 的执行顺序 优先于 `click`
+
+二、如果一个页面尤其是单页应用在多处对 `window` 进行 `visibilitychange`、`resize`、 `scroll` 等事件的监听，会出现事件不触发也不报错的情况，所以这里我想要给两个建议
 - 有 `addEventListener` 一定要注意在不需要的情况下 `removeEventListener` 及时销毁
 - 在多处对 `window` 进行 `visibilitychange`、`resize`、 `scroll` 等事件重复的监听情况下，建议单独拎一个文件出来封装这些事件只监听一次，然后把 `event` 通过 [EventBus](/blog/Javascript.html#_20行简单实现全局事件-eventbus) 或者状态管理器(`VueX`、`Redux`)分发到需要用到的地方，有效避免无效重复监听导致的问题
 :::
@@ -438,3 +443,20 @@ HTTP2大幅度的提高了web 性能，在HTTP1.1完全语义兼容的基础上�
   border-bottom: 1px solid rgba(0, 0, 0, 2%)
 }
 </style>
+
+
+### BFC
+
+**BFC 即 Block Formatting Contexts (块级格式化上下文)，它属于上述定位方案的普通流。**
+
+只要元素满足下面任一条件即可触发 BFC：
+- body 根元素
+- 浮动元素：float 除 none 以外的值
+- 绝对定位元素：position (absolute、fixed)
+- display 为 inline-block、table-cells、flex
+- overflow 除了 visible 以外的值 (hidden、auto、scroll)
+
+BFC 特性：
+- 同一个 BFC 下外边距会发生折叠
+- BFC 可以包含浮动的元素（清除浮动）
+- BFC 可以阻止元素被浮动元素覆盖
